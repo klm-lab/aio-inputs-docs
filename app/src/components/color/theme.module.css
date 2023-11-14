@@ -1,0 +1,54 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute, .wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customScroll {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--primary-color) transparent;
+}
+.customScroll::-webkit-scrollbar {
+  width: 6px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background: var(--user-color);
+  border-radius: var(--radius);
+}
+.customScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wrapper {
+  top: 0.5rem;
+  bottom: unset;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .themeIcon {
+  height: 40px;
+  right: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.wrapper .themeIcon:hover {
+  transform: scale(1.2) rotateZ(-12deg);
+}
+.wrapper .picker {
+  width: 0;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=theme.module.css.map */

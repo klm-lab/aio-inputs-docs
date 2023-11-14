@@ -1,0 +1,40 @@
+{
+  "name": "aio-inputs-docs",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "sass": "sass --watch app/:app/",
+    "remix-dev": "remix dev",
+    "dev": "concurrently npm:sass npm:remix-dev",
+    "start": "netlify serve",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@netlify/functions": "^1.4.0",
+    "@react-spring/web": "^9.7.3",
+    "@remix-run/css-bundle": "^1.19.0",
+    "@remix-run/netlify": "^1.19.0",
+    "@remix-run/node": "^1.19.0",
+    "@remix-run/react": "^1.19.0",
+    "aio-store": "^2.4.4",
+    "cross-env": "^7.0.3",
+    "isbot": "^3.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.19.0",
+    "@remix-run/eslint-config": "^1.19.0",
+    "@remix-run/serve": "^1.19.0",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.38.0",
+    "sass": "^1.64.0",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

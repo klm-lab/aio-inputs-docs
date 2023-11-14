@@ -1,0 +1,38 @@
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    transition: 0.2s ease;
+}
+
+body {
+
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+    margin: 0;
+}
+
+a, button, input {
+    border: none;
+}
+
+a:focus, button:focus, input:focus, a:hover, button:hover, input:hover, a:active, button:active, input:active {
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
