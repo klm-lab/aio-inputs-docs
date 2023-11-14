@@ -1,0 +1,15 @@
+@import "../../assets/styles/extends";
+
+.rightIcons {
+  @extend .flexCenter;
+  column-gap: .1rem;
+
+  .icon {
+    @extend .iconWrapper;
+
+    &:hover {
+      background-color: var(--muted-color);
+      border-radius: 50%;
+    }
+  }
+}

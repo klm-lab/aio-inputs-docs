@@ -1,0 +1,121 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter, .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCenterSpace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.customScroll, .sidebar {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--scroll-color) transparent;
+}
+.customScroll::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.customScroll::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 6px;
+}
+.customScroll::-webkit-scrollbar-track, .sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.size {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--shadow-color);
+  border-right: 1px solid var(--shadow-color);
+}
+
+.sidebar {
+  padding-top: 1rem;
+  width: calc(var(--max-width) * var(--percent) / 100);
+  max-height: calc(var(--body-height));
+  overflow: hidden;
+  position: fixed;
+  top: var(--header-height);
+  --color: var(--text-color);
+}
+.sidebar:hover {
+  overflow: auto;
+}
+.sidebar .list .item:hover, .sidebar .sideEl .sideTitle:hover, .sidebar .active {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.sidebar .active {
+  background-color: var(--h-bg-color);
+  --color: var(--primary-color);
+  font-weight: 600;
+}
+.sidebar .version {
+  margin-top: 2rem;
+  padding: 1rem var(--padding);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(---muted-icon-color);
+}
+.sidebar .sideEl {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+.sidebar .sideEl .sideTitle {
+  padding: 1rem var(--padding);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color);
+  cursor: pointer;
+  display: block;
+}
+.sidebar .sideEl .sideTitle:hover {
+  background-color: var(--muted-color);
+}
+.sidebar .activeList {
+  height: var(--height) !important;
+}
+.sidebar .list {
+  height: 0;
+}
+.sidebar .list .item {
+  font-size: 1rem;
+  list-style: none;
+  padding: 1rem calc(var(--padding) + 1rem);
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  color: var(--color);
+}
+.sidebar .list .item:hover {
+  background-color: var(--muted-color);
+}
+
+@media screen and (max-width: 968px) {
+  .sidebar {
+    transform: translateX(-400px);
+  }
+}
+
+/*# sourceMappingURL=sidebar.css.map */

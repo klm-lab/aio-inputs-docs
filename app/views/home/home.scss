@@ -1,0 +1,28 @@
+.home {
+  padding: 4rem var(--padding);
+  color: var(--text-color);
+  .title {
+    font-weight: 700;
+    font-size: 2rem;
+
+  }
+
+  .subTitle {
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  .titleIntro {
+    margin-top: 2rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    margin: 2rem 0;
+    background-color: var(--muted-color);
+  }
+}

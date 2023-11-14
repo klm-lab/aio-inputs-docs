@@ -1,0 +1,75 @@
+@import "./extends";
+
+:root {
+  --header-height: 6rem;
+  --padding: 2rem;
+  --max-width: 1500px
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+
+  }
+}
+
+body[data-dark="true"] {
+  --bg-color: #222222;
+  --primary-color: #0e66be;
+  --h-bg-color: #90bbe8;
+  --shadow-color: #181818;
+  --icon-color: #f1f1f1;
+  ---muted-icon-color: #989898;
+  --muted-color: #363636;
+  --scroll-color: #8f8f8f;
+}
+
+body {
+  --bg-color: #ffffff;
+  --primary-color: #2671c6;
+  --h-bg-color: #90bbe8;
+  --shadow-color: #eaeaea;
+  --icon-color: #343434;
+  ---muted-icon-color: #989898;
+  --muted-color: #f3f3f3;
+  --scroll-color: #c1c1c1;
+
+  @extend .customScroll;
+  @extend .size;
+  background-color: var(--bg-color);
+  min-height: calc(100vh - var(--header-height));
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+  margin: 0;
+}
+
+a, button, input {
+  border: none;
+
+  &:focus, &:hover, &:active {
+    outline: none;
+    border: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}

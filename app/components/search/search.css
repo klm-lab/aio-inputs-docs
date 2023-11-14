@@ -1,0 +1,67 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter, .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCenterSpace, .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.customScroll {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--scroll-color) transparent;
+}
+.customScroll::-webkit-scrollbar {
+  width: 6px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 6px;
+}
+.customScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.size {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--shadow-color);
+  border-right: 1px solid var(--shadow-color);
+}
+
+.search {
+  flex: 1;
+  background-color: var(--muted-color);
+  padding: 0 1rem;
+  height: 40px;
+  margin: 0 2rem;
+  column-gap: 1rem;
+  border-radius: 25px;
+}
+.search input {
+  height: 100%;
+  flex: 1;
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=search.css.map */

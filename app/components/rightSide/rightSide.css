@@ -1,0 +1,60 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter, .rightIcons, .iconWrapper, .rightIcons .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCenterSpace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper, .rightIcons .icon {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.customScroll {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--scroll-color) transparent;
+}
+.customScroll::-webkit-scrollbar {
+  width: 6px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 6px;
+}
+.customScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.size {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--shadow-color);
+  border-right: 1px solid var(--shadow-color);
+}
+
+.rightIcons {
+  column-gap: 0.1rem;
+}
+.rightIcons .icon:hover {
+  background-color: var(--muted-color);
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=rightSide.css.map */
