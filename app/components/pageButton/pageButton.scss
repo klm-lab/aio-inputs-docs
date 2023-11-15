@@ -1,0 +1,46 @@
+@import "../../assets/styles/extends";
+
+.next {
+  padding: .5rem 1rem;
+  background-color: var(--primary-color);
+  color: #f7f7f7;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: .2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    transform: translateX(-80px);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: .2s ease;
+    @extend .flexCenter;
+    box-shadow: 2px 0 4px var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  &[data-text*="Prev"]:after {
+    transform: translateX(80px);
+    box-shadow: -2px 0 4px var(--primary-color);
+  }
+
+  &:hover {
+    &[data-text*="Prev"] {
+      transform: translateX(-16px);
+    }
+    padding: .5rem 2rem;
+    transform: translateX(16px);
+    overflow: visible;
+
+    &:after {
+      transform: translateX(0);
+    }
+  }
+}

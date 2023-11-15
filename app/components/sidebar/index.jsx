@@ -2,10 +2,10 @@ import "./sidebar.css"
 import {Link, useLocation} from "@remix-run/react";
 import {addClasses} from "../../util";
 import {routes, SIDEBAR} from "../../util/constants";
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 const {
-    ROOT, USE_INPUTS, USE_INPUTS_ARRAY,
+    ROOT,USE_INPUTS, USE_INPUTS_ARRAY,
     USE_INPUTS_OBJECT, USE_INPUTS_STRING
 } = routes;
 const {HOOK, PROPERTIES, FORM, TRACK} = SIDEBAR;
@@ -14,6 +14,12 @@ const Sidebar = () => {
     const {pathname} = useLocation();
 
     const [open, setOpen] = useState("");
+
+    useEffect(() => {
+        if (pathname.includes(USE_INPUTS)) {
+            setOpen(HOOK)
+        }
+    }, [pathname]);
 
     const toggleMenu = useCallback((target) => {
         setOpen(open => open === target ? "" : target)
@@ -27,8 +33,11 @@ const Sidebar = () => {
             </Link>
         </div>
         <div className="sideEl">
-            <Link to={USE_INPUTS} onClick={() => toggleMenu(HOOK)}
-                  className={addClasses("sideTitle", pathname === USE_INPUTS ? "active" : "")}>Use inputs</Link>
+            {/*<Link to={USE_INPUTS} onClick={() => toggleMenu(HOOK)}*/}
+            {/*      className={addClasses("sideTitle", pathname === USE_INPUTS ? "active" : "")}>*/}
+            {/*    Use inputs</Link>*/}
+            <h2 onClick={() => toggleMenu(HOOK)}
+                className="sideTitle">Use inputs</h2>
             <ul style={{
                 "--height": "150px"
             }} className={addClasses("list", open === HOOK && "activeList")}>

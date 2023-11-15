@@ -1,0 +1,144 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter, .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCenterSpace, .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.customScroll {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--scroll-color) transparent;
+}
+.customScroll::-webkit-scrollbar {
+  width: 6px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 6px;
+}
+.customScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.size {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--shadow-color);
+  border-right: 1px solid var(--shadow-color);
+}
+
+.keyword {
+  color: var(--keyword);
+}
+
+.definition {
+  color: var(--definition);
+}
+
+.key {
+  color: var(--key);
+}
+
+.oKey {
+  color: var(--o-key);
+}
+
+.package {
+  color: var(--package);
+}
+
+.comment {
+  color: var(---muted-icon-color);
+}
+
+.indent {
+  margin-right: 0.5rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.space {
+  margin: 0 1rem;
+}
+
+.link {
+  color: var(--link-color);
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.hl {
+  background-color: var(--muted-color);
+  padding: 0.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.foot {
+  margin-top: 1rem;
+}
+
+.data {
+  padding: 4rem var(--padding);
+  color: var(--text-color);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.subTitle {
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.titleIntro {
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  white-space: pre-wrap;
+}
+
+.extra {
+  margin-left: 40px;
+  margin-top: 1rem;
+}
+.extra li {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=common.css.map */

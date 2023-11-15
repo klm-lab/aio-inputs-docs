@@ -1,3 +1,5 @@
+import String from "../views/string";
+
 export const meta = () => {
 
     return [
@@ -6,7 +8,7 @@ export const meta = () => {
     ];
 };
 export const UseInputs = () => {
-    return "string"
+    return <String/>
 }
 
 export default UseInputs

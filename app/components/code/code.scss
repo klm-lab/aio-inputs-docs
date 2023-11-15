@@ -1,0 +1,60 @@
+@import "../../assets/styles/extends";
+
+.codeWrapper {
+  min-height: 60px;
+  box-shadow: -2px -2px 16px var(--shadow-color);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  @extend .flexCenterSpace;
+  align-items: normal;
+  padding: 1rem;
+  overflow: auto;
+  white-space: nowrap;
+  letter-spacing: .05rem;
+
+  .code {
+    @extend .flexCenter;
+    align-items: normal;
+    flex-direction: column;
+
+    span {
+      margin-right: .5rem;
+    }
+
+    .no-indent {
+      margin-right: 0;
+    }
+
+    &Line {
+      margin-left: 2rem;
+    }
+
+    &DeepLine {
+      margin-left: 4rem;
+      margin-top: -.2rem;
+    }
+    &SuperDeepLine {
+      margin-left: 6rem;
+      margin-top: -.2rem;
+    }
+    &NestedLine {
+      margin-left: 8rem;
+      margin-top: -.2rem;
+    }
+    &SuperNestedLine {
+      margin-left: 10rem;
+      margin-top: -.2rem;
+    }
+
+    &New {
+      background-color: var(--new-code);
+      padding: .2rem;
+      border-radius: 6px;
+    }
+
+  }
+
+  .copy {
+    cursor: pointer;
+  }
+}

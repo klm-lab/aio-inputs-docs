@@ -1,0 +1,97 @@
+@import "./extends";
+
+.keyword {
+  color: var(--keyword);
+}
+
+.definition {
+  color: var(--definition);
+}
+
+.key {
+  color: var(--key);
+}
+
+.oKey {
+  color: var(--o-key);
+}
+
+.package {
+  color: var(--package);
+}
+
+.comment {
+  color: var(---muted-icon-color);
+}
+
+.indent {
+  margin-right: .5rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.space {
+  margin: 0 1rem;
+}
+
+.link {
+  color: var(--link-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.hl {
+  background-color: var(--muted-color);
+  padding: .5rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.foot {
+  @extend .flexCenterSpace;
+  margin-top: 1rem;
+}
+
+.data {
+  padding: 4rem var(--padding);
+  color: var(--text-color);
+}
+
+
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.subTitle {
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.titleIntro {
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  white-space: pre-wrap;
+}
+
+.extra {
+  margin-left: 40px;
+  margin-top: 1rem;
+
+  li {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

@@ -52,6 +52,9 @@
 .rightIcons {
   column-gap: 0.1rem;
 }
+.rightIcons .icon {
+  transition: 0.2s ease;
+}
 .rightIcons .icon:hover {
   background-color: var(--muted-color);
   border-radius: 50%;

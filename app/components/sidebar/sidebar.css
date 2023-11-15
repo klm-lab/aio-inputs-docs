@@ -57,6 +57,7 @@
   position: fixed;
   top: var(--header-height);
   --color: var(--text-color);
+  transition: 0.2s ease;
 }
 .sidebar:hover {
   overflow: auto;
@@ -98,6 +99,7 @@
 }
 .sidebar .list {
   height: 0;
+  transition: 0.2s ease;
 }
 .sidebar .list .item {
   font-size: 1rem;

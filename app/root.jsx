@@ -1,5 +1,6 @@
 import {cssBundleHref} from "@remix-run/css-bundle";
 import rootStyles from "./assets/styles/rootStyle.css"
+import commonStyles from "./assets/styles/common.css"
 
 import {Links, LiveReload, Meta, Scripts, ScrollRestoration,} from "@remix-run/react";
 import Content from "./components/content";
@@ -8,6 +9,7 @@ import NotFound from "./views/notFound";
 const mainStyles = [
     {rel: "icon", type: "image/x-icon", href: "/favicon.svg"},
     {rel: "stylesheet", href: rootStyles},
+    {rel: "stylesheet", href: commonStyles},
     {rel: "preconnect", href: "https://fonts.googleapis.com"},
     {rel: "preconnect", href: "https://fonts.gstatic.com"},
     {

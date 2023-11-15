@@ -1,3 +1,5 @@
+import Array from "../views/array";
+
 export const meta = () => {
 
     return [
@@ -6,7 +8,7 @@ export const meta = () => {
     ];
 };
 export const UseInputs = () => {
-    return "array"
+    return <Array/>
 }
 
 export default UseInputs

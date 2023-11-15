@@ -9,6 +9,7 @@
   position: fixed;
   top: var(--header-height);
   --color: var(--text-color);
+  transition: 0.2s ease;
 
   &:hover {
     overflow: auto;
@@ -60,6 +61,7 @@
 
   .list {
     height: 0;
+    transition: .2s ease;
 
     .item {
       font-size: 1rem;
