@@ -8,6 +8,7 @@ import FormSideBar from "./formSideBar";
 import {appStore} from "../../store";
 import TrackSideBar from "./trackSideBar";
 import PropertiesSidebar from "./propertiesSideBar";
+import ArrowIcon from "../../assets/icon/ArrowIcon";
 
 const {
     ROOT,
@@ -26,7 +27,7 @@ const Sidebar = () => {
         <div className={addClasses("sideEl", pathname === ROOT ? "active" : "")}>
             <Link to={ROOT} onClick={toggleMenu}
                   className={addClasses("sideTitle", pathname === ROOT ? "active" : "")}>
-                Get started
+                <h2 className="text">Get started</h2>
             </Link>
         </div>
         <UseInputsSideBar/>

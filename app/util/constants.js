@@ -16,6 +16,12 @@ export const routes = {
         TO_ARRAY: "#toArray",
         TO_OBJECT: "#toObject",
     },
+    CONFIG: {
+        ROOT: "/config",
+        ASYNC_DELAY: "#asyncDelay",
+        PERSIST_ID: "#persitID",
+        TRACK_ID: "#trackID"
+    },
     TRACK: {
         ROOT: "/track",
         SETUP: "#setup",

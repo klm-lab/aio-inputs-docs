@@ -11,16 +11,29 @@ export const meta = () => {
     ];
 };
 
-const {ROOT,GET_VALUES} = routes.FORM
+const {ROOT, GET_VALUES} = routes.FORM
 
 export const Form = () => {
     const navigate = useNavigate();
     const {pathname, hash} = useLocation();
+
     useEffect(() => {
         if (pathname === ROOT && !hash) {
             navigate(GET_VALUES);
         }
     }, [navigate, pathname, hash]);
+
+    useEffect(() => {
+        window.onpopstate = (ev) => {
+            if (ev.target.navigation.currentEntry.url.includes(ROOT)) {
+                navigate(-1)
+            }
+        }
+        return () => {
+            window.onpopstate = null
+        }
+    }, [navigate]);
+
     return <FormEntry/>
 }
 

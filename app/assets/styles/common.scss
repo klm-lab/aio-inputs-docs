@@ -57,7 +57,13 @@
 }
 
 .smt {
-  scroll-margin-top: calc(var(--header-height) + 1rem);
+  &::before {
+    --c: calc(var(--header-height) + 1rem);
+    content: "";
+    display: block;
+    height: var(--c);
+    margin-top: calc(var(--c) * -1);
+  }
 }
 
 .foot {

@@ -2,8 +2,9 @@ import "../sidebar.css"
 import {Link, useLocation} from "@remix-run/react";
 import {addClasses} from "../../../util";
 import {routes, SIDEBAR} from "../../../util/constants";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect} from "react";
 import {appStore} from "../../../store";
+import ArrowIcon from "../../../assets/icon/ArrowIcon";
 
 const {
     USE_INPUTS
@@ -31,11 +32,14 @@ const useInputsSidebar = () => {
     }, [])
 
     return <div className="sideEl">
-        {/*<Link to={USE_INPUTS} onClick={() => toggleMenu(HOOK)}*/}
-        {/*      className={addClasses("sideTitle", pathname === USE_INPUTS ? "active" : "")}>*/}
-        {/*    Use inputs</Link>*/}
-        <h2 onClick={toggleMenu}
-            className="sideTitle">Use inputs</h2>
+        <div onClick={toggleMenu}
+             className={addClasses("sideTitle",
+                 activeList !== HOOK && pathname.includes(USE_INPUTS.ROOT) && "active",
+                 activeList === HOOK && "open"
+                 )}>
+            <h2 className="text">Use inputs</h2>
+            <ArrowIcon size={14}/>
+        </div>
         <ul style={{
             "--height": `calc(var(--el-h) * ${R.length - 1})`
         }} className={addClasses("list", activeList === HOOK && "activeList")}>

@@ -27,6 +27,12 @@
     font-weight: 600;
   }
 
+  .open {
+    .arrow {
+      transform: rotateZ(90deg);
+    }
+  }
+
   .version {
     margin-top: 2rem;
     padding: 1rem var(--padding);
@@ -42,11 +48,18 @@
 
     .sideTitle {
       padding: 1rem var(--padding);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--color);
       cursor: pointer;
-      display: block;
+      @extend .flexCenterSpace;
+
+      .text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color);
+      }
+
+      .arrow {
+        transition: .2s ease;
+      }
 
       &:hover {
         @extend %borderR;
@@ -67,7 +80,9 @@
     .item {
       font-size: 1rem;
       list-style: none;
-      padding: 1rem calc(var(--padding) + 1rem);
+      @extend .flexCenter;
+      justify-content: flex-start;
+      padding-left: calc(var(--padding) + 1rem);
       height: var(--el-h);
       width: 100%;
       cursor: pointer;

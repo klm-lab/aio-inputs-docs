@@ -34,7 +34,7 @@ const String = () => {
         </h2>
         <p className="description">
             Call <span className="definition">useInputs</span> with the name you want.
-            For example, you want the <span className="hl">phoneNumber</span> of a user
+            For example, you want the <span className="hl">phoneNumber</span> of a user.
         </p>
         <Code>
             <CreateInputs close multiple={false}/>

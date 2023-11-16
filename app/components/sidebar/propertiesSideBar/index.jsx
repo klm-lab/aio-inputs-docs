@@ -4,6 +4,7 @@ import {addClasses} from "../../../util";
 import {routes, SIDEBAR} from "../../../util/constants";
 import {useCallback, useEffect, useState} from "react";
 import {appStore} from "../../../store";
+import ArrowIcon from "../../../assets/icon/ArrowIcon";
 
 const {PROPERTIES: PROPERTIES_ROUTE} = routes;
 const R = Object.keys(PROPERTIES_ROUTE);
@@ -30,12 +31,18 @@ const PropertiesSidebar = () => {
 
     const toggleMenu = useCallback(() => {
         appStore.set(ref => {
-            ref.activeList = ref.activeList === PROPERTIES ? "" : PROPERTIES
+            ref.activeList = PROPERTIES
         })
     }, [])
 
     return <div className="sideEl">
-        <h2 onClick={toggleMenu} className="sideTitle">Properties</h2>
+        <div onClick={toggleMenu} className={addClasses("sideTitle",
+            activeList !== PROPERTIES && pathname.includes(PROPERTIES_ROUTE.ROOT) && "active",
+            activeList === PROPERTIES && "open"
+        )}>
+            <h2 className="text">Properties</h2>
+            <ArrowIcon size={14}/>
+        </div>
         <ul style={{
             "--height": `calc(var(--el-h) * ${R.length - 1})`
         }} className={addClasses("list", activeList === PROPERTIES && "activeList")}>

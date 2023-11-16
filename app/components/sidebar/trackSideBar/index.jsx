@@ -4,6 +4,7 @@ import {addClasses} from "../../../util";
 import {routes, SIDEBAR} from "../../../util/constants";
 import {useCallback, useEffect, useState} from "react";
 import {appStore} from "../../../store";
+import ArrowIcon from "../../../assets/icon/ArrowIcon";
 
 const {TRACK: TRACK_ROUTE} = routes;
 const R = Object.keys(TRACK_ROUTE);
@@ -35,7 +36,13 @@ const TrackSidebar = () => {
     }, [])
 
     return <div className="sideEl">
-        <h2 onClick={toggleMenu} className="sideTitle">Track</h2>
+        <div onClick={toggleMenu} className={addClasses("sideTitle",
+            activeList !== TRACK && pathname.includes(TRACK_ROUTE.ROOT) && "active",
+            activeList === TRACK && "open"
+            )}>
+            <h2 className="text">Track</h2>
+            <ArrowIcon size={14}/>
+        </div>
         <ul style={{
             "--height": `calc(var(--el-h) * ${R.length - 1})`
         }} className={addClasses("list", activeList === TRACK && "activeList")}>

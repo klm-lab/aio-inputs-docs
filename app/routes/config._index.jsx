@@ -1,25 +1,27 @@
 import {useLocation, useNavigate} from "@remix-run/react";
-import {routes} from "../util/constants";
 import {useEffect} from "react";
+import {routes} from "../util/constants";
+import Config from "../views/config";
 
 export const meta = () => {
 
     return [
-        {title: "Aio-Inputs UseInputs"},
-        {name: "description", content: "Use inputs with react"}
+        {title: "Aio-Inputs Config"},
+        {name: "description", content: "Use inputs config with react"}
     ];
 };
 
-const {ROOT,STRING} = routes.USE_INPUTS
+const {ROOT, ASYNC_DELAY} = routes.CONFIG
 
-export const UseInputs = () => {
+export const Form = () => {
     const navigate = useNavigate();
-    const {pathname} = useLocation();
+    const {pathname, hash} = useLocation();
     useEffect(() => {
-        if (pathname === ROOT) {
-            navigate(STRING);
+        if (pathname === ROOT && !hash) {
+            navigate(ASYNC_DELAY);
         }
-    }, [navigate, pathname]);
+    }, [navigate, pathname, hash]);
+
 
     useEffect(() => {
         window.onpopstate = (ev) => {
@@ -31,7 +33,8 @@ export const UseInputs = () => {
             window.onpopstate = null
         }
     }, [navigate]);
-    return ""
+
+    return <Config/>
 }
 
-export default UseInputs
+export default Form

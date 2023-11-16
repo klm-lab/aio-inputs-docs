@@ -4,6 +4,7 @@ import {addClasses} from "../../../util";
 import {routes, SIDEBAR} from "../../../util/constants";
 import {useCallback, useEffect, useState} from "react";
 import {appStore} from "../../../store";
+import ArrowIcon from "../../../assets/icon/ArrowIcon";
 
 const {FORM: FORM_ROUTE} = routes;
 const R = Object.keys(FORM_ROUTE);
@@ -35,7 +36,13 @@ const FormSidebar = () => {
     }, [])
 
     return <div className="sideEl">
-        <h2 onClick={toggleMenu} className="sideTitle">Form</h2>
+        <div onClick={toggleMenu} className={addClasses("sideTitle",
+            activeList !== FORM && pathname.includes(FORM_ROUTE.ROOT) && "active",
+            activeList === FORM && "open"
+            )}>
+            <h2 className="text">Form</h2>
+            <ArrowIcon size={14}/>
+        </div>
         <ul style={{
             "--height": `calc(var(--el-h) * ${R.length - 1})`
         }} className={addClasses("list", activeList === FORM && "activeList")}>

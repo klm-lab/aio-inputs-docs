@@ -103,8 +103,12 @@
   font-weight: 600;
 }
 
-.smt {
-  scroll-margin-top: calc(var(--header-height) + 1rem);
+.smt::before {
+  --c: calc(var(--header-height) + 1rem);
+  content: "";
+  display: block;
+  height: var(--c);
+  margin-top: calc(var(--c) * -1);
 }
 
 .foot {

@@ -14,7 +14,7 @@ import ObjectValidation from "./ObjectValidation";
 import CreateInputs from "../../../components/codeComponents/CreateInputs";
 import MapInputs from "../../../components/codeComponents/mapInputs";
 
-const {USE_INPUTS,FORM} = routes
+const {USE_INPUTS, FORM} = routes
 
 const FormMap = () => {
     return <span className="hl">
@@ -56,7 +56,7 @@ const ObjectEntry = () => {
             </CreateInputs>
         </Code>
         <p className="description">Notice that we extract also the <span className="hl">form</span> object
-            from <span className="package">aio-inputs. </span>
+            from <span className="package hl">aio-inputs. </span>
             Because we can't use map like array to render our inputs.
             We will use <FormMap/> instead, or just destructure our inputs and render them. It is up to you
         </p>
@@ -127,7 +127,7 @@ const ObjectEntry = () => {
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(USE_INPUTS.ARRAY)} text="Prev"/>
-            <PageButton onClick={() => navigate(FORM.ROOT + FORM.GET_VALUES)}/>
+            <PageButton onClick={() => navigate(FORM.ROOT)}/>
         </div>
     </div>
 }

@@ -47,7 +47,7 @@ const Index = () => {
         </p>
         <div className="foot">
             <div/>
-            <PageButton onClick={() => navigate(routes.USE_INPUTS.STRING)}/>
+            <PageButton onClick={() => navigate(routes.USE_INPUTS.ROOT)}/>
         </div>
     </div>
 }
