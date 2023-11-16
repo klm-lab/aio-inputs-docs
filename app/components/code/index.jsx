@@ -11,7 +11,7 @@ const Code = ({children}) => {
              {/*    <span>inputs</span>*/}
              {/*    <span>]</span>*/}
              {/*    <span>=</span>*/}
-             {/*    <span className="definition no-indent">useInputs</span>*/}
+             {/*    <span className="definition no-indent">useInputsSideBar</span>*/}
              {/*    <span className="no-indent">(</span>*/}
              {/*    <span className="key no-indent">6</span>*/}
              {/*    <span>)</span>*/}

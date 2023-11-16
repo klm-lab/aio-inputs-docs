@@ -32,11 +32,11 @@
   scrollbar-color: var(--scroll-color) transparent;
 }
 .customScroll::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 .customScroll::-webkit-scrollbar-thumb {
   background: var(--scroll-color);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .customScroll::-webkit-scrollbar-track {
   background: transparent;

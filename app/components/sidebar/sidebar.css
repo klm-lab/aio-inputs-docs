@@ -32,11 +32,11 @@
   scrollbar-color: var(--scroll-color) transparent;
 }
 .customScroll::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 .customScroll::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb {
   background: var(--scroll-color);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .customScroll::-webkit-scrollbar-track, .sidebar::-webkit-scrollbar-track {
   background: transparent;
@@ -98,6 +98,7 @@
   height: var(--height) !important;
 }
 .sidebar .list {
+  --el-h: 50px;
   height: 0;
   transition: 0.2s ease;
 }
@@ -105,13 +106,16 @@
   font-size: 1rem;
   list-style: none;
   padding: 1rem calc(var(--padding) + 1rem);
-  height: 50px;
+  height: var(--el-h);
   width: 100%;
   cursor: pointer;
   color: var(--color);
 }
 .sidebar .list .item:hover {
   background-color: var(--muted-color);
+}
+.sidebar .list .up:first-letter {
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 968px) {

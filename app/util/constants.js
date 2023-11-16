@@ -1,13 +1,32 @@
 export const routes = {
     ROOT: "/",
-    USE_INPUTS: "/use_inputs",
-    USE_INPUTS_STRING: "/use_inputs/string",
-    USE_INPUTS_ARRAY: "/use_inputs/array",
-    USE_INPUTS_OBJECT: "/use_inputs/object",
-    FORM: "/form",
-    FORM_RESET: "/form/reset",
-    PROPERTIES: "/properties",
-    PROPERTIES_INPUTS: "/properties/inputs"
+    USE_INPUTS: {
+        ROOT: "/use_inputs",
+        STRING: "/use_inputs/string",
+        ARRAY: "/use_inputs/array",
+        OBJECT: "/use_inputs/object",
+    },
+    FORM: {
+        ROOT: "/form",
+        GET_VALUES: "#getValues",
+        RESET: "#reset",
+        FOR_EACH: "#forEach",
+        MAP: "#map",
+        LENGTH: "#length",
+        TO_ARRAY: "#toArray",
+        TO_OBJECT: "#toObject",
+    },
+    TRACK: {
+        ROOT: "/track",
+        SETUP: "#setup",
+        USE_VALUES: "#useValues",
+        LENGTH: "#length",
+    },
+    PROPERTIES: {
+        ROOT: "/properties",
+        INPUTS: "#inputs",
+        VALIDATIONS: "#validations"
+    },
 }
 
 export const SIDEBAR = {
@@ -16,6 +35,17 @@ export const SIDEBAR = {
     TRACK: "track",
     PROPERTIES: "properties"
 }
+
+export const getInputsKey = (value) => [
+    {key: "key", value: '"some unique key",'},
+    {key: "id", value: value},
+    {key: "name", value: value},
+    {key: "label", value: value},
+    {key: "type", value: '"text",'},
+    {key: "value", value: '"",'},
+    {key: "valid", value: "true,", className: "definition"},
+    {key: "onChange", value: "Function", className: "definition"},
+]
 
 
 export const IS_DARK = "isDark"

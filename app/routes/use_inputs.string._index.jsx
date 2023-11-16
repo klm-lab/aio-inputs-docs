@@ -1,4 +1,4 @@
-import String from "../views/string";
+import String from "../views/useInputs/string";
 
 export const meta = () => {
 

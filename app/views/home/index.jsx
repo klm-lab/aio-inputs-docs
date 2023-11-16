@@ -3,7 +3,7 @@ import Line from "../../components/line";
 import PageButton from "../../components/pageButton";
 import {useNavigate} from "@remix-run/react";
 import {routes} from "../../util/constants";
-import ImportStatement from "../../components/importStatement";
+import ImportStatement from "../../components/codeComponents/importStatement";
 
 const Index = () => {
 
@@ -47,7 +47,7 @@ const Index = () => {
         </p>
         <div className="foot">
             <div/>
-            <PageButton onClick={() => navigate(routes.USE_INPUTS_STRING)}/>
+            <PageButton onClick={() => navigate(routes.USE_INPUTS.STRING)}/>
         </div>
     </div>
 }

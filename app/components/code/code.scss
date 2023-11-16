@@ -29,27 +29,13 @@
       margin-left: 2rem;
     }
 
-    &DeepLine {
-      margin-left: 4rem;
-      margin-top: -.2rem;
-    }
-    &SuperDeepLine {
-      margin-left: 6rem;
-      margin-top: -.2rem;
-    }
-    &NestedLine {
-      margin-left: 8rem;
-      margin-top: -.2rem;
-    }
-    &SuperNestedLine {
-      margin-left: 10rem;
-      margin-top: -.2rem;
-    }
-
     &New {
       background-color: var(--new-code);
       padding: .2rem;
       border-radius: 6px;
+      span {
+        color: white;
+      }
     }
 
   }

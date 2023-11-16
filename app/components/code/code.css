@@ -32,11 +32,11 @@
   scrollbar-color: var(--scroll-color) transparent;
 }
 .customScroll::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 .customScroll::-webkit-scrollbar-thumb {
   background: var(--scroll-color);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .customScroll::-webkit-scrollbar-track {
   background: transparent;
@@ -73,26 +73,13 @@
 .codeWrapper .codeLine {
   margin-left: 2rem;
 }
-.codeWrapper .codeDeepLine {
-  margin-left: 4rem;
-  margin-top: -0.2rem;
-}
-.codeWrapper .codeSuperDeepLine {
-  margin-left: 6rem;
-  margin-top: -0.2rem;
-}
-.codeWrapper .codeNestedLine {
-  margin-left: 8rem;
-  margin-top: -0.2rem;
-}
-.codeWrapper .codeSuperNestedLine {
-  margin-left: 10rem;
-  margin-top: -0.2rem;
-}
 .codeWrapper .codeNew {
   background-color: var(--new-code);
   padding: 0.2rem;
   border-radius: 6px;
+}
+.codeWrapper .codeNew span {
+  color: white;
 }
 .codeWrapper .copy {
   cursor: pointer;

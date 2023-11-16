@@ -32,11 +32,11 @@
   scrollbar-color: var(--scroll-color) transparent;
 }
 .customScroll::-webkit-scrollbar, body::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 .customScroll::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   background: var(--scroll-color);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .customScroll::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
   background: transparent;
@@ -87,7 +87,8 @@ body[data-dark=true] {
   --o-key: #b593ea;
   --definition: #e7ac65;
   --package: #65c765;
-  --new-code: #215410;
+  --new-code: #335017;
+  --warn-color: #493e30;
 }
 
 body {
@@ -106,7 +107,8 @@ body {
   --o-key: #5104c4;
   --definition: #dc8615;
   --package: green;
-  --new-code: #ccfbb6;
+  --new-code: #58622b;
+  --warn-color: #f8edd1;
   background-color: var(--bg-color);
   min-height: calc(100vh - var(--header-height));
 }

@@ -1,9 +1,9 @@
-const LinkedIn = ({size = 25, ...rest }) => (
+const Github = ({size = 25, ...rest }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size + "px"}
         height={size + "px"}
-        fill={`var(--icon-color)`}
+        fill="var(--icon-color)"
         viewBox="0 0 20 20" {...rest}>
         <path
             fillRule="evenodd"
@@ -11,4 +11,4 @@ const LinkedIn = ({size = 25, ...rest }) => (
         />
     </svg>
 )
-export default LinkedIn
+export default Github

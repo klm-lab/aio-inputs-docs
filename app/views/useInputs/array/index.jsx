@@ -1,11 +1,12 @@
-import Code from "../../components/code";
-import Line from "../../components/line";
-import PageButton from "../../components/pageButton";
+import Code from "../../../components/code";
+import Line from "../../../components/line";
+import PageButton from "../../../components/pageButton";
 import {useNavigate} from "@remix-run/react";
-import {routes} from "../../util/constants";
-import ImportStatement from "../../components/importStatement";
+import {routes} from "../../../util/constants";
+import ImportStatement from "../../../components/codeComponents/importStatement";
 import StringArray from "./stringArray";
 import MixedArray from "./mixedArray";
+import Box from "../../../components/box";
 
 const Array = () => {
 
@@ -22,7 +23,7 @@ const Array = () => {
             <li>An array of object</li>
         </ul>
         <p className="description">
-            When you use an an array of string, the input is
+            When you use an array of string, the input is
             <span className="package bold space">
             VALID
         </span> by default, because
@@ -35,9 +36,12 @@ const Array = () => {
         <ImportStatement/>
         <StringArray/>
         <MixedArray/>
+        <p className="description">
+            Hit next to find out how to use object with aio-inputs
+        </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(routes.ROOT)} text="Prev"/>
-            <PageButton onClick={() => navigate(routes.USE_INPUTS_ARRAY)}/>
+            <PageButton onClick={() => navigate(routes.USE_INPUTS.STRING)} text="Prev"/>
+            <PageButton onClick={() => navigate(routes.USE_INPUTS.OBJECT)}/>
         </div>
     </div>
 }

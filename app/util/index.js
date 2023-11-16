@@ -15,6 +15,8 @@ export const LS = {
     }
 };
 
+export const getAnchor = (link) => link.replace("#","")
+
 export const getTheme = () => {
     if (typeof window !== "undefined") {
         const isDark = window.matchMedia(DARK_SCHEME).matches;

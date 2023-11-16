@@ -1,3 +1,5 @@
+import ObjectEntry from "../views/useInputs/object";
+
 export const meta = () => {
 
     return [
@@ -6,7 +8,7 @@ export const meta = () => {
     ];
 };
 export const UseInputs = () => {
-    return "object"
+    return <ObjectEntry/>
 }
 
 export default UseInputs

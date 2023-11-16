@@ -1,4 +1,4 @@
-import Array from "../views/array";
+import Array from "../views/useInputs/array";
 
 export const meta = () => {
 

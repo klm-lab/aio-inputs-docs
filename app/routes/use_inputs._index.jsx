@@ -1,3 +1,7 @@
+import {useLocation, useNavigate} from "@remix-run/react";
+import {routes} from "../util/constants";
+import {useEffect} from "react";
+
 export const meta = () => {
 
     return [
@@ -6,7 +10,14 @@ export const meta = () => {
     ];
 };
 export const UseInputs = () => {
-    return "useinputs"
+    const navigate = useNavigate();
+    const {pathname} = useLocation();
+    useEffect(() => {
+        if (pathname === routes.USE_INPUTS.ROOT) {
+            navigate(routes.USE_INPUTS.STRING);
+        }
+    }, [navigate, pathname]);
+    return ""
 }
 
 export default UseInputs
