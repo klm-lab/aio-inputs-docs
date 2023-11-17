@@ -1,27 +1,23 @@
-const InputLine = ({name= "ip", iKey, inline}) => {
+import DotProperty from "../dotProperty";
+
+const InputLine = ({name = "ip", iKey, inline}) => {
     const I = <>
-        <span className="definition">{"<input"}</span>
+        <span className="element">{"<input"}</span>
         {iKey && <>
             <span className="keyword no-indent">{"key="}</span>
             <span className="no-indent">{"{"}</span>
-            <span className="no-indent">{name}</span>
-            <span className="no-indent">.</span>
-            <span className="oKey no-indent">key</span>
+            <DotProperty name={name} value="key" method={false}/>
             <span>{"}"}</span>
         </>}
         <span className="keyword no-indent">{"value="}</span>
         <span className="no-indent">{"{"}</span>
-        <span className="no-indent">{name}</span>
-        <span className="no-indent">.</span>
-        <span className="oKey no-indent">value</span>
+        <DotProperty name={name} value="value" method={false}/>
         <span>{"}"}</span>
         <span className="keyword no-indent">{"onChange="}</span>
         <span className="no-indent">{"{"}</span>
-        <span className="no-indent">{name}</span>
-        <span className="no-indent">.</span>
-        <span className="oKey no-indent">onChange</span>
+        <DotProperty name={name} value="onChange" method={true} noCall/>
         <span>{"}"}</span>
-        <span className="definition">{"/>"}</span>
+        <span className="element">{"/>"}</span>
     </>
     return inline ? I : <div className="codeLine">
         {I}

@@ -50,11 +50,28 @@
       padding: 1rem var(--padding);
       cursor: pointer;
       @extend .flexCenterSpace;
+      column-gap: .8rem;
+
+      .titleItem {
+        flex: 1;
+        @extend .flexCenterSpace;
+      }
 
       .text {
         font-size: 1.1rem;
         font-weight: 600;
         color: var(--color);
+      }
+
+      .info {
+        @extend .flexCenter;
+        height: 25px;
+        font-size: .7rem;
+        padding: 0 .5rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 6px;
+        font-weight: 600;
       }
 
       .arrow {
@@ -93,15 +110,10 @@
         background-color: var(--muted-color);
       }
     }
-    .up {
-      &:first-letter {
-        text-transform: uppercase;
-      }
-    }
   }
 }
 
-@media screen and (max-width: 968px){
+@media screen and (max-width: 968px) {
   .sidebar {
     transform: translateX(-400px);
   }

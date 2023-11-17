@@ -10,14 +10,14 @@ const Index = () => {
     const navigate = useNavigate()
 
     return <div className="data">
-        <h1 className="title">Aio-Inputs</h1>
+        <h1 className="title">aio-inputs</h1>
         <p className="titleIntro">
             An input state management for React. It comes with useful common validations if enabled.
             It supports custom validation asynchronous or not, with dynamic error messages with some additional
             features:
         </p>
         <ul className="extra">
-            <li>Inputs tracking outside a component with two way data binding support</li>
+            <li>Inputs tracking outside a component</li>
             <li>Easy data loading for an edit</li>
         </ul>
         <Line/>

@@ -1,53 +1,64 @@
 import {Link, useNavigate} from "@remix-run/react";
 import Line from "../../components/line";
 import Code from "../../components/code";
-import CreateInputs from "../../components/codeComponents/CreateInputs";
+import Create from "../../components/codeComponents/create";
 import {routes} from "../../util/constants";
 import PageButton from "../../components/pageButton";
 import {getAnchor} from "../../util";
 import ConsoleLog from "../../components/codeComponents/consoleLog";
+import DotProperty from "../../components/codeComponents/dotProperty";
+import CallDefinition from "../../components/codeComponents/callDefinition";
 
 const {
     FORM: {
         GET_VALUES, RESET,
         FOR_EACH, MAP, LENGTH, TO_ARRAY, TO_OBJECT
-    }, TRACK, CONFIG
+    }, TRACK, CONFIG, USE_INPUTS
 } = routes
 
 const FormEntry = () => {
     const navigate = useNavigate();
 
     return <div className="data">
-        <h1 id={getAnchor(GET_VALUES)} className="title smt">Aio-Inputs getValues</h1>
+        <h1 id={getAnchor(GET_VALUES)} className="title smt">Form</h1>
         <p className="description">
-            Use <span className="hl oKey">getValues</span> to get your inputs values. The result is an object where the
-            keys
-            match the name of your inputs.<br/>
-            If you didn't set name on inputs creation, generated ones are used.
+            The form object is immutable. It will never change once created. You can safely use it in useEffect.
+            It gives you access to these properties / method :
         </p>
+        <ul className="extra item-space">
+            <li><CallDefinition name="getValues" hl/> a method to return your inputs values.</li>
+            <li><CallDefinition name="reset" hl/> a method to reset a form.</li>
+            <li><CallDefinition name="forEach" hl/> a method to loop through each input.</li>
+            <li><CallDefinition name="map" hl/> a method loop through each input with return capabilities.</li>
+            <li><span className="oKey hl">length</span> a property which contains inputs length.</li>
+            <li><CallDefinition name="toArray" hl/> a method to return an array version of your inputs.</li>
+            <li><CallDefinition name="toObject" hl/> a method to return an object version of your inputs.</li>
+        </ul>
         <Line/>
         <h2 className="subTitle">
             Get your Values
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">getValues</span></span> is a
-            practical way to get the values of your inputs at once.</p>
+            <DotProperty value="getValues" hl/> is a
+            practical way to get the values of your inputs at once.
+            The result is an object where the keys match the name of your inputs.
+            If you didn't set name on inputs creation, random ones are used.
+        </p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="getValues" comment="Get your values"/>
         </Code>
         <h2 id={getAnchor(RESET)} className="subTitle smt">
             Reset inputs
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">reset</span></span> Let
-            you reset the value of your inputs</p>
+            <DotProperty value="reset" hl/> reset the value of your inputs</p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="reset" comment="Do a reset" noConsole/>
         </Code>
 
@@ -55,83 +66,83 @@ const FormEntry = () => {
             For each input
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">forEach</span></span> emulates the very popular
-            known <span className="hl">Array.prototype.<span className="oKey">forEach</span></span> method.
+            <DotProperty value="forEach" hl/> acts like the very popular
+            known <DotProperty name="Array.prototype" value="forEach" hl/> method.
             More on <Link
             target="_blank"
             rel="noopener noreferrer"
             to={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"}
-            className="link">MDN FOR EACH</Link>
+            className="link">FOR EACH</Link>.
         </p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="forEach" comment="Do a reset" noConsole content="..."/>
         </Code>
         <h2 id={getAnchor(MAP)} className="subTitle smt">
             Map inputs
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">map</span></span> emulates the very popular
-            known <span className="hl">Array.prototype.<span className="oKey">map</span></span> method.
+            <DotProperty value="map" hl/> acts like the very popular
+            known <DotProperty name="Array.prototype" value="map" hl/> method.
             More on <Link
             target="_blank"
             rel="noopener noreferrer"
             to={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"}
-            className="link">MDN MAP</Link>
+            className="link">MAP</Link>.
         </p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="map" comment="Map inputs" noConsole content="..."/>
         </Code>
         <h2 id={getAnchor(LENGTH)} className="subTitle smt">
             Length
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">length</span></span> give you the inputs length
+            <DotProperty value="length" hl method={false}/> give you the inputs length
         </p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="length" comment="Get your inputs length" property/>
         </Code>
         <h2 id={getAnchor(TO_ARRAY)} className="subTitle smt">
             To array
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">toArray</span></span> give you an array version of your
+            <DotProperty value="toArray" hl/> give you an array version of your
             inputs.
         </p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="toArray" comment="Get your array version"/>
         </Code>
         <h2 id={getAnchor(TO_OBJECT)} className="subTitle smt">
             To object
         </h2>
         <p className="description">
-            <span className="hl">form.<span className="oKey">toObject</span></span> give you an object version of your
-            inputs.
+            <DotProperty value="toObject" hl/> give you an object version of your
+            inputs. If you defined ids in your inputs, they are used as first keys otherwise, we generate random ids
         </p>
         <Code>
-            <CreateInputs close form>
+            <Create close form>
                 ...
-            </CreateInputs>
+            </Create>
             <ConsoleLog space method="toObject" comment="Get your object version"/>
         </Code>
 
         <p className="description">
-            Hit next to find out how to <Link className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour.
-            When using <Link className="link" to={TRACK.SETUP}>TRACK</Link> or async custom validation.
+            Hit next to find out how to <Link className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour,
+            when using <Link className="link" to={TRACK.ROOT}>TRACK</Link> or async custom validation.
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(routes.USE_INPUTS.OBJECT)} text="Prev"/>
+            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.OBJECT)} text="Prev"/>
             <PageButton onClick={() => navigate(CONFIG.ROOT)}/>
         </div>
     </div>

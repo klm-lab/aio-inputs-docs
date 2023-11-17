@@ -8,17 +8,20 @@ import InputLine from "../../../components/codeComponents/inputLine";
 import ReadyToUse from "../../../components/codeComponents/readyToUse";
 import FormRef from "../../../components/FormRef";
 import Bracket from "../../../components/codeComponents/bracket";
-import CreateInputs from "../../../components/codeComponents/CreateInputs";
+import Create from "../../../components/codeComponents/create";
+import DotProperty from "../../../components/codeComponents/dotProperty";
+
+const {ROOT,USE_INPUTS} = routes;
 
 const String = () => {
 
     const navigate = useNavigate()
 
     return <div className="data">
-        <h1 className="title">Aio-Inputs with string</h1>
+        <h1 className="title">useInputs with string</h1>
         <p className="titleIntro">
-            You can create an input state by passing a string as an argument. When you use a string, the input is
-            <span className="package bold space">
+            You can create an input state by passing a string
+            as an argument. When you use a string, the input is <span className="package bold">
             VALID
         </span> by default, because
             there is no validation attached to it. Please use it if :
@@ -37,7 +40,7 @@ const String = () => {
             For example, you want the <span className="hl">phoneNumber</span> of a user.
         </p>
         <Code>
-            <CreateInputs close multiple={false}/>
+            <Create close multiple={false}/>
         </Code>
 
         <p className="description">
@@ -57,18 +60,16 @@ const String = () => {
             <InputLine name={"myInput"}/>
         </Code>
         <p className="description">
-            That is it. The value entered by the user will be stored in
-            <span className="hl">
-                <span>myInput.</span><span className="oKey">value</span>
-            </span>.
+            That is it. The value entered by the user will
+            be stored in  <DotProperty name={"myInput"} value="value" method={false} hl/>.
         </p>
         <FormRef/>
         <p className="description">
             Hit next to find out how to use array with aio-inputs
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(routes.ROOT)} text="Prev"/>
-            <PageButton onClick={() => navigate(routes.USE_INPUTS.ARRAY)}/>
+            <PageButton onClick={() => navigate(ROOT)} text="Prev"/>
+            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.ARRAY)}/>
         </div>
     </div>
 }

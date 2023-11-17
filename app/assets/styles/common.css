@@ -65,8 +65,12 @@
   color: var(--o-key);
 }
 
-.package {
+.package, .element {
   color: var(--package);
+}
+
+.punctuation {
+  color: var(--text-color);
 }
 
 .comment {
@@ -85,12 +89,28 @@
   margin: 0 1rem;
 }
 
+.mt-1, .item-space li {
+  margin-top: 1rem;
+}
+
+.item-space-5 li {
+  margin-top: 0.5rem;
+}
+
 .link {
   color: var(--link-color);
   font-weight: 600;
 }
 .link:hover {
   text-decoration: underline;
+}
+
+.up:first-letter {
+  text-transform: uppercase;
+}
+
+.sub-desc {
+  font-weight: 500;
 }
 
 .hl {
@@ -104,7 +124,7 @@
 }
 
 .smt::before {
-  --c: calc(var(--header-height) + 1rem);
+  --c: calc(var(--header-height) + 2rem);
   content: "";
   display: block;
   height: var(--c);
@@ -116,7 +136,7 @@
 }
 
 .data {
-  padding: 4rem var(--padding);
+  padding: var(--padding);
   color: var(--text-color);
 }
 
@@ -127,8 +147,13 @@
 
 .subTitle {
   margin-top: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.4rem;
+}
+
+.subTitle-3 {
+  font-weight: 500;
+  font-size: 1.3rem;
 }
 
 .titleIntro {

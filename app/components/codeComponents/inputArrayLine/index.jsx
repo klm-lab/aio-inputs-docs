@@ -2,6 +2,8 @@ import Code from "../../code";
 import InputLine from "../inputLine";
 import MapInputs from "../mapInputs";
 import KeyComment from "../keyComment";
+import {ChildBracket} from "../keyValue";
+import DotProperty from "../dotProperty";
 
 const InputArrayLine = ({name, topComment = true, validComment = true, loadingComment}) => {
     return <Code>
@@ -11,36 +13,32 @@ const InputArrayLine = ({name, topComment = true, validComment = true, loadingCo
         <MapInputs name={name} inline={false} close>
             <div className="codeLine">
                 <span className="keyword">{"return"}</span>
-                <span className="definition">{"<div"}</span>
+                <span className="element">{"<div"}</span>
                 <span className="keyword no-indent">{"key"}</span>
-                <span className="no-indent">{"={"}</span>
-                <span className="no-indent">ip.</span>
-                <span className="oKey no-indent">key</span>
-                <span className="no-indent">{"}"}</span>
-                <span className="definition">{">"}</span>
-                <span></span>
+                <span className="no-indent">=</span>
+                <ChildBracket inline stop={false} noPrevIndent>
+                    <DotProperty name={"ip"} value="key" method={false}/>
+                </ChildBracket>
+                <span className="element">{">"}</span>
             </div>
             <div className="codeLine">
                 <InputLine/>
                 {validComment && <KeyComment full comment={"{/* if touched and not valid */}"}/>}
                 <div className="codeLine">
-                    <span>{"{"}</span>
-                    <span className="no-indent">ip.</span>
-                    <span className="oKey">touched</span>
-                    <span>&&</span>
-                    <span className="no-indent key">!</span>
-                    <span className="no-indent">ip.</span>
-                    <span className="oKey">valid</span>
-                    <span>&&</span>
-                    <span className="definition no-indent">{"<span>"}</span>
-                    <span className="no-indent">{"{"}</span>
-                    <span className="no-indent">ip.</span>
-                    <span className="oKey no-indent">errorMessage</span>
-                    <span className="no-indent">{"}"}</span>
-                    <span className="definition">{"</span>"}</span>
-                    <span>{"}"}</span>
+                    <ChildBracket inline stop={false}>
+                        <DotProperty name={"ip"} value="touched" method={false} indent/>
+                        <span>&&</span>
+                        <span className="no-indent">!</span>
+                        <DotProperty name={"ip"} value="valid" method={false} indent/>
+                        <span>&&</span>
+                        <span className="element no-indent">{"<span>"}</span>
+                        <ChildBracket inline stop={false} noPrevIndent noIndent>
+                            <DotProperty name={"ip"} value="errorMessage" method={false}/>
+                        </ChildBracket>
+                        <span className="element">{"</span>"}</span>
+                    </ChildBracket>
                 </div>
-                <span className="definition">{"</div>"}</span>
+                <span className="element">{"</div>"}</span>
             </div>
         </MapInputs>
     </Code>

@@ -1,3 +1,5 @@
+import DotProperty from "../dotProperty";
+
 const ConsoleLog = ({name = "form", method, comment = false, space, noConsole, content, property}) => {
     return <>
         {comment && <div style={{
@@ -6,18 +8,14 @@ const ConsoleLog = ({name = "form", method, comment = false, space, noConsole, c
             <span className="comment">{"// " + comment}</span>
         </div>}
         <div className="codeLine">
-            {!noConsole && <>
-                <span className="no-indent">console.</span>
-                <span className="oKey no-indent">log(</span>
-            </>}
-            <span className="no-indent">{name}.</span>
-            <span className="oKey no-indent">{method}</span>
-            {!property && <>
-                <span className="no-indent">(</span>
-                {content && <span className="no-indent">{content}</span>}
-                <span className="no-indent">)</span>
-            </>}
-            {!noConsole && <span>)</span>}
+            {!noConsole ?
+                <DotProperty name="console" value="log"
+                             params={
+                                 <DotProperty name={name} method={!property} value={method} params={content}/>
+                             }
+                /> :
+                <DotProperty name={name} method={!property} value={method} params={content}/>
+            }
         </div>
     </>
 }

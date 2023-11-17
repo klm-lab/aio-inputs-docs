@@ -8,13 +8,13 @@
   inset: 0;
 }
 
-.flexCenter, .sidebar .list .item, .iconWrapper {
+.flexCenter, .sidebar .list .item, .sidebar .sideEl .sideTitle .info, .iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.flexCenterSpace, .sidebar .sideEl .sideTitle {
+.flexCenterSpace, .sidebar .sideEl .sideTitle .titleItem, .sidebar .sideEl .sideTitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,11 +89,24 @@
 .sidebar .sideEl .sideTitle {
   padding: 1rem var(--padding);
   cursor: pointer;
+  column-gap: 0.8rem;
+}
+.sidebar .sideEl .sideTitle .titleItem {
+  flex: 1;
 }
 .sidebar .sideEl .sideTitle .text {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color);
+}
+.sidebar .sideEl .sideTitle .info {
+  height: 25px;
+  font-size: 0.7rem;
+  padding: 0 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
 }
 .sidebar .sideEl .sideTitle .arrow {
   transition: 0.2s ease;
@@ -121,9 +134,6 @@
 }
 .sidebar .list .item:hover {
   background-color: var(--muted-color);
-}
-.sidebar .list .up:first-letter {
-  text-transform: uppercase;
 }
 
 @media screen and (max-width: 968px) {

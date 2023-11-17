@@ -58,7 +58,7 @@
   padding: 1rem;
   overflow: auto;
   white-space: nowrap;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.07rem;
 }
 .codeWrapper .code {
   align-items: normal;

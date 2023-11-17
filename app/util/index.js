@@ -1,6 +1,6 @@
 import {DARK_SCHEME, IS_DARK} from "./constants.js";
 
-export const addClasses = (...classes) => classes.join(" ").replace("false", "");
+export const addClasses = (...classes) => classes.join(" ").replaceAll("false", "");
 
 export const LS = {
     get: (id) => {

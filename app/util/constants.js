@@ -1,10 +1,10 @@
 export const routes = {
     ROOT: "/",
     USE_INPUTS: {
-        ROOT: "/use_inputs",
-        STRING: "/use_inputs/string",
-        ARRAY: "/use_inputs/array",
-        OBJECT: "/use_inputs/object",
+        ROOT: "/useInputs",
+        STRING: "/string",
+        ARRAY: "/array",
+        OBJECT: "/object",
     },
     FORM: {
         ROOT: "/form",
@@ -23,23 +23,16 @@ export const routes = {
         TRACK_ID: "#trackID"
     },
     TRACK: {
-        ROOT: "/track",
-        SETUP: "#setup",
+        ROOT: "/tracking",
+        TRACKING_TOOL: "#trackingTool",
         USE_VALUES: "#useValues",
         LENGTH: "#length",
     },
     PROPERTIES: {
         ROOT: "/properties",
-        INPUTS: "#inputs",
-        VALIDATIONS: "#validations"
+        INPUTS: "/inputs",
+        VALIDATIONS: "/validations"
     },
-}
-
-export const SIDEBAR = {
-    HOOK: "hook",
-    FORM: "form",
-    TRACK: "track",
-    PROPERTIES: "properties"
 }
 
 export const getInputsKey = (value) => [
@@ -54,7 +47,5 @@ export const getInputsKey = (value) => [
 ]
 
 
-export const IS_DARK = "isDark"
-export const COLOR = "color";
-
+export const IS_DARK = "isDark";
 export const DARK_SCHEME = '(prefers-color-scheme: dark)'

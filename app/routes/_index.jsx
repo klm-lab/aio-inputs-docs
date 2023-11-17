@@ -1,4 +1,4 @@
-import Home from "../views/home";
+import Home from "../views/getStarted";
 
 export const meta = () => {
 

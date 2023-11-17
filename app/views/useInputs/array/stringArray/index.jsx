@@ -3,8 +3,9 @@ import {Link} from "@remix-run/react";
 import {getInputsKey, routes} from "../../../../util/constants";
 import ReadyToUse from "../../../../components/codeComponents/readyToUse";
 import FormRef from "../../../../components/FormRef";
-import CreateInputs from "../../../../components/codeComponents/CreateInputs";
+import Create, {ArrayParams} from "../../../../components/codeComponents/create";
 import MapInputs from "../../../../components/codeComponents/mapInputs";
+import DotProperty from "../../../../components/codeComponents/dotProperty";
 
 const StringArray = () => {
     return <>
@@ -16,11 +17,9 @@ const StringArray = () => {
             For example, you want the <span className="hl">name, phoneNumber, and gender</span> of a user
         </p>
         <Code>
-            <CreateInputs close>
-                <span className="no-indent">[</span>
-                <span className="key no-indent"> "name", "phoneNumber", "gender" </span>
-                <span className="no-indent">]</span>
-            </CreateInputs>
+            <Create close array>
+                <ArrayParams params={["name","phoneNumber","gender"]}/>
+            </Create>
         </Code>
 
         <p className="description">
@@ -50,9 +49,7 @@ const StringArray = () => {
         </Code>
         <p className="description">
             That is it. The value entered by the user will be stored in corresponding
-            <span className="hl">
-                <span>ip.</span><span className="oKey">value</span>
-            </span>
+            <DotProperty name="ip" value="value" method={false} hl/>
             located in <span className="hl">myInputs</span>.
         </p>
         <FormRef/>

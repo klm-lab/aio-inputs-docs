@@ -1,39 +1,13 @@
 import "./sidebar.css"
-import {Link, useLocation} from "@remix-run/react";
-import {addClasses} from "../../util";
 import {routes} from "../../util/constants";
-import {useCallback} from "react";
-import UseInputsSideBar from "./useInputsSideBar";
-import FormSideBar from "./formSideBar";
-import {appStore} from "../../store";
-import TrackSideBar from "./trackSideBar";
-import PropertiesSidebar from "./propertiesSideBar";
-import ArrowIcon from "../../assets/icon/ArrowIcon";
+import SidebarCategory from "./sidebarCategory";
 
-const {
-    ROOT,
-} = routes;
 const Sidebar = () => {
 
-    const {pathname} = useLocation();
-
-    const toggleMenu = useCallback(() => {
-        appStore.set(ref => {
-            ref.activeList = ""
-        })
-    }, [])
-
     return <aside className="sidebar">
-        <div className={addClasses("sideEl", pathname === ROOT ? "active" : "")}>
-            <Link to={ROOT} onClick={toggleMenu}
-                  className={addClasses("sideTitle", pathname === ROOT ? "active" : "")}>
-                <h2 className="text">Get started</h2>
-            </Link>
-        </div>
-        <UseInputsSideBar/>
-        <FormSideBar/>
-        <TrackSideBar/>
-        <PropertiesSidebar/>
+        {Object.keys(routes).map(r => {
+            return <SidebarCategory key={r} routesKeys={Object.keys(routes[r])} routes={routes[r]}/>
+        })}
         <h1 className="version">aio-inputs@2.0.9</h1>
     </aside>
 }

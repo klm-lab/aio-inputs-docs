@@ -1,6 +1,5 @@
-import {useLocation, useNavigate} from "@remix-run/react";
-import {useEffect} from "react";
 import {routes} from "../util/constants";
+import useRedirect from "../hook/useRedirect";
 
 export const meta = () => {
 
@@ -10,18 +9,12 @@ export const meta = () => {
     ];
 };
 
-const {ROOT,INPUTS} = routes.PROPERTIES
+const {ROOT, INPUTS} = routes.PROPERTIES
 
 
-export const Form = () => {
-    const navigate = useNavigate();
-    const {pathname, hash} = useLocation();
-    useEffect(() => {
-        if (pathname === ROOT && !hash) {
-            navigate(INPUTS);
-        }
-    }, [navigate, pathname, hash]);
-    return "po"
+export const Properties = () => {
+    useRedirect(ROOT, INPUTS);
+    return ""
 }
 
-export default Form
+export default Properties
