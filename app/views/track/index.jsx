@@ -59,7 +59,7 @@ const TrackEntry = () => {
         <h1 id={getAnchor(TRACKING_TOOL)} className="title smt">Tracking</h1>
         <p className="description">
             To access your inputs data outside a component, you need a tracking tool.
-            A tracking tool inherit every method available on <Link className="link" to={FORM.ROOT}>
+            A tracking tool inherit every method available on <Link aria-label={"To show the form utility"} className="link" to={FORM.ROOT}>
             FORM
         </Link> and has his own <CallDefinition name="length" hl/> method.
         </p>
@@ -105,7 +105,7 @@ const TrackEntry = () => {
         <p className="description">For example to get your inputs values,</p>
         <Usage name="getValues"/>
         <p className="description">
-            A tracking tool inherit every method available on <Link className="link" to={FORM.ROOT}>
+            A tracking tool inherit every method available on <Link aria-label={"To show the form utility"} className="link" to={FORM.ROOT}>
             FORM
         </Link> and has his own <CallDefinition name="length" hl/> method.
         </p>
@@ -142,7 +142,7 @@ const TrackEntry = () => {
             </div>
         </Code>
         <p className="description">
-            Hit next to know more about all available <Link className="link"
+            Hit next to know more about all available <Link aria-label={"To show all available properties"} className="link"
                                                                        to={PROPERTIES.ROOT}>PROPERTIES</Link>
         </p>
         <div className="foot">

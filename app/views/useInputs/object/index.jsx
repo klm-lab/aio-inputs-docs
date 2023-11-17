@@ -60,8 +60,7 @@ const ObjectEntry = () => {
         <p className="description">
             If you log <span className="hl">myInputs</span>, you'll see an object
             where first keys are <span className="hl">name and gender</span>. Those keys have as value these
-            related ready-to-use properties and
-            many others listed <Link className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>HERE</Link>.<br/>
+            related ready-to-use properties and <Link aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</Link>.<br/>
             The name, id and label match every first key.
         </p>
         <Code>
@@ -79,9 +78,8 @@ const ObjectEntry = () => {
             Now bind <span className="hl">myInputs</span>, to some input element.<br/>
         </p>
         <ul className="extra">
-            <li>With <DotProperty value="map" hl/>, more
-                details <Link className="link"
-                              to={FORM.ROOT + FORM.MAP}>HERE</Link>
+            <li>With <DotProperty value="map" hl/>, <Link aria-label={"To show the form map utility"} className="link"
+                              to={FORM.ROOT + FORM.MAP}>MORE DETAILS</Link>
             </li>
         </ul>
         <Code>
@@ -125,7 +123,7 @@ const ObjectEntry = () => {
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.ARRAY)} text="Prev"/>
-            <PageButton onClick={() => navigate(FORM.ROOT)}/>
+            <PageButton onClick={() => navigate(FORM.ROOT + FORM.GET_VALUES)}/>
         </div>
     </div>
 }

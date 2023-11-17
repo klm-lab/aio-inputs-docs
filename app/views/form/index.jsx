@@ -8,6 +8,7 @@ import {getAnchor} from "../../util";
 import ConsoleLog from "../../components/codeComponents/consoleLog";
 import DotProperty from "../../components/codeComponents/dotProperty";
 import CallDefinition from "../../components/codeComponents/callDefinition";
+import ExternalLink from "../../components/externalLink";
 
 const {
     FORM: {
@@ -68,11 +69,10 @@ const FormEntry = () => {
         <p className="description">
             <DotProperty value="forEach" hl/> acts like the very popular
             known <DotProperty name="Array.prototype" value="forEach" hl/> method.
-            More on <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            to={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"}
-            className="link">FOR EACH</Link>.
+            More on <ExternalLink aria-label={"Link to mdn site for forEach method"}
+                                  to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">
+            FOR EACH
+        </ExternalLink>.
         </p>
         <Code>
             <Create close form>
@@ -86,11 +86,10 @@ const FormEntry = () => {
         <p className="description">
             <DotProperty value="map" hl/> acts like the very popular
             known <DotProperty name="Array.prototype" value="map" hl/> method.
-            More on <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            to={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"}
-            className="link">MAP</Link>.
+            More on <ExternalLink aria-label={"Link to mdn website for map method"}
+                                  to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">
+            MAP
+        </ExternalLink>.
         </p>
         <Code>
             <Create close form>
@@ -138,8 +137,9 @@ const FormEntry = () => {
         </Code>
 
         <p className="description">
-            Hit next to find out how to <Link className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour,
-            when using <Link className="link" to={TRACK.ROOT}>TRACK</Link> or async custom validation.
+            Hit next to find out how to <Link aria-label={"To navigate change the configuration of aio-inputs"}
+                                              className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour,
+            when using <Link aria-label={"To setup a tracking tool"} className="link" to={TRACK.ROOT}>TRACK</Link> or async custom validation.
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.OBJECT)} text="Prev"/>

@@ -3,10 +3,11 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "sass app/ && remix build",
-    "sass": "sass --watch app/",
+    "build": "npm run sass && remix build",
+    "sass-dev": "sass --watch --no-source-map --style=compressed app/assets/styles/",
+    "sass": "sass --no-source-map --style=compressed app/assets/styles/",
     "remix-dev": "remix dev",
-    "dev": "concurrently npm:sass npm:remix-dev",
+    "dev": "concurrently npm:sass-dev npm:remix-dev",
     "start": "netlify serve",
     "typecheck": "tsc"
   },

@@ -7,6 +7,8 @@ import Create, {ArrayParams} from "../../../../components/codeComponents/create"
 import MapInputs from "../../../../components/codeComponents/mapInputs";
 import DotProperty from "../../../../components/codeComponents/dotProperty";
 
+const {PROPERTIES} = routes;
+
 const StringArray = () => {
     return <>
         <h2 className="subTitle">
@@ -24,8 +26,7 @@ const StringArray = () => {
 
         <p className="description">
             If you log <span className="hl">myInputs</span>, you'll see an array of these related ready-to-use
-            properties and
-            many others listed <Link className="link" to={routes.PROPERTIES_INPUTS}>HERE</Link>.<br/>
+            properties and <Link aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</Link>.<br/>
             The name, id and label match the array of string value.
         </p>
         <Code>

@@ -1,30 +1,15 @@
-import {cssBundleHref} from "@remix-run/css-bundle";
-import rootStyles from "./assets/styles/rootStyle.css"
-import commonStyles from "./assets/styles/common.css"
+import rootStyles from "./assets/styles/app.css"
+import fontStyles from "./assets/styles/fonts.css"
 
 import {Links, LiveReload, Meta, Scripts, ScrollRestoration,} from "@remix-run/react";
 import Content from "./components/content";
 import NotFound from "./views/notFound";
 
-const mainStyles = [
+export const links = () => [
     {rel: "icon", type: "image/x-icon", href: "/favicon.svg"},
     {rel: "stylesheet", href: rootStyles},
-    {rel: "stylesheet", href: commonStyles},
-    {rel: "preconnect", href: "https://fonts.googleapis.com"},
+    {rel: "stylesheet", href: fontStyles},
     {rel: "preconnect", href: "https://fonts.gstatic.com"},
-    {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-    },
-];
-
-export const links = () => [
-    ...(cssBundleHref ? [
-        ...mainStyles,
-        {rel: "stylesheet", href: cssBundleHref}
-    ] : [
-        ...mainStyles
-    ]),
 ];
 export default function App() {
 

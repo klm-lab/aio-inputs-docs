@@ -1,11 +1,9 @@
 import ValidationsProperties from "../views/properties/validations";
+import {commonPropMeta} from "./properties._index";
 
 export const meta = () => {
 
-    return [
-        {title: "Aio-Inputs validations properties"},
-        {name: "description", content: "Use inputs validations with react"}
-    ];
+    return commonPropMeta()
 };
 
 export const Properties = () => {

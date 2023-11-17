@@ -15,6 +15,13 @@ const useTheme = () => {
         setThemeInDom(isDark)
     }, [isDark]);
 
+    // For ssr
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        setLoaded(true)
+    }, []);
+
     useEffect(() => {
         const onThemeChange = ({matches}) => {
             setIsDark(matches);
@@ -27,7 +34,7 @@ const useTheme = () => {
         }
     }, []);
 
-    return {toggleTheme, isDark};
+    return {loaded, toggleTheme, isDark};
 }
 
 export default useTheme
