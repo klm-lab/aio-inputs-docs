@@ -18,7 +18,7 @@ const Index = () => {
         </p>
         <ul className="extra">
             <li>Inputs tracking outside a component</li>
-            <li>Easy data loading for an edit</li>
+            <li>Easy data loading when edit</li>
         </ul>
         <Line/>
         <h2 className="subTitle">

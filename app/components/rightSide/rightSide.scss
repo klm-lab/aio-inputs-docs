@@ -13,4 +13,29 @@
       border-radius: 50%;
     }
   }
+
+  .searchIcon {
+    --muted-icon-color: var(--text-color);
+    display: none;
+    transition: .2s ease;
+
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+
+    path {
+      stroke-width: 3;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 968px) {
+  .rightIcons {
+    .searchIcon {
+      display: flex;
+    }
+  }
 }

@@ -1,5 +1,19 @@
 @import "./extends";
 
+.overlay {
+  @extend .fixed;
+  background-color: var(--overlay-color);
+  pointer-events: none;
+  opacity: 0;
+  transition: .2s ease;
+}
+
+.show {
+  z-index: 3;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .keyword {
   color: var(--keyword);
 }
@@ -25,7 +39,7 @@
 }
 
 .comment {
-  color: var(---muted-icon-color);
+  color: var(--muted-icon-color);
 }
 
 .indent {

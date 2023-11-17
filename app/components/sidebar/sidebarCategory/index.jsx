@@ -27,11 +27,21 @@ const SidebarCategory = ({routesKeys, routes}) => {
         }
     }, [pathname, hash, ROOT]);
 
+    const closeSideBar = useCallback(() => {
+        appStore.set(ref => {
+            ref.sidebar = false;
+            ref.overlay = false
+        })
+    }, [])
+
     const toggleMenu = useCallback(() => {
         appStore.set(ref => {
-            ref.activeList = ref.activeList === ROOT ? "" : ROOT
+            ref.activeList = ref.activeList === ROOT ? "" : ROOT;
+            if (routes === "/") {
+                closeSideBar()
+            }
         })
-    }, [ROOT])
+    }, [ROOT,routes,closeSideBar])
 
     if (routes === "/") {
         return <div className={addClasses("sideEl", pathname === routes ? "active" : "")}>
@@ -59,7 +69,7 @@ const SidebarCategory = ({routesKeys, routes}) => {
             {routesKeys.map(l => {
                 const route = ROOT + routes[l];
                 return routes[l] !== ROOT &&
-                    <Link key={route} to={route}>
+                    <Link onClick={closeSideBar} key={route} to={route}>
                         <li className={addClasses("item up", routes[l] === r ? "active" : "")}>
                             {routes[l].replace(/(#)|\//, "")}
                         </li>

@@ -7,6 +7,18 @@ const LogoIcon = ({size = 25, ...rest}) => {
                <polygon points="24,23.4 17,15 31,15"/>
                <rect x="22" y="4" width="4" height="14"/>
            </g>
+            <g id="top2">
+                <polygon points="24,23.4 17,15 31,15"/>
+                <rect x="22" y="4" width="4" height="14"/>
+            </g>
+            <g id="top3">
+                <polygon points="24,23.4 17,15 31,15"/>
+                <rect x="22" y="4" width="4" height="14"/>
+            </g>
+            <g id="top4">
+                <polygon points="24,23.4 17,15 31,15"/>
+                <rect x="22" y="4" width="4" height="14"/>
+            </g>
             <g id="right">
                 <path
                     d="M31.5,26.9L30.8,28l3.5,1.9l0.6-1.2c1.6-3,2.6-4.7,3.5-5.2C39.3,23,41,23,44,23v-4 C36.3,19,35.6,19.4,31.5,26.9z"/>

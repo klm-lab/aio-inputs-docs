@@ -35,6 +35,8 @@ export const routes = {
     },
 }
 
+export const GITHUB_LINK = "https://github.com/klm-lab/inputs"
+
 export const getInputsKey = (value) => [
     {key: "key", value: '"some unique key",'},
     {key: "id", value: value},

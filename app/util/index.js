@@ -15,13 +15,13 @@ export const LS = {
     }
 };
 
-export const getAnchor = (link) => link.replace("#","")
+export const getAnchor = (link) => link.replace("#", "")
 
 export const getTheme = () => {
     if (typeof window !== "undefined") {
         const isDark = window.matchMedia(DARK_SCHEME).matches;
         const ls_isDark = LS.get(IS_DARK);
-        !ls_isDark && LS.set(IS_DARK, isDark)
+        !ls_isDark && LS.set(IS_DARK, isDark);
         return ls_isDark ?? isDark
     }
     return false
@@ -30,6 +30,6 @@ export const getTheme = () => {
 export const setThemeInDom = (isDark) => {
     if (typeof document !== "undefined") {
         document.body.setAttribute("data-dark", isDark);
-        LS.set(IS_DARK, isDark)
+        LS.set(IS_DARK, isDark);
     }
 }

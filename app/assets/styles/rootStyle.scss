@@ -30,10 +30,11 @@
     --h-bg-color: #283138;
     --shadow-color: #181818;
     --icon-color: #f1f1f1;
-    ---muted-icon-color: #989898;
+    --muted-icon-color: #989898;
     --muted-color: #363636;
     --scroll-color: #8f8f8f;
     --link-color: #60b2ec;
+    --netlify-color: white;
 
     // code
     --keyword: #43a4f1;
@@ -54,10 +55,12 @@ body[data-dark="true"] {
   --h-bg-color: #283138;
   --shadow-color: #181818;
   --icon-color: #f1f1f1;
-  ---muted-icon-color: #989898;
+  --muted-icon-color: #989898;
   --muted-color: #363636;
   --scroll-color: #8f8f8f;
   --link-color: #60b2ec;
+  --netlify-color: white;
+  --overlay-color: #0000009a;
 
   // code
   --keyword: #43a4f1;
@@ -77,10 +80,12 @@ body {
   --h-bg-color: #e0edf6;
   --shadow-color: #eaeaea;
   --icon-color: #343434;
-  ---muted-icon-color: #989898;
+  --muted-icon-color: #989898;
   --muted-color: #f3f3f3;
   --scroll-color: #c1c1c1;
   --link-color: #2671c6;
+  --netlify-color: #004746;
+  --overlay-color: #0000006a;
 
   // code
   --keyword: #0d7dcc;

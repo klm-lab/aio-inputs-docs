@@ -3,7 +3,10 @@
 .content {
   --percent: 20;
   margin-top: var(--header-height);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - var(--header-height));
 
   .page {
     margin-left: calc((var(--max-width) * var(--percent)) / 100);

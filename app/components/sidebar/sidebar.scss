@@ -3,7 +3,7 @@
 .sidebar {
   padding-top: 1rem;
   width: calc((var(--max-width) * var(--percent)) / 100);
-  max-height: calc(var(--body-height));
+  max-height: calc(100vh - var(--header-height));
   overflow: hidden;
   @extend .customScroll;
   position: fixed;
@@ -38,7 +38,7 @@
     padding: 1rem var(--padding);
     font-weight: 600;
     font-size: 1rem;
-    color: var(---muted-icon-color);
+    color: var(--muted-icon-color);
   }
 
   .sideEl {
@@ -116,5 +116,15 @@
 @media screen and (max-width: 968px) {
   .sidebar {
     transform: translateX(-400px);
+    inset: 0;
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  .open {
+    background-color: var(--bg-color);
+    transform: translateX(0);
+    z-index: 4;
+    border-radius: 0 6px 6px 0;
   }
 }
