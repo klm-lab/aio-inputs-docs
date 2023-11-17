@@ -1,4 +1,3 @@
-import "./search.css"
 import SearchIcon from "../../assets/icon/SearchIcon";
 import {useCallback, useRef} from "react";
 import {appStore} from "../../store";
@@ -14,7 +13,7 @@ const Search = () => {
         ref.current.blur()
     }, [ref])
 
-    return <div className="search">
+    return <div className="flexCenterSpace search">
         <SearchIcon/>
         <input ref={ref} onClick={openSearch} type="text" placeholder="Search"/>
     </div>

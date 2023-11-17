@@ -1,12 +1,11 @@
 import InputsProperties from "../views/properties/inputs";
+import {commonPropMeta} from "./properties._index";
 
 export const meta = () => {
 
-    return [
-        {title: "Aio-Inputs inputs properties"},
-        {name: "description", content: "Use inputs properties with react"}
-    ];
+    return commonPropMeta()
 };
+
 
 export const Properties = () => {
     return <InputsProperties/>

@@ -81,7 +81,7 @@ const ConfigEntry = () => {
         </Code>
 
         <p className="description">
-            Hit next to find out how to <Link className="link" to={TRACK.ROOT}>SETUP TRACKING TOOL</Link> and know more
+            Hit next to find out how to <Link aria-label={"To setup a tracking tool"} className="link" to={TRACK.ROOT}>SETUP TRACKING TOOL</Link> and know more
             of it.
         </p>
         <div className="foot">

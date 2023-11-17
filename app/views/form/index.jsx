@@ -69,8 +69,8 @@ const FormEntry = () => {
         <p className="description">
             <DotProperty value="forEach" hl/> acts like the very popular
             known <DotProperty name="Array.prototype" value="forEach" hl/> method.
-            More on <ExternalLink
-            to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">
+            More on <ExternalLink aria-label={"Link to mdn site for forEach method"}
+                                  to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">
             FOR EACH
         </ExternalLink>.
         </p>
@@ -86,8 +86,8 @@ const FormEntry = () => {
         <p className="description">
             <DotProperty value="map" hl/> acts like the very popular
             known <DotProperty name="Array.prototype" value="map" hl/> method.
-            More on <ExternalLink
-            to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">
+            More on <ExternalLink aria-label={"Link to mdn website for map method"}
+                                  to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">
             MAP
         </ExternalLink>.
         </p>
@@ -137,8 +137,9 @@ const FormEntry = () => {
         </Code>
 
         <p className="description">
-            Hit next to find out how to <Link className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour,
-            when using <Link className="link" to={TRACK.ROOT}>TRACK</Link> or async custom validation.
+            Hit next to find out how to <Link aria-label={"To navigate change the configuration of aio-inputs"}
+                                              className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour,
+            when using <Link aria-label={"To setup a tracking tool"} className="link" to={TRACK.ROOT}>TRACK</Link> or async custom validation.
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.OBJECT)} text="Prev"/>

@@ -74,10 +74,10 @@ const CommonArrayObject = ({Component, name,errorMessage, validation, value,arra
         </p>
         <FormRef/>
         <p className="description">
-            All inputs properties like name,
-            type and others are listed <Link className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>HERE</Link>.<br/>
-            All validation properties like min, max and
-            others are listed <Link className="link" to={PROPERTIES.ROOT + PROPERTIES.VALIDATIONS}>HERE</Link>.<br/>
+            <Link aria-label="To list available inputs properties" className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>INPUTS PROPERTIES</Link> like name,
+            type and many others are available.<br/>
+            Same for <Link aria-label="To list available validations properties" className="link" to={PROPERTIES.ROOT + PROPERTIES.VALIDATIONS}>VALIDATION PROPERTIES</Link> like min, max and
+            many others.<br/>
         </p>
     </>
 }

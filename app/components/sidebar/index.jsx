@@ -1,4 +1,3 @@
-import "./sidebar.css"
 import {routes} from "../../util/constants";
 import SidebarCategory from "./sidebarCategory";
 import {useRef} from "react";
@@ -11,7 +10,7 @@ const Sidebar = () => {
 
     const sidebarOpen = appStore("sidebar")
 
-    return <aside ref={sidebarRef} className={addClasses("sidebar", sidebarOpen ? "open" : "")}>
+    return <aside ref={sidebarRef} className={addClasses("customScroll sidebar", sidebarOpen ? "open" : "")}>
         {Object.keys(routes).map(r => {
             return <SidebarCategory key={r} routesKeys={Object.keys(routes[r])} routes={routes[r]}/>
         })}

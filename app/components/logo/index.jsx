@@ -1,5 +1,4 @@
 import LogoIcon from "../../assets/icon/LogoIcon";
-import "./logo.css"
 import {appStore} from "../../store";
 import {useCallback, useEffect} from "react";
 

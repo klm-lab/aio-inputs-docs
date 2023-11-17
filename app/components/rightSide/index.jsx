@@ -1,7 +1,6 @@
 import useTheme from "../../hook/useTheme";
 import Sun from "../../assets/icon/Sun"
 import Github from "../../assets/icon/Github";
-import "./rightSide.css"
 import Moon from "../../assets/icon/Moon";
 import ExternalLink from "../externalLink";
 import {GITHUB_LINK} from "../../util/constants"
@@ -11,14 +10,14 @@ const RightSide = () => {
 
     const {loaded, isDark, toggleTheme} = useTheme();
 
-    return loaded && <div className="rightIcons">
-        <div className="icon searchIcon">
+    return loaded && <div className="flexCenter rightIcons">
+        <div className="flexCenter icon searchIcon">
             <SearchIcon/>
         </div>
-        <div className="icon" onClick={toggleTheme}>
+        <div className="flexCenter icon" onClick={toggleTheme}>
             {isDark ? <Sun size={32}/> : <Moon size={32}/>}
         </div>
-        <ExternalLink to={GITHUB_LINK} className="icon">
+        <ExternalLink aria-label={"Link to github profile"} to={GITHUB_LINK} className="flexCenter icon">
             <Github/>
         </ExternalLink>
     </div>

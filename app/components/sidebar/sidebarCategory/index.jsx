@@ -1,4 +1,3 @@
-import "../sidebar.css"
 import {Link, useLocation} from "@remix-run/react";
 import {addClasses} from "../../../util";
 import {useCallback, useEffect, useState} from "react";
@@ -41,25 +40,25 @@ const SidebarCategory = ({routesKeys, routes}) => {
                 closeSideBar()
             }
         })
-    }, [ROOT,routes,closeSideBar])
+    }, [ROOT, routes, closeSideBar])
 
     if (routes === "/") {
         return <div className={addClasses("sideEl", pathname === routes ? "active" : "")}>
-            <Link to={ROOT} onClick={toggleMenu}
-                  className={addClasses("sideTitle", pathname === routes ? "active" : "")}>
+            <Link aria-label={"To navigate to the path " + ROOT} to={ROOT} onClick={toggleMenu}
+                  className={addClasses("flexCenterSpace sideTitle", pathname === routes ? "active" : "")}>
                 <h2 className="text">Get started</h2>
             </Link>
         </div>
     }
 
     return <div className="sideEl">
-        <div onClick={toggleMenu} className={addClasses("sideTitle",
+        <div onClick={toggleMenu} className={addClasses("flexCenterSpace sideTitle",
             activeList !== ROOT && pathname.includes(ROOT) && "active",
             activeList === ROOT && "open"
         )}>
-            <div className="titleItem">
+            <div className="flexCenterSpace titleItem">
                 <h2 className="text up">{ROOT.replace("/", "")}</h2>
-                {ROOT === "/form" && <span className="info">Immutable</span>}
+                {ROOT === "/form" && <span className="flexCenter info">Immutable</span>}
             </div>
             <ArrowIcon size={14}/>
         </div>
@@ -69,11 +68,13 @@ const SidebarCategory = ({routesKeys, routes}) => {
             {routesKeys.map(l => {
                 const route = ROOT + routes[l];
                 return routes[l] !== ROOT &&
-                    <Link onClick={closeSideBar} key={route} to={route}>
-                        <li className={addClasses("item up", routes[l] === r ? "active" : "")}>
+                    <li key={route}>
+                        <Link aria-label={"To navigate to the path " + route} className={addClasses("flexCenter item", routes[l] === r ? "active" : "")}
+                              onClick={closeSideBar} to={route}>
                             {routes[l].replace(/(#)|\//, "")}
-                        </li>
-                    </Link>
+                        </Link>
+                    </li>
+
             })}
         </ul>
     </div>

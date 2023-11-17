@@ -11,7 +11,7 @@ import Bracket from "../../../components/codeComponents/bracket";
 import Create from "../../../components/codeComponents/create";
 import DotProperty from "../../../components/codeComponents/dotProperty";
 
-const {ROOT,USE_INPUTS} = routes;
+const {ROOT,USE_INPUTS,PROPERTIES} = routes;
 
 const String = () => {
 
@@ -44,8 +44,8 @@ const String = () => {
         </Code>
 
         <p className="description">
-            If you log <span className="hl">myInput</span>, you'll see these related ready-to-use properties and
-            many others listed <Link className="link" to={routes.PROPERTIES_INPUTS}>HERE</Link>.<br/>
+            If you log <span className="hl">myInput</span>, you'll see these related
+            ready-to-use properties and <Link aria-label={"To show available properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</Link>.<br/>
             The name, id and label is the value of your string.
         </p>
         <Code>

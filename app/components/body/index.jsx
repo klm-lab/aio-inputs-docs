@@ -1,5 +1,4 @@
 import {Outlet} from "@remix-run/react";
-import "./body.css"
 import Sidebar from "../sidebar";
 import Footer from "../footer";
 

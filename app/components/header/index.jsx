@@ -1,10 +1,9 @@
 import Search from "../search";
 import RightSide from "../rightSide";
-import "./header.css"
 import Logo from "../logo";
 
 const Header = () => {
-    return <header className="header">
+    return <header className="fixed size flexCenterSpace header">
         <Logo/>
         <Search/>
         <RightSide/>

@@ -61,8 +61,8 @@ const InputsProperties = () => {
             <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
             <li><CallProperty name="label" hl/> input label <UnlockIcon/><LanguageIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
-            <li><CallProperty name="files" hl/> input upload files <LockIcon/> Check files
-                properties <Link to={"#files"} className="link">HERE</Link>
+            <li><CallProperty name="files" hl/> input upload files <LockIcon/> Check <Link aria-label={"To list all file properties"} to={"#files"} className="link">FILES PROPERTIES</Link> to know
+                more of it
             </li>
             <li><CallProperty name="checked" hl/> input checked state <span
                 className="hl">boolean</span> <UnlockIcon/></li>
@@ -80,8 +80,9 @@ const InputsProperties = () => {
                 className="hl">boolean</span> <UnlockIcon/></li>
             <li><CallProperty name="asyncValidationFailed" hl/> <span
                 className="hl">boolean</span> <UnlockIcon/></li>
-            <li><CallProperty name="validation" hl/> input validations <UnlockIcon/> Check validations
-                properties <Link to={ROOT + VALIDATIONS} className="link">HERE</Link>
+            <li><CallProperty name="validation" hl/> input
+                validations <UnlockIcon/> Check <Link aria-label={"Check all validations properties"} to={ROOT + VALIDATIONS} className="link">VALIDATIONS PROPERTIES</Link> to know
+                more of it.
             </li>
             <li><CallDefinition name="onChange" hl/> a method to change input value.
                 Accept InputEvent or customValue <LockIcon/></li>
@@ -108,7 +109,7 @@ const InputsProperties = () => {
         </ul>
         <p className="description">
             Hit next to know more
-            about all validations <Link className="link"
+            about all validations <Link aria-label={"To check all validations properties"} className="link"
                                         to={ROOT + VALIDATIONS}>PROPERTIES</Link>
         </p>
         <div className="foot">
