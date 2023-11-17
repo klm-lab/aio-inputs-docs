@@ -25,7 +25,7 @@ An input state management for React. It comes with useful common validations if 
 ```sh
   npm install aio-inputs
   ```
-**DOCS 👉** [HERE][docs-links]<br/>
+**DOCS WEBSITE 👉** [HERE][docs-site]<br/>
 **ALL EXAMPLES 👉** [HERE][example-links]
 
 ## License
@@ -39,7 +39,7 @@ An input state management for React. It comes with useful common validations if 
 
 [version-shield]: https://img.shields.io/npm/v/aio-inputs?style=for-the-badge
 [example-links]: https://github.com/klm-lab/inputs/tree/dev/examples#readme
-[docs-links]: https://github.com/klm-lab/inputs/tree/dev/examples#readme
+[docs-site]: https://aio-inputs.netlify.app
 [edit-link]: https://github.com/klm-lab/inputs/blob/dev/examples/edit.tsx
 
 
