@@ -3,8 +3,8 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
-    "sass": "sass --watch app/:app/",
+    "build": "sass app/ && remix build",
+    "sass": "sass --watch app/",
     "remix-dev": "remix dev",
     "dev": "concurrently npm:sass npm:remix-dev",
     "start": "netlify serve",
