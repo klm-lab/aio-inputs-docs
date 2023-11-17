@@ -1,0 +1,88 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter, .codeWrapper .code, .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCenterSpace, .codeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.customScroll {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--scroll-color) transparent;
+}
+.customScroll::-webkit-scrollbar {
+  width: 10px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 10px;
+}
+.customScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.size {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--shadow-color);
+  border-right: 1px solid var(--shadow-color);
+}
+
+.codeWrapper {
+  min-height: 60px;
+  box-shadow: -2px -2px 16px var(--shadow-color);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  align-items: normal;
+  padding: 1rem;
+  overflow: auto;
+  white-space: nowrap;
+  letter-spacing: 0.07rem;
+}
+.codeWrapper .code {
+  align-items: normal;
+  flex-direction: column;
+}
+.codeWrapper .code span {
+  margin-right: 0.5rem;
+}
+.codeWrapper .code .no-indent {
+  margin-right: 0;
+}
+.codeWrapper .codeLine {
+  margin-left: 2rem;
+}
+.codeWrapper .codeNew {
+  background-color: var(--new-code);
+  padding: 0.2rem;
+  border-radius: 6px;
+}
+.codeWrapper .codeNew span {
+  color: white;
+}
+.codeWrapper .copy {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=code.css.map */

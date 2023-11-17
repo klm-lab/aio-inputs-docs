@@ -1,9 +1,0 @@
-@media (prefers-color-scheme: dark) {
-    body {
-
-    }
-}
-
-body[data-dark="true"] {
-
-}

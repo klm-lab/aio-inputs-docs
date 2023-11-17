@@ -1,0 +1,52 @@
+.logo {
+  cursor: pointer;
+
+  #top {
+    animation: top-animation infinite 3s;
+  }
+
+  #right {
+    animation: right-animation infinite 3s;
+  }
+
+  #left {
+    animation: left-animation infinite 3s;
+  }
+
+  &:hover {
+    #top, #right, #left {
+      animation-duration: .3s;
+    }
+
+    svg {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@keyframes top-animation {
+  100%, 0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes right-animation {
+  100%, 0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(6px, -6px);
+  }
+}
+
+@keyframes left-animation {
+  100%, 0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-6px, -6px);
+  }
+}

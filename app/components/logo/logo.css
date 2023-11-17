@@ -1,0 +1,45 @@
+.logo {
+  cursor: pointer;
+}
+.logo #top {
+  animation: top-animation infinite 3s;
+}
+.logo #right {
+  animation: right-animation infinite 3s;
+}
+.logo #left {
+  animation: left-animation infinite 3s;
+}
+.logo:hover #top, .logo:hover #right, .logo:hover #left {
+  animation-duration: 0.3s;
+}
+.logo:hover svg {
+  transform: scale(1.1);
+}
+
+@keyframes top-animation {
+  100%, 0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes right-animation {
+  100%, 0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(6px, -6px);
+  }
+}
+@keyframes left-animation {
+  100%, 0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-6px, -6px);
+  }
+}
+
+/*# sourceMappingURL=logo.css.map */

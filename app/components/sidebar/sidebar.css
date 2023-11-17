@@ -1,0 +1,145 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter, .sidebar .list .item, .sidebar .sideEl .sideTitle .info, .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexCenterSpace, .sidebar .sideEl .sideTitle .titleItem, .sidebar .sideEl .sideTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.customScroll, .sidebar {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--scroll-color) transparent;
+}
+.customScroll::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+.customScroll::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 10px;
+}
+.customScroll::-webkit-scrollbar-track, .sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.size {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--shadow-color);
+  border-right: 1px solid var(--shadow-color);
+}
+
+.sidebar {
+  padding-top: 1rem;
+  width: calc(var(--max-width) * var(--percent) / 100);
+  max-height: calc(var(--body-height));
+  overflow: hidden;
+  position: fixed;
+  top: var(--header-height);
+  --color: var(--text-color);
+  transition: 0.2s ease;
+}
+.sidebar:hover {
+  overflow: auto;
+}
+.sidebar .list .item:hover, .sidebar .sideEl .sideTitle:hover, .sidebar .active {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.sidebar .active {
+  background-color: var(--h-bg-color);
+  --color: var(--primary-color);
+  font-weight: 600;
+}
+.sidebar .open .arrow {
+  transform: rotateZ(90deg);
+}
+.sidebar .version {
+  margin-top: 2rem;
+  padding: 1rem var(--padding);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(---muted-icon-color);
+}
+.sidebar .sideEl {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+.sidebar .sideEl .sideTitle {
+  padding: 1rem var(--padding);
+  cursor: pointer;
+  column-gap: 0.8rem;
+}
+.sidebar .sideEl .sideTitle .titleItem {
+  flex: 1;
+}
+.sidebar .sideEl .sideTitle .text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color);
+}
+.sidebar .sideEl .sideTitle .info {
+  height: 25px;
+  font-size: 0.7rem;
+  padding: 0 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.sidebar .sideEl .sideTitle .arrow {
+  transition: 0.2s ease;
+}
+.sidebar .sideEl .sideTitle:hover {
+  background-color: var(--muted-color);
+}
+.sidebar .activeList {
+  height: var(--height) !important;
+}
+.sidebar .list {
+  --el-h: 50px;
+  height: 0;
+  transition: 0.2s ease;
+}
+.sidebar .list .item {
+  font-size: 1rem;
+  list-style: none;
+  justify-content: flex-start;
+  padding-left: calc(var(--padding) + 1rem);
+  height: var(--el-h);
+  width: 100%;
+  cursor: pointer;
+  color: var(--color);
+}
+.sidebar .list .item:hover {
+  background-color: var(--muted-color);
+}
+
+@media screen and (max-width: 968px) {
+  .sidebar {
+    transform: translateX(-400px);
+  }
+}
+
+/*# sourceMappingURL=sidebar.css.map */

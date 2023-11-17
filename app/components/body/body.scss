@@ -1,0 +1,20 @@
+@import "../../assets/styles/extends";
+
+.content {
+  --percent: 20;
+  margin-top: var(--header-height);
+  position: relative;
+
+  .page {
+    margin-left: calc((var(--max-width) * var(--percent)) / 100);
+    transition: 0.2s ease;
+  }
+}
+
+@media screen and (max-width: 968px){
+  .content {
+    .page {
+      margin-left: 0;
+    }
+  }
+}

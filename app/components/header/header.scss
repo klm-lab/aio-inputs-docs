@@ -1,0 +1,13 @@
+@import "../../assets/styles/extends";
+
+.header {
+  @extend .fixed;
+  @extend .size;
+  z-index: 2;
+  height: var(--header-height);
+  background-color: var(--bg-color);
+  backdrop-filter: blur(4px);
+  @extend .flexCenterSpace;
+  padding: 0 var(--padding);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}

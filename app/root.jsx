@@ -1,15 +1,15 @@
 import {cssBundleHref} from "@remix-run/css-bundle";
-import rootStyles from "./src/rootStyles/rootStyle.css"
-import rootDarkStyles from "./src/rootStyles/rootDarkStyle.css"
+import rootStyles from "./assets/styles/rootStyle.css"
+import commonStyles from "./assets/styles/common.css"
 
 import {Links, LiveReload, Meta, Scripts, ScrollRestoration,} from "@remix-run/react";
-import Content from "./src/components/content";
-import Index from "./src/views/notFound";
+import Content from "./components/content";
+import NotFound from "./views/notFound";
 
 const mainStyles = [
     {rel: "icon", type: "image/x-icon", href: "/favicon.svg"},
     {rel: "stylesheet", href: rootStyles},
-    {rel: "stylesheet", href: rootDarkStyles, media: "(prefers-color-scheme: dark)"},
+    {rel: "stylesheet", href: commonStyles},
     {rel: "preconnect", href: "https://fonts.googleapis.com"},
     {rel: "preconnect", href: "https://fonts.gstatic.com"},
     {
@@ -33,6 +33,7 @@ export default function App() {
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <Meta/>
+        <title>Aio-Inputs Docs</title>
         <Links/>
     </head>
     <body>
@@ -45,5 +46,5 @@ export default function App() {
 }
 
 export const ErrorBoundary = ({error}) => {
-    return <Index error={error}/>
+    return <NotFound error={error}/>
 }
