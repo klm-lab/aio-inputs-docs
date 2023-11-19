@@ -1,7 +1,6 @@
 import Code from "../../../components/code";
 import Line from "../../../components/line";
 import PageButton from "../../../components/pageButton";
-import {useNavigate} from "@remix-run/react";
 import {getInputsKey, routes} from "../../../util/constants";
 import ImportStatement from "../../../components/codeComponents/importStatement";
 import InputLine from "../../../components/codeComponents/inputLine";
@@ -15,8 +14,6 @@ import AppLink from "../../../components/appLink";
 const {ROOT, USE_INPUTS, PROPERTIES} = routes;
 
 const String = () => {
-
-    const navigate = useNavigate()
 
     return <div className="data">
         <h1 className="title">useInputs with string</h1>
@@ -70,8 +67,8 @@ const String = () => {
             Hit next to find out how to use array with aio-inputs
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(ROOT)} text="Prev"/>
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.ARRAY)}/>
+            <PageButton to={ROOT} prev/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.ARRAY}/>
         </div>
     </div>
 }

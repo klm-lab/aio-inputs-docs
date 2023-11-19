@@ -1,4 +1,3 @@
-import {useNavigate} from "@remix-run/react";
 import Line from "../../../components/line";
 import Code from "../../../components/code";
 import {TopComment} from "../../../components/codeComponents/create";
@@ -16,10 +15,10 @@ import Box from "../../../components/box";
 
 const {
     PROPERTIES: {VALIDATIONS, ROOT},
-    TRACK,FORM
+    TRACK, FORM
 } = routes;
 
-const CommonInit = ({children,comment, value}) => {
+const CommonInit = ({children, comment, value}) => {
     return <Code>
         <TopComment comment={comment}/>
         <div className="codeLine">
@@ -64,7 +63,6 @@ export const CommonSyntax = ({pre, name}) => {
 }
 
 const InputsProperties = () => {
-    const navigate = useNavigate();
 
     return <div className="data">
         <h1 className="title smt">Input properties</h1>
@@ -139,10 +137,12 @@ const InputsProperties = () => {
                 </CommonInit>
                 <Box className="warn">
                     <span>we recommend you to use <CallDefinition name="init" hl/> method
-                        from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT} className="link">FORM</AppLink> object
+                        from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT}
+                                          className="link">FORM</AppLink> object
                         , <AppLink aria-label="Navigate to the form forEach page"
                                    to={FORM.ROOT + FORM.FOR_EACH} className="link">FOREACH </AppLink>
-                        or <AppLink aria-label="Navigate to the form map page" to={FORM.ROOT + FORM.MAP} className="link">MAP</AppLink> method.</span>
+                        or <AppLink aria-label="Navigate to the form map page" to={FORM.ROOT + FORM.MAP}
+                                    className="link">MAP</AppLink> method.</span>
                 </Box>
             </li>
         </ul>
@@ -170,8 +170,8 @@ const InputsProperties = () => {
                                            to={ROOT + VALIDATIONS}>PROPERTIES</AppLink>
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(TRACK.ROOT)} text="Prev"/>
-            <PageButton onClick={() => navigate(ROOT + VALIDATIONS)}/>
+            <PageButton to={TRACK.ROOT} prev/>
+            <PageButton to={ROOT + VALIDATIONS}/>
         </div>
     </div>
 }

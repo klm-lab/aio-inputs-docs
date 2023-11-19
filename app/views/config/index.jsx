@@ -1,4 +1,3 @@
-import {useNavigate} from "@remix-run/react";
 import {getAnchor} from "../../util";
 import Line from "../../components/line";
 import Code from "../../components/code";
@@ -16,7 +15,6 @@ const {
 } = routes
 
 const ConfigEntry = () => {
-    const navigate = useNavigate();
 
     return <div className="data">
         <h1 id={getAnchor(ASYNC_DELAY)} className="title smt">Config</h1>
@@ -88,8 +86,8 @@ const ConfigEntry = () => {
             of it.
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(FORM.ROOT)} text="Prev"/>
-            <PageButton onClick={() => navigate(TRACK.ROOT)}/>
+            <PageButton to={FORM.ROOT} prev/>
+            <PageButton to={TRACK.ROOT}/>
         </div>
     </div>
 }

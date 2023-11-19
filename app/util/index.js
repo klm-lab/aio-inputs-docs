@@ -33,3 +33,16 @@ export const setThemeInDom = (isDark) => {
         LS.set(IS_DARK, isDark);
     }
 }
+
+export const copyToClipboard = (element) => {
+    if (!navigator.clipboard) {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("copy");
+        selection.removeAllRanges()
+    }
+    navigator.clipboard.writeText(element.innerText.toString())
+}

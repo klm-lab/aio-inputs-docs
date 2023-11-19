@@ -77,7 +77,7 @@ body[data-dark="true"] {
 body {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --primary-color: #2671c6;
+  --primary-color: #175eaf;
   --info-color: #073f72;
   --h-bg-color: #e0edf6;
   --shadow-color: #eaeaea;
@@ -392,6 +392,9 @@ a {
   }
 }
 
+.s-c {
+  position: relative;
+}
 
 .codeWrapper {
   min-height: 60px;
@@ -400,7 +403,7 @@ a {
   margin: 1.5rem 0;
   align-items: normal;
   padding: 1rem;
-  overflow: auto;
+  overflow-x: auto;
   white-space: nowrap;
   letter-spacing: .07rem;
 
@@ -435,6 +438,38 @@ a {
 
   .copy {
     cursor: pointer;
+
+    .copied {
+      opacity: 0;
+      pointer-events: none;
+      cursor: default;
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      padding: .5rem;
+      border-radius: 6px;
+      position: absolute;
+      top: -3rem;
+      right: -10px;
+      box-shadow: 0 4px 8px var(--shadow-color);
+      transition: .1s ease;
+      transform: translateY(-20px) scale(.8);
+
+      &:after {
+        content: "";
+        background-color: var(--text-color);
+        position: absolute;
+        left: 50%;
+        bottom: -4px;
+        height: 10px;
+        width: 10px;
+        transform: translateX(-50%) rotateZ(45deg);
+      }
+    }
+    .show-copy {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
   }
 }
 

@@ -1,4 +1,3 @@
-import {useNavigate} from "@remix-run/react";
 import Code from "../../../components/code";
 import {routes} from "../../../util/constants";
 import PageButton from "../../../components/pageButton";
@@ -40,7 +39,6 @@ const CustomCode = ({async}) => {
 }
 
 const ValidationsProperties = () => {
-    const navigate = useNavigate();
 
     return <div className="data">
         <h1 className="title smt">Validations properties</h1>
@@ -151,7 +149,7 @@ const ValidationsProperties = () => {
             </li>
         </ul>
         <div className="foot">
-            <PageButton onClick={() => navigate(ROOT + INPUTS)} text="Prev"/>
+            <PageButton to={ROOT + INPUTS} prev/>
         </div>
     </div>
 }

@@ -1,13 +1,10 @@
 import Code from "../../components/code";
 import Line from "../../components/line";
 import PageButton from "../../components/pageButton";
-import {useNavigate} from "@remix-run/react";
 import {routes} from "../../util/constants";
 import ImportStatement from "../../components/codeComponents/importStatement";
 
 const Index = () => {
-
-    const navigate = useNavigate()
 
     return <div className="data">
         <h1 className="title">aio-inputs</h1>
@@ -47,7 +44,7 @@ const Index = () => {
         </p>
         <div className="foot">
             <div/>
-            <PageButton onClick={() => navigate(routes.USE_INPUTS.ROOT)}/>
+            <PageButton to={routes.USE_INPUTS.ROOT + routes.USE_INPUTS.STRING}/>
         </div>
     </div>
 }

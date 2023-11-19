@@ -1,6 +1,5 @@
 import Line from "../../../components/line";
 import PageButton from "../../../components/pageButton";
-import {useNavigate} from "@remix-run/react";
 import {getInputsKey, routes} from "../../../util/constants";
 import ImportStatement from "../../../components/codeComponents/importStatement";
 import Code from "../../../components/code";
@@ -20,8 +19,6 @@ const {USE_INPUTS, FORM, PROPERTIES} = routes
 
 
 const ObjectEntry = () => {
-
-    const navigate = useNavigate()
 
     return <div className="data">
         <h1 className="title">useInputs with object</h1>
@@ -125,8 +122,8 @@ const ObjectEntry = () => {
             Hit next to find out how to use form object with aio-inputs.
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.ARRAY)} text="Prev"/>
-            <PageButton onClick={() => navigate(FORM.ROOT + FORM.GET_VALUES)}/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.ARRAY} prev/>
+            <PageButton to={FORM.ROOT + FORM.GET_VALUES}/>
         </div>
     </div>
 }

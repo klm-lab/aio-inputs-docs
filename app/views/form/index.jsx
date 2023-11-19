@@ -1,4 +1,3 @@
-import {useNavigate} from "@remix-run/react";
 import Line from "../../components/line";
 import Code from "../../components/code";
 import Create from "../../components/codeComponents/create";
@@ -19,7 +18,6 @@ const {
 } = routes
 
 const FormEntry = () => {
-    const navigate = useNavigate();
 
     return <div className="data">
         <h1 id={getAnchor(GET_VALUES)} className="title smt">Form</h1>
@@ -145,8 +143,8 @@ const FormEntry = () => {
                                 to={TRACK.ROOT}>TRACK</AppLink> or async custom validation.
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.OBJECT)} text="Prev"/>
-            <PageButton onClick={() => navigate(CONFIG.ROOT)}/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.OBJECT} prev/>
+            <PageButton to={CONFIG.ROOT}/>
         </div>
     </div>
 }
