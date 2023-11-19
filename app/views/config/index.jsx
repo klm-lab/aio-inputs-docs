@@ -1,4 +1,4 @@
-import {Link, useNavigate} from "@remix-run/react";
+import {useNavigate} from "@remix-run/react";
 import {getAnchor} from "../../util";
 import Line from "../../components/line";
 import Code from "../../components/code";
@@ -8,6 +8,7 @@ import {routes} from "../../util/constants";
 import KeyValue, {ChildBracket} from "../../components/codeComponents/keyValue";
 import DotProperty from "../../components/codeComponents/dotProperty";
 import CallDefinition from "../../components/codeComponents/callDefinition";
+import AppLink from "../../components/appLink";
 
 const {
     CONFIG: {ASYNC_DELAY, PERSIST_ID, TRACK_ID},
@@ -24,7 +25,8 @@ const ConfigEntry = () => {
             className="package hl">aio-inputs</span>. you can config these properties:
         </p>
         <ul className="extra item-space">
-            <li><span className="oKey hl">asyncDelay</span> asynchronous validation waiting time when user stops typing.</li>
+            <li><span className="oKey hl">asyncDelay</span> asynchronous validation waiting time when user stops typing.
+            </li>
             <li><span className="oKey hl">persistID</span> persist data on component unmount with this ID.</li>
             <li><span className="oKey hl">trackID</span> access your inputs outside a component with this ID.</li>
         </ul>
@@ -81,7 +83,8 @@ const ConfigEntry = () => {
         </Code>
 
         <p className="description">
-            Hit next to find out how to <Link aria-label={"To setup a tracking tool"} className="link" to={TRACK.ROOT}>SETUP TRACKING TOOL</Link> and know more
+            Hit next to find out how to <AppLink aria-label={"To setup a tracking tool"} className="link"
+                                                 to={TRACK.ROOT}>SETUP TRACKING TOOL</AppLink> and know more
             of it.
         </p>
         <div className="foot">

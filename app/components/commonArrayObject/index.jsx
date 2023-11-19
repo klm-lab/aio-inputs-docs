@@ -3,8 +3,8 @@ import KeyValue, {ChildBracket} from "../codeComponents/keyValue";
 import InputArrayLine from "../codeComponents/inputArrayLine";
 import DotProperty from "../codeComponents/dotProperty";
 import FormRef from "../FormRef";
-import {Link} from "@remix-run/react";
 import {routes} from "../../util/constants";
+import AppLink from "../appLink";
 
 const {PROPERTIES} = routes;
 
@@ -18,7 +18,7 @@ export const CommonProp = ({validation, value}) => {
     }/>
 }
 
-const CommonArrayObject = ({Component, name,errorMessage, validation, value,arrayLineName}) => {
+const CommonArrayObject = ({Component, name, errorMessage, validation, value, arrayLineName}) => {
     return <>
         <p className="description">
             Lets add some error message for {name} input to help the user. You can add tow kind of error message:
@@ -26,7 +26,8 @@ const CommonArrayObject = ({Component, name,errorMessage, validation, value,arra
         <ul className="extra">
             <li>
                 A general one
-                <p className="sub-desc">A general errorMessage act like a summary of all possible errors that can occur when user types.</p>
+                <p className="sub-desc">A general errorMessage act like a summary of all possible errors that can occur
+                    when user types.</p>
             </li>
             <li>
                 A Specific one
@@ -54,7 +55,7 @@ const CommonArrayObject = ({Component, name,errorMessage, validation, value,arra
                             <KeyValue newCode objKey="message" value={`"${errorMessage}",`}/>
                             <KeyValue objKey="value" value={value}/>
                         </ChildBracket>
-                    } />
+                    }/>
                 </ChildBracket>
             }/>
         </Component>
@@ -74,9 +75,12 @@ const CommonArrayObject = ({Component, name,errorMessage, validation, value,arra
         </p>
         <FormRef/>
         <p className="description">
-            <Link aria-label="To list available inputs properties" className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>INPUTS PROPERTIES</Link> like name,
+            <AppLink aria-label="To list available inputs properties" className="link"
+                     to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>INPUTS PROPERTIES</AppLink> like name,
             type and many others are available.<br/>
-            Same for <Link aria-label="To list available validations properties" className="link" to={PROPERTIES.ROOT + PROPERTIES.VALIDATIONS}>VALIDATION PROPERTIES</Link> like min, max and
+            Same for <AppLink aria-label="To list available validations properties" className="link"
+                              to={PROPERTIES.ROOT + PROPERTIES.VALIDATIONS}>VALIDATION PROPERTIES</AppLink> like min,
+            max and
             many others.<br/>
         </p>
     </>

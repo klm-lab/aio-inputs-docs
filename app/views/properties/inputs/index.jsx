@@ -1,4 +1,4 @@
-import {Link, useNavigate} from "@remix-run/react";
+import {useNavigate} from "@remix-run/react";
 import Line from "../../../components/line";
 import Code from "../../../components/code";
 import {TopComment} from "../../../components/codeComponents/create";
@@ -10,13 +10,35 @@ import UnlockIcon from "../../../assets/icon/UnlockIcon";
 import LanguageIcon from "../../../assets/icon/LanguageIcon";
 import Bracket from "../../../components/codeComponents/bracket";
 import KeyValue, {ChildBracket} from "../../../components/codeComponents/keyValue";
+import AppLink from "../../../components/appLink";
+import DotProperty from "../../../components/codeComponents/dotProperty";
+import Box from "../../../components/box";
 
 const {
     PROPERTIES: {VALIDATIONS, ROOT},
-    TRACK,
+    TRACK,FORM
 } = routes;
 
-export const CommonSyntax = ({pre,name}) => {
+const CommonInit = ({children,comment, value}) => {
+    return <Code>
+        <TopComment comment={comment}/>
+        <div className="codeLine">
+            <DotProperty ponctuation value={"forEach"} noCall={false} params={
+                <span className="no-indent">
+                    <span>{"ip =>"}</span>
+                    <DotProperty name="ip" value="init" params={
+                        <span className="no-indent">
+                            <span className="no-indent">{value}</span>
+                            {children}
+                        </span>
+                    }/>
+                </span>
+            }/>
+        </div>
+    </Code>
+}
+
+export const CommonSyntax = ({pre, name}) => {
     return <>
         <p className="description">Properties with language icons <LanguageIcon/> support this syntax.<br/>
             For example, the {pre ?? name} can be one of these formats
@@ -61,7 +83,9 @@ const InputsProperties = () => {
             <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
             <li><CallProperty name="label" hl/> input label <UnlockIcon/><LanguageIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
-            <li><CallProperty name="files" hl/> input upload files <LockIcon/> Check <Link aria-label={"To list all file properties"} to={"#files"} className="link">FILES PROPERTIES</Link> to know
+            <li><CallProperty name="files" hl/> input upload files <LockIcon/> Check <AppLink
+                aria-label={"To list all file properties"} to={"#files"} className="link">FILES PROPERTIES</AppLink> to
+                know
                 more of it
             </li>
             <li><CallProperty name="checked" hl/> input checked state <span
@@ -81,13 +105,46 @@ const InputsProperties = () => {
             <li><CallProperty name="asyncValidationFailed" hl/> <span
                 className="hl">boolean</span> <UnlockIcon/></li>
             <li><CallProperty name="validation" hl/> input
-                validations <UnlockIcon/> Check <Link aria-label={"Check all validations properties"} to={ROOT + VALIDATIONS} className="link">VALIDATIONS PROPERTIES</Link> to know
+                validations <UnlockIcon/> Check <AppLink aria-label={"Check all validations properties"}
+                                                         to={ROOT + VALIDATIONS} className="link">VALIDATIONS
+                    PROPERTIES</AppLink> to know
                 more of it.
             </li>
             <li><CallDefinition name="onChange" hl/> a method to change input value.
                 Accept InputEvent or customValue <LockIcon/></li>
             <li><CallDefinition name="init" hl/> a method to load value to
-                your inputs for an edit. Accept a customValue <LockIcon/></li>
+                your inputs for an edit. Accept any type of value except for files <UnlockIcon/>
+                <CommonInit comment="Without file input" value="MY_VALUE"/>
+                Inputs of type file value need to be a string url <span className="hl">https://....jpg</span> or an
+                array of string
+                url <span className="hl">[https://....jpg, https://....png]</span><br/>
+                When you load data for input type file, you can add an optional function which let you retrieve a blob.
+                This function should take an url as param
+                <CommonInit comment="With file input" value="MY_URL_OR_MY_ARRAY_OF_URL">
+                    <span>,</span>
+                    <ChildBracket inline stop={false} noIndent>
+                        <KeyValue objKey="getBlob" directValue={false} value={
+                            <span className="no-indent">
+                                                <CallDefinition anonymous arrow params="url"/>
+                                                <ChildBracket>
+                                                    <TopComment comment="get your blob with the url"/>
+                                                    <div className="codeLine">
+                                                        <span className="keyword">return</span>
+                                                        <span>a blob or a file</span>
+                                                    </div>
+                                                </ChildBracket>
+                                            </span>
+                        }/>
+                    </ChildBracket>
+                </CommonInit>
+                <Box className="warn">
+                    <span>we recommend you to use <CallDefinition name="init" hl/> method
+                        from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT} className="link">FORM</AppLink> object
+                        , <AppLink aria-label="Navigate to the form forEach page"
+                                   to={FORM.ROOT + FORM.FOR_EACH} className="link">FOREACH </AppLink>
+                        or <AppLink aria-label="Navigate to the form map page" to={FORM.ROOT + FORM.MAP} className="link">MAP</AppLink> method.</span>
+                </Box>
+            </li>
         </ul>
         <Line/>
         <h2 className="subTitle">Files properties list</h2>
@@ -109,8 +166,8 @@ const InputsProperties = () => {
         </ul>
         <p className="description">
             Hit next to know more
-            about all validations <Link aria-label={"To check all validations properties"} className="link"
-                                        to={ROOT + VALIDATIONS}>PROPERTIES</Link>
+            about all validations <AppLink aria-label={"To check all validations properties"} className="link"
+                                           to={ROOT + VALIDATIONS}>PROPERTIES</AppLink>
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(TRACK.ROOT)} text="Prev"/>

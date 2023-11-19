@@ -9,6 +9,7 @@ import PageButton from "../../components/pageButton";
 import {routes} from "../../util/constants";
 import ImportStatement from "../../components/codeComponents/importStatement";
 import CallDefinition from "../../components/codeComponents/callDefinition";
+import AppLink from "../../components/appLink";
 
 const {
     CONFIG,
@@ -59,9 +60,9 @@ const TrackEntry = () => {
         <h1 id={getAnchor(TRACKING_TOOL)} className="title smt">Tracking</h1>
         <p className="description">
             To access your inputs data outside a component, you need a tracking tool.
-            A tracking tool inherit every method available on <Link aria-label={"To show the form utility"} className="link" to={FORM.ROOT}>
+            A tracking tool inherit every method available on <AppLink aria-label={"To show the form utility"} className="link" to={FORM.ROOT}>
             FORM
-        </Link> and has his own <CallDefinition name="length" hl/> method.
+        </AppLink> and has his own <CallDefinition name="length" hl/> method.
         </p>
         <Line/>
         <ImportStatement title="Tracking tool" name={"trackInputs"}/>
@@ -105,9 +106,9 @@ const TrackEntry = () => {
         <p className="description">For example to get your inputs values,</p>
         <Usage name="getValues"/>
         <p className="description">
-            A tracking tool inherit every method available on <Link aria-label={"To show the form utility"} className="link" to={FORM.ROOT}>
+            A tracking tool inherit every method available on <AppLink aria-label={"To show the form utility"} className="link" to={FORM.ROOT}>
             FORM
-        </Link> and has his own <CallDefinition name="length" hl/> method.
+        </AppLink> and has his own <CallDefinition name="length" hl/> method.
         </p>
         <p className="description">
             Therefor calling <CallDefinition name="reset" hl/> and other method will work.
@@ -142,8 +143,8 @@ const TrackEntry = () => {
             </div>
         </Code>
         <p className="description">
-            Hit next to know more about all available <Link aria-label={"To show all available properties"} className="link"
-                                                                       to={PROPERTIES.ROOT}>PROPERTIES</Link>
+            Hit next to know more about all available <AppLink aria-label={"To show all available properties"} className="link"
+                                                                       to={PROPERTIES.ROOT}>PROPERTIES</AppLink>
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(CONFIG.ROOT)} text="Prev"/>

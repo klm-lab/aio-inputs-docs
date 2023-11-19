@@ -1,4 +1,4 @@
-import {Link, useNavigate} from "@remix-run/react";
+import {useNavigate} from "@remix-run/react";
 import Line from "../../components/line";
 import Code from "../../components/code";
 import Create from "../../components/codeComponents/create";
@@ -9,6 +9,7 @@ import ConsoleLog from "../../components/codeComponents/consoleLog";
 import DotProperty from "../../components/codeComponents/dotProperty";
 import CallDefinition from "../../components/codeComponents/callDefinition";
 import ExternalLink from "../../components/externalLink";
+import AppLink from "../../components/appLink";
 
 const {
     FORM: {
@@ -137,9 +138,11 @@ const FormEntry = () => {
         </Code>
 
         <p className="description">
-            Hit next to find out how to <Link aria-label={"To navigate change the configuration of aio-inputs"}
-                                              className="link" to={CONFIG.ROOT}>CONFIG</Link> aio-inputs behaviour,
-            when using <Link aria-label={"To setup a tracking tool"} className="link" to={TRACK.ROOT}>TRACK</Link> or async custom validation.
+            Hit next to find out how to <AppLink aria-label={"To navigate change the configuration of aio-inputs"}
+                                                 className="link" to={CONFIG.ROOT}>CONFIG</AppLink> aio-inputs
+            behaviour,
+            when using <AppLink aria-label={"To setup a tracking tool"} className="link"
+                                to={TRACK.ROOT}>TRACK</AppLink> or async custom validation.
         </p>
         <div className="foot">
             <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.OBJECT)} text="Prev"/>

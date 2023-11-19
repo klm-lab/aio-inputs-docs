@@ -3,6 +3,7 @@ import {addClasses} from "../../../util";
 import {useCallback, useEffect, useState} from "react";
 import {appStore} from "../../../store";
 import ArrowIcon from "../../../assets/icon/ArrowIcon";
+import AppLink from "../../appLink";
 
 const SidebarCategory = ({routesKeys, routes}) => {
 
@@ -44,10 +45,10 @@ const SidebarCategory = ({routesKeys, routes}) => {
 
     if (routes === "/") {
         return <div className={addClasses("sideEl", pathname === routes ? "active" : "")}>
-            <Link aria-label={"To navigate to the path " + ROOT} to={ROOT} onClick={toggleMenu}
-                  className={addClasses("flexCenterSpace sideTitle", pathname === routes ? "active" : "")}>
+            <AppLink aria-label={"To navigate to the path " + ROOT} to={ROOT} onClick={toggleMenu}
+                     className={addClasses("flexCenterSpace sideTitle", pathname === routes ? "active" : "")}>
                 <h2 className="text">Get started</h2>
-            </Link>
+            </AppLink>
         </div>
     }
 
@@ -69,10 +70,11 @@ const SidebarCategory = ({routesKeys, routes}) => {
                 const route = ROOT + routes[l];
                 return routes[l] !== ROOT &&
                     <li key={route}>
-                        <Link aria-label={"To navigate to the path " + route} className={addClasses("flexCenter item", routes[l] === r ? "active" : "")}
+                        <AppLink aria-label={"To navigate to the path " + route}
+                              className={addClasses("flexCenter item", routes[l] === r ? "active" : "")}
                               onClick={closeSideBar} to={route}>
                             {routes[l].replace(/(#)|\//, "")}
-                        </Link>
+                        </AppLink>
                     </li>
 
             })}
