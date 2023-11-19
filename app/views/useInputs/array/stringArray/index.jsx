@@ -6,6 +6,7 @@ import FormRef from "../../../../components/FormRef";
 import Create, {ArrayParams} from "../../../../components/codeComponents/create";
 import MapInputs from "../../../../components/codeComponents/mapInputs";
 import DotProperty from "../../../../components/codeComponents/dotProperty";
+import AppLink from "../../../../components/appLink";
 
 const {PROPERTIES} = routes;
 
@@ -26,7 +27,7 @@ const StringArray = () => {
 
         <p className="description">
             If you log <span className="hl">myInputs</span>, you'll see an array of these related ready-to-use
-            properties and <Link aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</Link>.<br/>
+            properties and <AppLink aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label match the array of string value.
         </p>
         <Code>

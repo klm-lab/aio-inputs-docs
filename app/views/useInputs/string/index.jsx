@@ -1,7 +1,6 @@
 import Code from "../../../components/code";
 import Line from "../../../components/line";
 import PageButton from "../../../components/pageButton";
-import {Link, useNavigate} from "@remix-run/react";
 import {getInputsKey, routes} from "../../../util/constants";
 import ImportStatement from "../../../components/codeComponents/importStatement";
 import InputLine from "../../../components/codeComponents/inputLine";
@@ -10,12 +9,11 @@ import FormRef from "../../../components/FormRef";
 import Bracket from "../../../components/codeComponents/bracket";
 import Create from "../../../components/codeComponents/create";
 import DotProperty from "../../../components/codeComponents/dotProperty";
+import AppLink from "../../../components/appLink";
 
-const {ROOT,USE_INPUTS,PROPERTIES} = routes;
+const {ROOT, USE_INPUTS, PROPERTIES} = routes;
 
 const String = () => {
-
-    const navigate = useNavigate()
 
     return <div className="data">
         <h1 className="title">useInputs with string</h1>
@@ -45,7 +43,8 @@ const String = () => {
 
         <p className="description">
             If you log <span className="hl">myInput</span>, you'll see these related
-            ready-to-use properties and <Link aria-label={"To show available properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</Link>.<br/>
+            ready-to-use properties and <AppLink aria-label={"To show available properties"} className="link"
+                                                 to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label is the value of your string.
         </p>
         <Code>
@@ -61,15 +60,15 @@ const String = () => {
         </Code>
         <p className="description">
             That is it. The value entered by the user will
-            be stored in  <DotProperty name={"myInput"} value="value" method={false} hl/>.
+            be stored in <DotProperty name={"myInput"} value="value" method={false} hl/>.
         </p>
         <FormRef/>
         <p className="description">
             Hit next to find out how to use array with aio-inputs
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(ROOT)} text="Prev"/>
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.ARRAY)}/>
+            <PageButton to={ROOT} prev/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.ARRAY}/>
         </div>
     </div>
 }

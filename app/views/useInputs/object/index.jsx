@@ -1,6 +1,5 @@
 import Line from "../../../components/line";
 import PageButton from "../../../components/pageButton";
-import {Link, useNavigate} from "@remix-run/react";
 import {getInputsKey, routes} from "../../../util/constants";
 import ImportStatement from "../../../components/codeComponents/importStatement";
 import Code from "../../../components/code";
@@ -14,13 +13,12 @@ import ObjectValidation from "./ObjectValidation";
 import Create from "../../../components/codeComponents/create";
 import MapInputs from "../../../components/codeComponents/mapInputs";
 import DotProperty from "../../../components/codeComponents/dotProperty";
+import AppLink from "../../../components/appLink";
 
 const {USE_INPUTS, FORM, PROPERTIES} = routes
 
 
 const ObjectEntry = () => {
-
-    const navigate = useNavigate()
 
     return <div className="data">
         <h1 className="title">useInputs with object</h1>
@@ -60,7 +58,8 @@ const ObjectEntry = () => {
         <p className="description">
             If you log <span className="hl">myInputs</span>, you'll see an object
             where first keys are <span className="hl">name and gender</span>. Those keys have as value these
-            related ready-to-use properties and <Link aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</Link>.<br/>
+            related ready-to-use properties and <AppLink aria-label={"To show all inputs properties"} className="link"
+                                                         to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label match every first key.
         </p>
         <Code>
@@ -78,8 +77,9 @@ const ObjectEntry = () => {
             Now bind <span className="hl">myInputs</span>, to some input element.<br/>
         </p>
         <ul className="extra">
-            <li>With <DotProperty value="map" hl/>, <Link aria-label={"To show the form map utility"} className="link"
-                              to={FORM.ROOT + FORM.MAP}>MORE DETAILS</Link>
+            <li>With <DotProperty value="map" hl/>, <AppLink aria-label={"To show the form map utility"}
+                                                             className="link"
+                                                             to={FORM.ROOT + FORM.MAP}>MORE DETAILS</AppLink>
             </li>
         </ul>
         <Code>
@@ -122,8 +122,8 @@ const ObjectEntry = () => {
             Hit next to find out how to use form object with aio-inputs.
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.ARRAY)} text="Prev"/>
-            <PageButton onClick={() => navigate(FORM.ROOT + FORM.GET_VALUES)}/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.ARRAY} prev/>
+            <PageButton to={FORM.ROOT + FORM.GET_VALUES}/>
         </div>
     </div>
 }

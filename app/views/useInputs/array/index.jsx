@@ -1,6 +1,5 @@
 import Line from "../../../components/line";
 import PageButton from "../../../components/pageButton";
-import {useNavigate} from "@remix-run/react";
 import {routes} from "../../../util/constants";
 import ImportStatement from "../../../components/codeComponents/importStatement";
 import StringArray from "./stringArray";
@@ -9,8 +8,6 @@ import MixedArray from "./mixedArray";
 const {USE_INPUTS} = routes;
 
 const Array = () => {
-
-    const navigate = useNavigate()
 
     return <div className="data">
         <h1 className="title">useInputs with array</h1>
@@ -40,8 +37,8 @@ const Array = () => {
             Hit next to find out how to use object with aio-inputs
         </p>
         <div className="foot">
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.STRING)} text="Prev"/>
-            <PageButton onClick={() => navigate(USE_INPUTS.ROOT + USE_INPUTS.OBJECT)}/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.STRING} prev/>
+            <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.OBJECT}/>
         </div>
     </div>
 }
