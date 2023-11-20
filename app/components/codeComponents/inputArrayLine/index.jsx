@@ -4,9 +4,10 @@ import MapInputs from "../mapInputs";
 import KeyComment from "../keyComment";
 import {ChildBracket} from "../keyValue";
 import DotProperty from "../dotProperty";
+import {USE_INPUTS_CODE} from "../../../code";
 
-const InputArrayLine = ({name, topComment = true, validComment = true, loadingComment}) => {
-    return <Code>
+const InputArrayLine = ({name, topComment = true, validComment = true, inlineText}) => {
+    return <Code copyText={inlineText}>
         {topComment && <div className="codeLine">
             <span className="comment">{"// Inside your component"}</span>
         </div>}

@@ -9,6 +9,7 @@ import DotProperty from "../../components/codeComponents/dotProperty";
 import CallDefinition from "../../components/codeComponents/callDefinition";
 import ExternalLink from "../../components/externalLink";
 import AppLink from "../../components/appLink";
+import {FORM_CODE} from "../../code";
 
 const {
     FORM: {
@@ -44,7 +45,7 @@ const FormEntry = () => {
             The result is an object where the keys match the name of your inputs.
             If you didn't set name on inputs creation, random ones are used.
         </p>
-        <Code>
+        <Code copyText={FORM_CODE.GET_VALUES}>
             <Create close form>
                 ...
             </Create>
@@ -55,7 +56,7 @@ const FormEntry = () => {
         </h2>
         <p className="description">
             <DotProperty value="reset" hl/> reset the value of your inputs</p>
-        <Code>
+        <Code copyText={FORM_CODE.RESET}>
             <Create close form>
                 ...
             </Create>
@@ -73,11 +74,11 @@ const FormEntry = () => {
             FOR EACH
         </ExternalLink>.
         </p>
-        <Code>
+        <Code copyText={FORM_CODE.FOR_EACH}>
             <Create close form>
                 ...
             </Create>
-            <ConsoleLog space method="forEach" comment="Do a reset" noConsole content="..."/>
+            <ConsoleLog space method="forEach" comment="For each input" noConsole content="..."/>
         </Code>
         <h2 id={getAnchor(MAP)} className="subTitle smt">
             Map inputs
@@ -90,7 +91,7 @@ const FormEntry = () => {
             MAP
         </ExternalLink>.
         </p>
-        <Code>
+        <Code copyText={FORM_CODE.MAP}>
             <Create close form>
                 ...
             </Create>
@@ -102,7 +103,7 @@ const FormEntry = () => {
         <p className="description">
             <DotProperty value="length" hl method={false}/> give you the inputs length
         </p>
-        <Code>
+        <Code copyText={FORM_CODE.LENGTH}>
             <Create close form>
                 ...
             </Create>
@@ -115,7 +116,7 @@ const FormEntry = () => {
             <DotProperty value="toArray" hl/> give you an array version of your
             inputs.
         </p>
-        <Code>
+        <Code copyText={FORM_CODE.TO_ARRAY}>
             <Create close form>
                 ...
             </Create>
@@ -128,7 +129,7 @@ const FormEntry = () => {
             <DotProperty value="toObject" hl/> give you an object version of your
             inputs. If you defined ids in your inputs, they are used as first keys otherwise, we generate random ids
         </p>
-        <Code>
+        <Code copyText={FORM_CODE.TO_OBJECT}>
             <Create close form>
                 ...
             </Create>

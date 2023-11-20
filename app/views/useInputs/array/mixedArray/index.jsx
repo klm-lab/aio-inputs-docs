@@ -4,9 +4,10 @@ import StringKey from "../../../../components/codeComponents/stringKey";
 import Bracket from "../../../../components/codeComponents/bracket";
 import Create from "../../../../components/codeComponents/create";
 import CommonArrayObject, {CommonProp} from "../../../../components/commonArrayObject";
+import {USE_INPUTS_CODE} from "../../../../code";
 
-const CommonArrayInput = ({children}) => {
-    return <Code>
+const CommonArrayInput = ({children,copyText}) => {
+    return <Code copyText={copyText}>
         <Create array close>
             <Bracket>
                 <KeyValue objKey="name" value='"age",'/>
@@ -38,10 +39,13 @@ const MixedArray = () => {
             and type number, Name and Firstname with no validation.<br/>
             We will use object for age input and string for others.
         </p>
-        <CommonArrayInput>
+        <CommonArrayInput copyText={USE_INPUTS_CODE.CREATE_ARRAY_MIX}>
             <CommonProp value={18} validation="min"/>
         </CommonArrayInput>
         <CommonArrayObject
+            inlineText={USE_INPUTS_CODE.INPUT_ARRAY_LINE}
+            copyGenText={USE_INPUTS_CODE.CREATE_ARRAY_MIX_GEN_MESSAGE}
+            copySpecText={USE_INPUTS_CODE.CREATE_ARRAY_MIX_SPEC_MESSAGE}
             Component={CommonArrayInput}
             value={18}
             name="age"

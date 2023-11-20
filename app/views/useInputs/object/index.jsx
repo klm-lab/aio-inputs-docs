@@ -14,6 +14,7 @@ import Create from "../../../components/codeComponents/create";
 import MapInputs from "../../../components/codeComponents/mapInputs";
 import DotProperty from "../../../components/codeComponents/dotProperty";
 import AppLink from "../../../components/appLink";
+import {USE_INPUTS_CODE} from "../../../code";
 
 const {USE_INPUTS, FORM, PROPERTIES} = routes
 
@@ -41,7 +42,7 @@ const ObjectEntry = () => {
             For example, you want the <span className="hl">name, and gender</span> of a user.<br/>
             Call <span className="definition">useInputs</span> like this.
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.CREATE_OBJECT}>
             <Create close form>
                 <Bracket>
                     <KeyValue objKey="name" value="{},"/>
@@ -62,7 +63,7 @@ const ObjectEntry = () => {
                                                          to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label match every first key.
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.OBJECT_PROPERTIES}>
             <Bracket>
                 {["name", "gender"].map(s => {
                     return <KeyValue directValue={false} key={s} objKey={s} value={
@@ -82,13 +83,13 @@ const ObjectEntry = () => {
                                                              to={FORM.ROOT + FORM.MAP}>MORE DETAILS</AppLink>
             </li>
         </ul>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.BIND_FORM}>
             <MapInputs name="form"/>
         </Code>
         <ul className="extra">
             <li>With destructuring</li>
         </ul>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.DESTRUCTURING}>
             <div className="codeLine">
                 <span className="keyword">const</span>
                 <ChildBracket inline stop={false}>

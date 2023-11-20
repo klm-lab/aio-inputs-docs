@@ -8,6 +8,7 @@ import KeyValue, {ChildBracket} from "../../components/codeComponents/keyValue";
 import DotProperty from "../../components/codeComponents/dotProperty";
 import CallDefinition from "../../components/codeComponents/callDefinition";
 import AppLink from "../../components/appLink";
+import {CONFIG_CODE} from "../../code";
 
 const {
     CONFIG: {ASYNC_DELAY, PERSIST_ID, TRACK_ID},
@@ -38,7 +39,7 @@ const ConfigEntry = () => {
             The default value on inputs creation is <span className="hl">800ms</span>.
             You can change <span className="hl oKey">asyncDelay</span> by passing its value in a config file as
             second argument of <CallDefinition hl name="useInputs"/>.</p>
-        <Code>
+        <Code copyText={CONFIG_CODE.ASYNC_DELAY}>
             <Create close form>
                 yourInputs <span>,</span>
                 <ChildBracket inline stop={false} noIndent>
@@ -53,7 +54,7 @@ const ConfigEntry = () => {
             You can persist data on component unmount with a persistID.
             <span className="hl oKey">persistID</span> must be a unique ID throughout your application,
             and must not change during the component's lifetime.</p>
-        <Code>
+        <Code copyText={CONFIG_CODE.PERSIST_ID}>
             <Create close form>
                 yourInputs <span>,</span>
                 <ChildBracket inline stop={false} noIndent>
@@ -69,7 +70,7 @@ const ConfigEntry = () => {
             You can also access your inputs data outside a component. For that, you need
             to setup a tracking tool and add corresponding ID to your inputs.
             An example of a <span className="hl oKey">trackID</span>.</p>
-        <Code>
+        <Code copyText={CONFIG_CODE.TRACK_ID}>
             <Create close form>
                 yourInputs <span>,</span>
                 <ChildBracket inline stop={false} noIndent>

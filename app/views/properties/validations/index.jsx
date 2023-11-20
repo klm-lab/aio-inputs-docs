@@ -6,14 +6,15 @@ import Bracket from "../../../components/codeComponents/bracket";
 import KeyValue, {ChildBracket} from "../../../components/codeComponents/keyValue";
 import {CommonSyntax} from "../inputs";
 import Create, {ArrayParams, TopComment} from "../../../components/codeComponents/create";
+import {PROPERTIES_CODE} from "../../../code";
 
 const {
     PROPERTIES: {INPUTS, ROOT},
 } = routes;
 
 
-const CustomCode = ({async}) => {
-    return <Code>
+const CustomCode = ({async,copyText}) => {
+    return <Code copyText={copyText}>
         <Bracket>
             <KeyValue objKey="validation" directValue={false} value={
                 <ChildBracket>
@@ -77,7 +78,7 @@ const ValidationsProperties = () => {
             <li><CallDefinition name="custom" hl/> a synchronous validation function. It accepts two arguments.
                 The first argument is the value entered by the user and the second is a method for updating the error
                 message. It have to return a <span className="hl">boolean</span>
-                <CustomCode/>
+                <CustomCode copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM()}/>
             </li>
             <li><CallDefinition name="asyncCustom" hl/> an asynchronous validation function. Works like the custom
                 one but have to return a <span className="hl">
@@ -86,11 +87,11 @@ const ValidationsProperties = () => {
                 <span className="no-indent keyword">boolean</span>
                 <span className="no-indent">{">"}</span>
                 </span>
-                <CustomCode async/>
+                <CustomCode async copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM(true)}/>
             </li>
             <li><CallProperty name="copy" hl/> copy validations from another input. It accepts a <span
                 className="hl">string (INPUT ID)</span> or an object which let you omit the validation you don't want
-                <Code>
+                <Code copyText={PROPERTIES_CODE.COPY}>
                     <Create close array>
                         <div className="codeLine">
                             <ChildBracket>
@@ -119,7 +120,7 @@ const ValidationsProperties = () => {
                     </Create>
                 </Code>
                 And if you want to omit for example <CallProperty name="maxLength" hl/>
-                <Code>
+                <Code copyText={PROPERTIES_CODE.OMIT}>
                     <div className="codeLine">
                         <ChildBracket>
                             <KeyValue objKey="name" value={`"firstname",`}/>

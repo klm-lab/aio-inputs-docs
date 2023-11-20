@@ -12,14 +12,15 @@ import KeyValue, {ChildBracket} from "../../../components/codeComponents/keyValu
 import AppLink from "../../../components/appLink";
 import DotProperty from "../../../components/codeComponents/dotProperty";
 import Box from "../../../components/box";
+import {PROPERTIES_CODE} from "../../../code";
 
 const {
     PROPERTIES: {VALIDATIONS, ROOT},
     TRACK, FORM
 } = routes;
 
-const CommonInit = ({children, comment, value}) => {
-    return <Code>
+const CommonInit = ({children, comment, value, copyText}) => {
+    return <Code copyText={copyText}>
         <TopComment comment={comment}/>
         <div className="codeLine">
             <DotProperty ponctuation value={"forEach"} noCall={false} params={
@@ -112,13 +113,13 @@ const InputsProperties = () => {
                 Accept InputEvent or customValue <LockIcon/></li>
             <li><CallDefinition name="init" hl/> a method to load value to
                 your inputs for an edit. Accept any type of value except for files <UnlockIcon/>
-                <CommonInit comment="Without file input" value="MY_VALUE"/>
+                <CommonInit copyText={PROPERTIES_CODE.INIT} comment="Without file input" value="MY_VALUE"/>
                 Inputs of type file value need to be a string url <span className="hl">https://....jpg</span> or an
                 array of string
                 url <span className="hl">[https://....jpg, https://....png]</span><br/>
                 When you load data for input type file, you can add an optional function which let you retrieve a blob.
                 This function should take an url as param
-                <CommonInit comment="With file input" value="MY_URL_OR_MY_ARRAY_OF_URL">
+                <CommonInit copyText={PROPERTIES_CODE.INIT_FILES} comment="With file input" value="MY_URL_OR_MY_ARRAY_OF_URL">
                     <span>,</span>
                     <ChildBracket inline stop={false} noIndent>
                         <KeyValue objKey="getBlob" directValue={false} value={

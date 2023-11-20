@@ -3,6 +3,7 @@ import Line from "../../components/line";
 import PageButton from "../../components/pageButton";
 import {routes} from "../../util/constants";
 import ImportStatement from "../../components/codeComponents/importStatement";
+import {GET_STARTED_CODE} from "../../code";
 
 const Index = () => {
 
@@ -21,7 +22,7 @@ const Index = () => {
         <h2 className="subTitle">
             Install with npm
         </h2>
-        <Code>
+        <Code copyText={GET_STARTED_CODE.NPM}>
             <div className="codeLine">
                 <span className="keyword">npm</span>
                 <span>i</span>
@@ -31,7 +32,7 @@ const Index = () => {
         <h2 className="subTitle">
             Install with yarn
         </h2>
-        <Code>
+        <Code copyText={GET_STARTED_CODE.YARN}>
             <div className="codeLine">
                 <span className="keyword">yarn</span>
                 <span>add</span>
