@@ -34,15 +34,17 @@ export const setThemeInDom = (isDark) => {
     }
 }
 
-export const copyToClipboard = (element) => {
-    if (!navigator.clipboard) {
-        const range = document.createRange();
-        range.selectNodeContents(element);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        document.execCommand("copy");
-        selection.removeAllRanges()
-    }
-    navigator.clipboard.writeText(element.innerText.toString())
+export const copyToClipboard = (text) => {
+    // element.contentEditable = true;
+    // element.readOnly = false;
+    // if (!navigator.clipboard) {
+    //     const range = document.createRange();
+    //     range.selectNodeContents(element);
+    //     const selection = window.getSelection();
+    //     selection.removeAllRanges();
+    //     selection.addRange(range);
+    //     document.execCommand("copy");
+    //     selection.removeAllRanges()
+    // }
+    navigator.clipboard.writeText(text)
 }

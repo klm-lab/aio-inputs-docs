@@ -1,6 +1,7 @@
 import Code from "../../code";
+import {GET_STARTED_CODE} from "../../../code";
 
-const ImportStatement = ({title = "Import", name = "useInputs"}) => {
+const ImportStatement = ({title = "Import", name = "useInputs", copyText = GET_STARTED_CODE.IMPORT }) => {
     return <>
         <h2 className="subTitle">
             {title}
@@ -9,7 +10,7 @@ const ImportStatement = ({title = "Import", name = "useInputs"}) => {
             Import <span className="definition">{name}</span> from <span
             className="package">aio-inputs</span> package
         </p>
-        <Code>
+        <Code copyText={copyText}>
             <div className="codeLine">
                 <span className="keyword">import</span>
                 <span>{"{"}</span>

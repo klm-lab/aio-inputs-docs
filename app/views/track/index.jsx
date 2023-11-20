@@ -9,6 +9,7 @@ import {routes} from "../../util/constants";
 import ImportStatement from "../../components/codeComponents/importStatement";
 import CallDefinition from "../../components/codeComponents/callDefinition";
 import AppLink from "../../components/appLink";
+import {TRACK_CODE} from "../../code";
 
 const {
     CONFIG,
@@ -26,7 +27,7 @@ const Usage = ({name}) => {
         <ul className="extra">
             <li>For each tracked input <span className="hl oKey">INPUT_ONE, INPUT_TWO and MY_ID</span></li>
         </ul>
-        <Code>
+        <Code copyText={TRACK_CODE.USE_TRACK(name)}>
             {BIND.map(b => {
                 return <span key={b.comment}>
                     <TopComment comment={`For ${b.value}`} space={b.space}/>
@@ -43,7 +44,7 @@ const Usage = ({name}) => {
             <p className="description">Use this with caution. Make sure inputs name across your tracked inputs are
                 different from each other.</p>
         </ul>
-        <Code>
+        <Code copyText={TRACK_CODE.USE_TRACK_G(name)}>
             <TopComment comment="For All inputs"/>
             <div className="codeLine">
                 <DotProperty name="trackingTool" value={name}/>
@@ -64,7 +65,7 @@ const TrackEntry = () => {
         </AppLink> and has his own <CallDefinition name="length" hl/> method.
         </p>
         <Line/>
-        <ImportStatement title="Tracking tool" name={"trackInputs"}/>
+        <ImportStatement copyText={TRACK_CODE.IMPORT}  title="Tracking tool" name={"trackInputs"}/>
         <h3 className="subTitle-3">
             Create your tracking tool
         </h3>
@@ -72,7 +73,7 @@ const TrackEntry = () => {
             It takes an array of id as arguments. They don't need to be unique. You can create in top of your component
             or in any external file. It doesn't matter.
         </p>
-        <Code>
+        <Code copyText={TRACK_CODE.CREATE}>
             <Create close oneConst="trackingTool" imported="trackInputs" array>
                 <ArrayParams params={["INPUT_ONE", "INPUT_TWO", "MY_ID"]}/>
             </Create>
@@ -83,7 +84,7 @@ const TrackEntry = () => {
         <p className="description">
             Add accordingly the <span className="hl oKey">trackID</span> property on inputs you want to track.
         </p>
-        <Code>
+        <Code copyText={TRACK_CODE.TRACKING}>
             {BIND.map(b => {
                 return <span key={b.comment}>
                     <TopComment comment={b.comment} space={b.space}/>
@@ -130,7 +131,7 @@ const TrackEntry = () => {
             <DotProperty name="trackingTool" value="length" hl/> get the length of your all tracked inputs.
             For each tracked inputs the length is a property not a method (Function).
         </p>
-        <Code>
+        <Code copyText={TRACK_CODE.LENGTH}>
             <TopComment comment="Each input"/>
             <div className="codeLine">
                 <DotProperty name="trackingTool" value={

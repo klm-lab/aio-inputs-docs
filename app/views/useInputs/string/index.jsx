@@ -10,6 +10,7 @@ import Bracket from "../../../components/codeComponents/bracket";
 import Create from "../../../components/codeComponents/create";
 import DotProperty from "../../../components/codeComponents/dotProperty";
 import AppLink from "../../../components/appLink";
+import {USE_INPUTS_CODE} from "../../../code";
 
 const {ROOT, USE_INPUTS, PROPERTIES} = routes;
 
@@ -37,7 +38,7 @@ const String = () => {
             Call <span className="definition">useInputs</span> with the name you want.
             For example, you want the <span className="hl">phoneNumber</span> of a user.
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.CREATE_STRING}>
             <Create close multiple={false}/>
         </Code>
 
@@ -47,7 +48,7 @@ const String = () => {
                                                  to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label is the value of your string.
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.PROPERTIES}>
             <Bracket>
                 <ReadyToUse keys={getInputsKey('"phoneNumber",')}/>
             </Bracket>
@@ -55,7 +56,7 @@ const String = () => {
         <p className="description">
             Now bind <span className="hl">myInput</span>, to an input element
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.BIND}>
             <InputLine name={"myInput"}/>
         </Code>
         <p className="description">

@@ -1,30 +1,32 @@
 import CopyIcon from "../../assets/icon/CopyIcon";
-import {useCallback, useRef, useState} from "react";
+import {useCallback, useState} from "react";
 import {copyToClipboard} from "../../util";
 
-const Code = ({children}) => {
+const Code = ({children, copyText}) => {
 
-    const copyRef = useRef(null);
+    // const copyRef = useRef(null);
 
     const [show, setShow] = useState(false);
 
     const copy = useCallback(() => {
+        // copyRef.current.innerText = `${copyText}`
         setShow(true)
         setTimeout(() => {
             setShow(false)
         }, 1000)
-        copyToClipboard(copyRef.current)
-    }, [copyRef])
+        copyToClipboard(copyText)
+    }, [copyText])
 
     return <div className="s-c">
+        {/*<textarea className="inv" ref={copyRef}/>*/}
         <div className="flexCenterSpace codeWrapper">
-            <div ref={copyRef} className="flexCenter code">
+            <div className="flexCenter code">
                 {children}
             </div>
-            <div onClick={copy} className="copy">
+            {copyText && <div onClick={copy} className="copy">
                 <CopyIcon/>
                 <span className={`copied ${show ? "show-copy" : ""}`}>Copied</span>
-            </div>
+            </div>}
         </div>
     </div>
 }

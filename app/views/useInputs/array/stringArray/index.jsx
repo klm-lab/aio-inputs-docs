@@ -7,6 +7,7 @@ import Create, {ArrayParams} from "../../../../components/codeComponents/create"
 import MapInputs from "../../../../components/codeComponents/mapInputs";
 import DotProperty from "../../../../components/codeComponents/dotProperty";
 import AppLink from "../../../../components/appLink";
+import {USE_INPUTS_CODE} from "../../../../code";
 
 const {PROPERTIES} = routes;
 
@@ -19,7 +20,7 @@ const StringArray = () => {
             Call <span className="definition">useInputs</span> with an array of string.
             For example, you want the <span className="hl">name, phoneNumber, and gender</span> of a user
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.CREATE_ARRAY_STRING}>
             <Create close array>
                 <ArrayParams params={["name","phoneNumber","gender"]}/>
             </Create>
@@ -30,7 +31,7 @@ const StringArray = () => {
             properties and <AppLink aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label match the array of string value.
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.ARRAY_PROPERTIES}>
             <div className="codeLine">
                 <span>[</span>
                 <span>{"{"}</span>
@@ -46,7 +47,7 @@ const StringArray = () => {
         <p className="description">
             Now bind <span className="hl">myInputs</span>, to some input element
         </p>
-        <Code>
+        <Code copyText={USE_INPUTS_CODE.ARRAY_BIND}>
             <MapInputs/>
         </Code>
         <p className="description">
