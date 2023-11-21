@@ -18,7 +18,7 @@
     "@remix-run/netlify": "^1.19.0",
     "@remix-run/node": "^1.19.0",
     "@remix-run/react": "^1.19.0",
-    "aio-inputs": "^2.0.8",
+    "aio-inputs": "^2.0.9",
     "aio-store": "^2.4.4",
     "cross-env": "^7.0.3",
     "isbot": "^3.6.8",

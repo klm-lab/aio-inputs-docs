@@ -8,6 +8,7 @@ export const routes = {
     },
     FORM: {
         ROOT: "/form",
+        ON_SUBMIT: "#onSubmit",
         GET_VALUES: "#getValues",
         RESET: "#reset",
         FOR_EACH: "#forEach",
@@ -18,6 +19,7 @@ export const routes = {
     },
     CONFIG: {
         ROOT: "/config",
+        LOCK_VALUES_ON_ERROR: "#lockValuesOnError",
         ASYNC_DELAY: "#asyncDelay",
         PERSIST_ID: "#persitID",
         TRACK_ID: "#trackID"

@@ -1,4 +1,4 @@
-import {Link, useLocation} from "@remix-run/react";
+import {useLocation} from "@remix-run/react";
 import {addClasses} from "../../../util";
 import {useCallback, useEffect, useState} from "react";
 import {appStore} from "../../../store";
@@ -71,8 +71,8 @@ const SidebarCategory = ({routesKeys, routes}) => {
                 return routes[l] !== ROOT &&
                     <li key={route}>
                         <AppLink aria-label={"To navigate to the path " + route}
-                              className={addClasses("flexCenter item", routes[l] === r ? "active" : "")}
-                              onClick={closeSideBar} to={route}>
+                                 className={addClasses("flexCenter item", routes[l] === r ? "active" : "")}
+                                 onClick={closeSideBar} to={route}>
                             {routes[l].replace(/(#)|\//, "")}
                         </AppLink>
                     </li>

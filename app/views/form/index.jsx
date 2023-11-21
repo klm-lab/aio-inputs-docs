@@ -13,7 +13,7 @@ import {FORM_CODE} from "../../code";
 
 const {
     FORM: {
-        GET_VALUES, RESET,
+        GET_VALUES, RESET, ON_SUBMIT,
         FOR_EACH, MAP, LENGTH, TO_ARRAY, TO_OBJECT
     }, TRACK, CONFIG, USE_INPUTS
 } = routes
@@ -21,13 +21,18 @@ const {
 const FormEntry = () => {
 
     return <div className="data">
-        <h1 id={getAnchor(GET_VALUES)} className="title smt">Form</h1>
+        <h1 id={getAnchor(ON_SUBMIT)} className="title smt">Form</h1>
         <p className="description">
             The form object is immutable. It will never change once created. You can safely use it in useEffect.
             It gives you access to these properties / method :
         </p>
         <ul className="extra item-space">
-            <li><CallDefinition name="getValues" hl/> a method to return your inputs values.</li>
+            <li><CallDefinition name="onSubmit" hl/> prevent the default behaviour of a <span
+                className="hl">{"<form>...</form>"}</span> HTML element .
+            </li>
+            <li><CallDefinition name="getValues" hl/> a method to return your inputs values. Return <span className="hl">null</span> if <AppLink aria-label="Navigate to lockValuesOnError config" to={CONFIG.ROOT + CONFIG.LOCK_VALUES_ON_ERROR}
+            className="link">LOCK VALUES ON ERROR</AppLink> is
+            set to true</li>
             <li><CallDefinition name="reset" hl/> a method to reset a form.</li>
             <li><CallDefinition name="forEach" hl/> a method to loop through each input.</li>
             <li><CallDefinition name="map" hl/> a method loop through each input with return capabilities.</li>
@@ -37,6 +42,30 @@ const FormEntry = () => {
         </ul>
         <Line/>
         <h2 className="subTitle">
+            On submit
+        </h2>
+        <p className="description">
+            Help you prevent the default behaviour of a <span className="hl">{"<form>...</form>"}</span> HTML element
+        </p>
+        <Code copyText={FORM_CODE.ON_SUBMIT}>
+            <Create close form>
+                ...
+            </Create>
+            <div className="codeLine mt-1">
+                <span className="package">{"<form"}</span>
+                <span className="definition no-indent">onSubmit</span>
+                <span className="no-indent">={"{"}</span>
+                <DotProperty name="form" value="onSubmit" noCall/>
+                <span className="no-indent">{"}"}</span>
+            </div>
+            <div className="codeLine">
+                <div className="codeLine">...</div>
+            </div>
+            <div className="codeLine">
+                <span className="package">{"</form>"}</span>
+            </div>
+        </Code>
+        <h2 id={getAnchor(GET_VALUES)} className="subTitle smt">
             Get your Values
         </h2>
         <p className="description">

@@ -4,12 +4,9 @@ import {copyToClipboard} from "../../util";
 
 const Code = ({children, copyText}) => {
 
-    // const copyRef = useRef(null);
-
     const [show, setShow] = useState(false);
 
     const copy = useCallback(() => {
-        // copyRef.current.innerText = `${copyText}`
         setShow(true)
         setTimeout(() => {
             setShow(false)
@@ -18,7 +15,6 @@ const Code = ({children, copyText}) => {
     }, [copyText])
 
     return <div className="s-c">
-        {/*<textarea className="inv" ref={copyRef}/>*/}
         <div className="flexCenterSpace codeWrapper">
             <div className="flexCenter code">
                 {children}
