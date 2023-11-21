@@ -42,6 +42,11 @@ export const GET_STARTED_CODE = {
 
 export const USE_INPUTS_CODE = {
     CREATE_STRING: `const [myInput] = useInputs("phoneNumber")`,
+    VALIDITY: `// all inputs
+yourInputs.isValid
+
+// Each input
+eachInput.valid`,
     PROPERTIES: `{
     key: "some unique key",
     tid: "phoneNumber",
@@ -125,6 +130,11 @@ return <>
 const FORM_C = `const [myInputs, form] = useInputs(...)`
 
 export const FORM_CODE = {
+    ON_SUBMIT: `${FORM_C}
+
+<form onSubmit={form.onSubmit}
+...
+</form>`,
     GET_VALUES: `${FORM_C}
 
 // Get your values
@@ -158,6 +168,9 @@ console.log(form.toArray())`,
 const CONFIG_C = `const [myInputs, form] = useInputs(yourInputs ,{`;
 
 export const CONFIG_CODE = {
+    LOCK_VALUES_ON_ERROR: `${CONFIG_C}
+    lockValuesOnError: true
+})`,
     ASYNC_DELAY: `${CONFIG_C}
     asyncDelay: 800 // The type is number
 })`,

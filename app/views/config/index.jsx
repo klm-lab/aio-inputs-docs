@@ -11,26 +11,48 @@ import AppLink from "../../components/appLink";
 import {CONFIG_CODE} from "../../code";
 
 const {
-    CONFIG: {ASYNC_DELAY, PERSIST_ID, TRACK_ID},
+    CONFIG: {ASYNC_DELAY, PERSIST_ID, TRACK_ID,LOCK_VALUES_ON_ERROR},
     TRACK, FORM
 } = routes
 
 const ConfigEntry = () => {
 
     return <div className="data">
-        <h1 id={getAnchor(ASYNC_DELAY)} className="title smt">Config</h1>
+        <h1 id={getAnchor(LOCK_VALUES_ON_ERROR)} className="title smt">Config</h1>
         <p className="description">
             This an optional configuration file to change the behaviour of <span
             className="package hl">aio-inputs</span>. you can config these properties:
         </p>
         <ul className="extra item-space">
-            <li><span className="oKey hl">asyncDelay</span> asynchronous validation waiting time when user stops typing.
+            <li><span className="oKey hl">lockValuesOnError</span> if set to
+                true, <AppLink
+                    aria-label="Navigate to get values method"
+                    to={FORM.ROOT + FORM.GET_VALUES}
+                    className="link">GET VALUES</AppLink> returns null.
             </li>
+            <li><span className="oKey hl">asyncDelay</span> asynchronous validation waiting time when user stops typing.</li>
             <li><span className="oKey hl">persistID</span> persist data on component unmount with this ID.</li>
             <li><span className="oKey hl">trackID</span> access your inputs outside a component with this ID.</li>
         </ul>
         <Line/>
         <h2 className="subTitle">
+            Lock values on error
+        </h2>
+        <p className="description">
+            Use <span className="hl oKey">lockValuesOnError</span> to
+            make <AppLink
+                aria-label="Navigate to get values method"
+                to={FORM.ROOT + FORM.GET_VALUES}
+                className="link">GET VALUES</AppLink> return nulls when all your inputs are invalid.</p>
+        <Code copyText={CONFIG_CODE.LOCK_VALUES_ON_ERROR}>
+            <Create close form>
+                yourInputs <span>,</span>
+                <ChildBracket inline stop={false} noIndent>
+                    <KeyValue objKey="lockValuesOnError" value="true"/>
+                </ChildBracket>
+            </Create>
+        </Code>
+        <h2 id={getAnchor(ASYNC_DELAY)} className="subTitle smt">
             Async delay
         </h2>
         <p className="description">
