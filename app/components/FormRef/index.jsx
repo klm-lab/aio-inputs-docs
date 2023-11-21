@@ -2,7 +2,7 @@ import {routes} from "../../util/constants";
 import AppLink from "../appLink";
 import Code from "../code";
 import {USE_INPUTS_CODE} from "../../code";
-import Create, {TopComment} from "../codeComponents/create";
+import {TopComment} from "../codeComponents/create";
 import DotProperty from "../codeComponents/dotProperty";
 
 const {ROOT, RESET, GET_VALUES} = routes.FORM

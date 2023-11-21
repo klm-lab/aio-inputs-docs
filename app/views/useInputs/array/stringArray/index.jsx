@@ -1,5 +1,4 @@
 import Code from "../../../../components/code";
-import {Link} from "@remix-run/react";
 import {getInputsKey, routes} from "../../../../util/constants";
 import ReadyToUse from "../../../../components/codeComponents/readyToUse";
 import FormRef from "../../../../components/FormRef";
@@ -22,13 +21,14 @@ const StringArray = () => {
         </p>
         <Code copyText={USE_INPUTS_CODE.CREATE_ARRAY_STRING}>
             <Create close array>
-                <ArrayParams params={["name","phoneNumber","gender"]}/>
+                <ArrayParams params={["name", "phoneNumber", "gender"]}/>
             </Create>
         </Code>
 
         <p className="description">
             If you log <span className="hl">myInputs</span>, you'll see an array of these related ready-to-use
-            properties and <AppLink aria-label={"To show all inputs properties"} className="link" to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
+            properties and <AppLink aria-label={"To show all inputs properties"} className="link"
+                                    to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
             The name, id and label match the array of string value.
         </p>
         <Code copyText={USE_INPUTS_CODE.ARRAY_PROPERTIES}>
