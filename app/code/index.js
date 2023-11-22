@@ -24,7 +24,7 @@ const OBJECT_MIX = (gen, spec) => `const [myInputs, form] = useInputs(
 )`
 
 
-const MAP_LINE = (value) => `return ${value}.map(ip => <inputkey={ip.key} value={ip.value} onChange={ip.onChange} />)`
+const MAP_LINE = (value) => `return ${value}.map(ip => <input key={ip.key} value={ip.value} onChange={ip.onChange} />)`
 
 const IN_LINE = (value) => `return ${value}.map(ip => {
     return <div key={ip.key}>

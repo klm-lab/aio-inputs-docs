@@ -35,16 +35,42 @@ export const routes = {
         INPUTS: "/inputs",
         VALIDATIONS: "/validations"
     },
+    EXAMPLES: {
+        ROOT: "/examples",
+        TEXT: "/text",
+        PASSWORD: "/password",
+        RADIO: "/radio",
+        CHECKBOX: "/checkbox",
+        SELECT: "/select",
+        FILE: "/file",
+        EDIT: "/edit"
+    }
 }
 
 export const GITHUB_LINK = "https://github.com/klm-lab/inputs";
 export const SITE_URL = "https://aio-inputs.netlify.app"
-export const SITE_IMAGE = SITE_URL + "/site_image.png"
-export const CREATOR = "@klm-lab"
-export const CARD = "summary_large_image";
-export const SITE_NAME = "Aio-inputs";
+// export const CARD = "summary_large_image";
 
-export const KEYWORDS = "react, inputs, state, store, immutable, fast, best, manage, management, hook, redux, inputs, aio-inputs, npm, track, validations, validate, input, useInputs, config, persist, reset, submit"
+export const getMeta = (title, description, url) => [
+    {
+        name: "keywords",
+        content: "react, inputs, state, store, immutable, fast, best, manage, management, hook, redux, inputs, aio-inputs, npm, track, validations, validate, input, useInputs, config, persist, reset, submit"
+    },
+    {title: title},
+    {name: "description", content: description},
+    {name: "og:type", content: "website"},
+    {name: "og:title", content: title},
+    {name: "og:description", content: description},
+    {name: "og:url", content: url ? SITE_URL + url : SITE_URL},
+    {name: "og:image", content: SITE_URL + "/site_image.png"},
+    {name: "og:site_name", content: "Aio-inputs"},
+    {name: "twitter:title", content: title},
+    {name: "twitter:description", content: description},
+    {name: "twitter:url", content: url ? SITE_URL + url : SITE_URL},
+    {name: "twitter:image", content: SITE_URL + "/site_image.png"},
+    {name: "twitter:creator", content: "@klm-lab"},
+    // {name: "twitter:card", content: CARD},
+]
 
 export const getInputsKey = (value) => [
     {key: "key", value: '"some unique key",'},
@@ -59,4 +85,28 @@ export const getInputsKey = (value) => [
 
 
 export const IS_DARK = "isDark";
-export const DARK_SCHEME = '(prefers-color-scheme: dark)'
+export const DARK_SCHEME = '(prefers-color-scheme: dark)';
+
+export const SINGLE_INPUT_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-gbcivq?ctl=1&embed=1&file=src%2Fstring.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-ufgt47?ctl=1&embed=1&file=src%2Fstring.js&hideExplorer=1&hideNavigation=1"
+}
+export const ARRAY_STRING_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-fymkce?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const ARRAY_VALID_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-jrc1wc?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const ARRAY_VALID_ERROR_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-csnuxy?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const PASSWORD_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-wgmyr8?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
