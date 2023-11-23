@@ -11,7 +11,7 @@ import {CommonSyntax} from "./properties.inputs._index";
 
 
 const {
-    PROPERTIES: {VALIDATIONS, ROOT, INPUTS},
+    PROPERTIES: {VALIDATIONS, ROOT, INPUTS},EXAMPLES
 } = routes;
 
 export const meta = () => {
@@ -156,6 +156,7 @@ export const Properties = () => {
         </ul>
         <div className="foot">
             <PageButton to={ROOT + INPUTS} prev/>
+            <PageButton to={EXAMPLES.ROOT + EXAMPLES.TEXT}/>
         </div>
     </div>
 }

@@ -1,4 +1,5 @@
-import {getMeta, routes} from "../util/constants";
+import {CHECKBOX_LINK, CHECKBOX_LINK_VALID, getMeta, routes} from "../util/constants";
+import CheckboxAndRadio from "../views/checkboxAndRadio";
 
 export const meta = () => {
 
@@ -8,11 +9,18 @@ export const meta = () => {
         , ROOT);
 };
 
-const {EXAMPLES: {ROOT, RADIO}, PROPERTIES} = routes
+const {EXAMPLES: {ROOT, RADIO, SELECT}} = routes
 
-export const TextExamples = () => {
+export const CheckboxExamples = () => {
 
-    return "checkbox"
+    return <CheckboxAndRadio
+        name="checkbox"
+        link={CHECKBOX_LINK}
+        validLink={CHECKBOX_LINK_VALID}
+        nextName="select"
+        prevLink={ROOT + RADIO}
+        nextLink={ROOT + SELECT}
+    />
 }
 
-export default TextExamples
+export default CheckboxExamples

@@ -10,20 +10,21 @@ export const meta = () => {
         , ROOT);
 };
 
-const {EXAMPLES: {ROOT, RADIO}, PROPERTIES} = routes
+const {EXAMPLES: {ROOT, RADIO,TEXT}} = routes
 
 export const PasswordExamples = () => {
 
     return <div className="data">
-        <h2 className="subTitle">
+        <h1 className="title">
             Password example
-        </h2>
-        <Iframe height={400} title="A single input with no validation" src={PASSWORD_LINK}/>
+        </h1>
+        <p className="description">Common use case when dealing with password</p>
+        <Iframe height={600} title="Password example" src={PASSWORD_LINK}/>
         <p className="description">
             Hit next for type radio examples with aio-inputs
         </p>
         <div className="foot">
-            <PageButton to={PROPERTIES.ROOT + PROPERTIES.INPUTS} prev/>
+            <PageButton to={ROOT + TEXT} prev/>
             <PageButton to={ROOT + RADIO}/>
         </div>
     </div>

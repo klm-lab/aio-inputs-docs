@@ -5,7 +5,7 @@ import {addClasses} from "../../util";
 
 const Iframe = ({src, title,height}) => {
 
-    const [active, setActive] = useState("js");
+    const [active, setActive] = useState("ts");
     const [opacity, setOpacity] = useState(0);
 
     const activate = useCallback((tab) => {
@@ -24,14 +24,18 @@ const Iframe = ({src, title,height}) => {
                 <Javascript/> Javascript
             </div>
         </div>
-        <iframe style={{
-            opacity,
-            height: `${height}px`
-        }} onLoad={() => {
-            setOpacity(1)
-        }} title={title} loading="lazy"
-                src={src[active]}
-        />
+        <div className="frame">
+            {!opacity && <div className="blur">
+                <div className="wait"/>
+            </div> }
+            <iframe style={{
+                height: `${height}px`
+            }} onLoad={() => {
+                setOpacity(1)
+            }} title={title} loading="lazy"
+                    src={src[active]}
+            />
+        </div>
     </div>
 }
 
