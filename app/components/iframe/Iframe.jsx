@@ -5,7 +5,7 @@ import {addClasses} from "../../util";
 
 const Iframe = ({src, title,height}) => {
 
-    const [active, setActive] = useState("js");
+    const [active, setActive] = useState("ts");
     const [opacity, setOpacity] = useState(0);
 
     const activate = useCallback((tab) => {

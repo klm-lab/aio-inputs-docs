@@ -97,16 +97,33 @@ export const ARRAY_STRING_LINK = {
 }
 
 export const ARRAY_VALID_LINK = {
-    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    ts: "https://stackblitz.com/edit/stackblitz-starters-kmslym?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
     js: "https://stackblitz.com/edit/stackblitz-starters-jrc1wc?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
 }
 
 export const ARRAY_VALID_ERROR_LINK = {
-    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    ts: "https://stackblitz.com/edit/stackblitz-starters-mqylls?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
     js: "https://stackblitz.com/edit/stackblitz-starters-csnuxy?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
 }
 
 export const PASSWORD_LINK = {
-    ts: "https://stackblitz.com/edit/stackblitz-starters-skbsdt?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    ts: "https://stackblitz.com/edit/stackblitz-starters-aj7g6c?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
     js: "https://stackblitz.com/edit/stackblitz-starters-wgmyr8?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const RADIO_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-kdxktp?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-3xihqf?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const RADIO_LINK_VALID = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-p9z69f?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-xhnvtp?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const CHECKBOX_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-xe7txh?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-3mm1fv?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const CHECKBOX_LINK_VALID = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-jedpx2?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-a9qwh7?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
 }
