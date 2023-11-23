@@ -73,6 +73,7 @@ export const getMeta = (title, description, url) => [
 ]
 
 export const getInputsKey = (value) => [
+    {key: "props", value: '// id, value, onChange etc...,'},
     {key: "key", value: '"some unique key",'},
     {key: "id", value: value},
     {key: "name", value: value},

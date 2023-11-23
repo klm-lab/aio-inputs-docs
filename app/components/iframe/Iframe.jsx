@@ -24,14 +24,18 @@ const Iframe = ({src, title,height}) => {
                 <Javascript/> Javascript
             </div>
         </div>
-        <iframe style={{
-            opacity,
-            height: `${height}px`
-        }} onLoad={() => {
-            setOpacity(1)
-        }} title={title} loading="lazy"
-                src={src[active]}
-        />
+        <div className="frame">
+            {!opacity && <div className="blur">
+                <div className="wait"/>
+            </div> }
+            <iframe style={{
+                height: `${height}px`
+            }} onLoad={() => {
+                setOpacity(1)
+            }} title={title} loading="lazy"
+                    src={src[active]}
+            />
+        </div>
     </div>
 }
 
