@@ -6,10 +6,10 @@ export const meta = () => {
     return getMeta(
         "Use Inputs type checkbox examples, documentation for react aio-inputs",
         "input type checkbox examples, fast and powerful library inputs state management for react."
-        , ROOT);
+        , ROOT + CHECKBOX);
 };
 
-const {EXAMPLES: {ROOT, RADIO, SELECT}} = routes
+const {EXAMPLES: {ROOT, RADIO, SELECT, CHECKBOX}} = routes
 
 export const CheckboxExamples = () => {
 

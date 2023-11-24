@@ -3,7 +3,7 @@ import Javascript from "../../assets/icon/Javascript";
 import {useCallback, useState} from "react";
 import {addClasses} from "../../util";
 
-const Iframe = ({src, title,height}) => {
+const Iframe = ({src, title,height = 300}) => {
 
     const [active, setActive] = useState("ts");
     const [opacity, setOpacity] = useState(0);
@@ -24,13 +24,14 @@ const Iframe = ({src, title,height}) => {
                 <Javascript/> Javascript
             </div>
         </div>
-        <div className="frame">
+        <div style={{
+            "--i-height": `${height}px`,
+            height: `var(--i-height)`
+        }} className="frame">
             {!opacity && <div className="blur">
                 <div className="wait"/>
             </div> }
-            <iframe style={{
-                height: `${height}px`
-            }} onLoad={() => {
+            <iframe onLoad={() => {
                 setOpacity(1)
             }} title={title} loading="lazy"
                     src={src[active]}

@@ -10,6 +10,7 @@ export const routes = {
         ROOT: "/form",
         ON_SUBMIT: "#onSubmit",
         GET_VALUES: "#getValues",
+        SHOW_ERROR: "#showError",
         RESET: "#reset",
         FOR_EACH: "#forEach",
         MAP: "#map",
@@ -127,4 +128,39 @@ export const CHECKBOX_LINK = {
 export const CHECKBOX_LINK_VALID = {
     ts: "https://stackblitz.com/edit/stackblitz-starters-jedpx2?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
     js: "https://stackblitz.com/edit/stackblitz-starters-a9qwh7?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const SELECT_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-grsysd?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-grydl1?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const SELECT_LINK_VALID = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-pycc8f?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-vp7uca?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const SELECT_MULTIPLE_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-ze4vr4?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-kay5u7?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const SELECT_MULTIPLE_LINK_VALID = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-bletfw?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-gerdum?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+
+export const SELECT_MULTIPLE_CUSTOM = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-jhbmpg?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-roholf?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const FILE_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-dwua1n?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-rbfcu7?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const FILE_CONTROL_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-ubohsb?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-qhjcc2?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
+}
+export const EDIT_LINK = {
+    ts: "https://stackblitz.com/edit/stackblitz-starters-du4fot?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
+    js: "https://stackblitz.com/edit/stackblitz-starters-zmfkxc?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
 }

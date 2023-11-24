@@ -15,10 +15,10 @@ export const meta = () => {
     return getMeta(
         "Use Inputs type text examples, documentation for react aio-inputs",
         "input type text examples, fast and powerful library inputs state management for react."
-        , ROOT);
+        , ROOT + TEXT);
 };
 
-const {EXAMPLES: {ROOT, PASSWORD}, PROPERTIES} = routes
+const {EXAMPLES: {ROOT, PASSWORD,TEXT}, PROPERTIES} = routes
 
 export const TextExamples = () => {
 
@@ -35,11 +35,11 @@ export const TextExamples = () => {
         <h2 className="subTitle">
             An array of string with no validation
         </h2>
-        <Iframe title=" An array of string with no validation" src={ARRAY_STRING_LINK}/>
+        <Iframe title="An array of string with no validation" src={ARRAY_STRING_LINK}/>
         <h2 className="subTitle">
             An array of inputs with some validation
         </h2>
-        <Iframe height={400} title=" An array of inputs with some validation" src={ARRAY_VALID_LINK}/>
+        <Iframe height={400} title="An array of inputs with some validation" src={ARRAY_VALID_LINK}/>
         <h2 className="subTitle">
             Array with Validation and errorMessage
         </h2>

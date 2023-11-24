@@ -7,10 +7,10 @@ export const meta = () => {
     return getMeta(
         "Use Inputs password examples, documentation for react aio-inputs",
         "input password examples, fast and powerful library inputs state management for react."
-        , ROOT);
+        , ROOT + PASSWORD);
 };
 
-const {EXAMPLES: {ROOT, RADIO,TEXT}} = routes
+const {EXAMPLES: {ROOT, RADIO,TEXT,PASSWORD}} = routes
 
 export const PasswordExamples = () => {
 
