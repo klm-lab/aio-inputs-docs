@@ -15,7 +15,7 @@ import PageButton from "../components/pageButton";
 const {
     FORM: {
         ROOT,
-        GET_VALUES, RESET, ON_SUBMIT,
+        GET_VALUES, RESET, ON_SUBMIT,SHOW_ERROR,
         FOR_EACH, MAP, LENGTH, TO_ARRAY, TO_OBJECT
     }, TRACK, CONFIG, USE_INPUTS
 } = routes
@@ -91,6 +91,18 @@ export const Form = () => {
                 ...
             </Create>
             <ConsoleLog space method="getValues" comment="Get your values"/>
+        </Code>
+        <h2 id={getAnchor(SHOW_ERROR)} className="subTitle smt">
+            Show error
+        </h2>
+        <p className="description">
+            <DotProperty value="showError" hl/> let your show inputs errors step by step on every invalid input.
+        </p>
+        <Code copyText={FORM_CODE.GET_VALUES}>
+            <Create close form>
+                ...
+            </Create>
+            <ConsoleLog space method="showError" comment="Show error"/>
         </Code>
         <h2 id={getAnchor(RESET)} className="subTitle smt">
             Reset inputs

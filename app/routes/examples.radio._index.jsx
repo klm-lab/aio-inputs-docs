@@ -6,10 +6,10 @@ export const meta = () => {
     return getMeta(
         "Use Inputs type radio examples, documentation for react aio-inputs",
         "input type radio examples, fast and powerful library inputs state management for react."
-        , ROOT);
+        , ROOT + RADIO);
 };
 
-const {EXAMPLES: {ROOT, PASSWORD, CHECKBOX}} = routes
+const {EXAMPLES: {ROOT, PASSWORD, CHECKBOX,RADIO}} = routes
 
 export const RadioExamples = () => {
     return <CheckboxAndRadio

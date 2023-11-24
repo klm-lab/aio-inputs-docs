@@ -219,10 +219,10 @@ trackingTool.length()`
 export const PROPERTIES_CODE = {
     INIT: `// Without file input
     
-form.forEach(ip => ip.init(MY_VALUE))`,
+form.forEach(ip => ip.initValue(MY_VALUE))`,
     INIT_FILES: `// With file input
     
-form.forEach(ip => ip.init(MY_URL_OR_MY_ARRAY_OF_URL, {
+form.forEach(ip => ip.initValue(MY_URL_OR_MY_ARRAY_OF_URL, {
     getBlob: (url) => {
         // get your blob with the url
         return a blob or a file

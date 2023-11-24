@@ -33,7 +33,7 @@ const CommonInit = ({children, comment, value, copyText}) => {
             <DotProperty ponctuation value={"forEach"} noCall={false} params={
                 <span className="no-indent">
                     <span>{"ip =>"}</span>
-                    <DotProperty name="ip" value="init" params={
+                    <DotProperty name="ip" value="initValue" params={
                         <span className="no-indent">
                             <span className="no-indent">{value}</span>
                             {children}
@@ -70,7 +70,6 @@ export const CommonSyntax = ({pre, name}) => {
     </>
 }
 
-
 export const Properties = () => {
     return <div className="data">
         <h1 className="title smt">Input properties</h1>
@@ -83,13 +82,20 @@ export const Properties = () => {
         <CommonSyntax name="label"/>
         <h2 className="subTitle">Properties list</h2>
         <ul className="extra item-space-5">
+            <li><CallProperty name="props" hl/> use this to spread all input props including onChange <LockIcon/>.
+                Check <AppLink
+                    aria-label={"To list all props properties"} to={"#props"} className="link">PROPS
+                    PROPERTIES</AppLink> to
+                know
+                more of it
+            </li>
             <li><CallProperty name="id"/> input id <UnlockIcon/></li>
             <li><CallProperty name="key"/> a crypto based key <LockIcon/></li>
             <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
             <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
             <li><CallProperty name="label" hl/> input label <UnlockIcon/><LanguageIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
-            <li><CallProperty name="files" hl/> input upload files <LockIcon/> Check <AppLink
+            <li><CallProperty name="files" hl/> input upload files <LockIcon/>. Check <AppLink
                 aria-label={"To list all file properties"} to={"#files"} className="link">FILES PROPERTIES</AppLink> to
                 know
                 more of it
@@ -118,8 +124,8 @@ export const Properties = () => {
             </li>
             <li><CallDefinition name="onChange" hl/> a method to change input value.
                 Accept InputEvent or customValue <LockIcon/></li>
-            <li><CallDefinition name="init" hl/> a method to load value to
-                your inputs for an edit. Accept any type of value except for files <UnlockIcon/>
+            <li><CallDefinition name="initValue" hl/> a method to load value to
+                your inputs for an edit. Accept any type of value except for files <LockIcon/>
                 <CommonInit copyText={PROPERTIES_CODE.INIT} comment="Without file input" value="MY_VALUE"/>
                 Inputs of type file value need to be a string url <span className="hl">https://....jpg</span> or an
                 array of string
@@ -145,18 +151,32 @@ export const Properties = () => {
                     </ChildBracket>
                 </CommonInit>
                 <Box className="warn">
-                    <span>we recommend you to use <CallDefinition name="init" hl/> method
+                    <span>we recommend you to use <CallDefinition name="initValue" hl/> method
                         from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT}
                                           className="link">FORM</AppLink> object
-                        , <AppLink aria-label="Navigate to the form forEach page"
-                                   to={FORM.ROOT + FORM.FOR_EACH} className="link">FOREACH </AppLink>
-                        or <AppLink aria-label="Navigate to the form map page" to={FORM.ROOT + FORM.MAP}
-                                    className="link">MAP</AppLink> method.</span>
+                        through <AppLink aria-label="Navigate to the form forEach page"
+                                   to={FORM.ROOT + FORM.FOR_EACH} className="link">FOREACH </AppLink> method.</span>
                 </Box>
             </li>
         </ul>
         <Line/>
-        <h2 className="subTitle">Files properties list</h2>
+        <h2 id="props" className="subTitle smt">Props properties list</h2>
+        <p className="description">Props is an object with following properties</p>
+        <ul className="extra item-space-5">
+            <li><CallProperty name="id"/> input id <UnlockIcon/></li>
+            <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
+            <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
+            <li><CallProperty name="aria-label" hl/> input aria-label <UnlockIcon/><LanguageIcon/></li>
+            <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
+            <li><CallProperty name="checked" hl/> input checked state <span
+                className="hl">boolean</span> <UnlockIcon/></li>
+            <li><CallProperty name="multiple" hl/> input property for multiple selection <span
+                className="hl">boolean</span> <UnlockIcon/></li>
+            <li><CallProperty name="placeholder" hl/> input placeholder <UnlockIcon/></li>
+            <li><CallDefinition name="onChange" hl/> a method to change input value.
+                Accept InputEvent or customValue <LockIcon/></li>
+        </ul>
+        <h2 id="files" className="subTitle smt">Files properties list</h2>
         <p className="description">Files is an array of object with following properties</p>
         <ul className="extra item-space-5">
             <li><CallProperty name="file"/> The original uploaded file <LockIcon/></li>
