@@ -4,9 +4,6 @@ import Code from "../components/code";
 import {GET_STARTED_CODE} from "../code";
 import ImportStatement from "../components/codeComponents/importStatement";
 import PageButton from "../components/pageButton";
-import {TopComment} from "../components/codeComponents/create";
-import InportCode from "../components/codeComponents/inportCode";
-import CallDefinition from "../components/codeComponents/callDefinition";
 
 export const meta = () => {
     return getMeta(
@@ -48,26 +45,6 @@ export default function Root() {
             </div>
         </Code>
         <ImportStatement/>
-        <h2 className="subTitle">
-            Types
-        </h2>
-        <p className="description">
-            If you're using flow or typescript, you can import these types to make things easier.
-            This allows you to benefit from autocompletion when you create your inputs in an external file or pass it as
-            a props to another component.
-            If you create your inputs directly in the <CallDefinition name="useInputs" hl/> hook,
-            You won't need them.
-        </p>
-        <Code copyText={GET_STARTED_CODE.YARN}>
-            <TopComment comment="To create an Array of inputs"/>
-            <InportCode name={"CreateArrayInputs"}/>
-            <TopComment space comment="To create an Object of inputs"/>
-            <InportCode name={"CreateObjectInputs"}/>
-            <TopComment space comment="When passing your input as props for other components"/>
-            <InportCode name={"Input"}/>
-            <TopComment space comment="When passing your input props as props for other components"/>
-            <InportCode name={"InputProps"}/>
-        </Code>
         <p className="description">
             Go the next step to find out how to use it
         </p>

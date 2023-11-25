@@ -10,6 +10,8 @@ export const routes = {
         ROOT: "/form",
         ON_SUBMIT: "#onSubmit",
         GET_VALUES: "#getValues",
+        GET_INPUT_BY_ID: "#getInputById",
+        GET_INPUTS_BY_NAME: "#getInputsByName",
         SHOW_ERROR: "#showError",
         RESET: "#reset",
         FOR_EACH: "#forEach",
@@ -34,6 +36,8 @@ export const routes = {
     PROPERTIES: {
         ROOT: "/properties",
         INPUTS: "/inputs",
+        INPUTS_PROPS: "/inputProps",
+        INPUTS_FILES: "/inputFiles",
         VALIDATIONS: "/validations"
     },
     EXAMPLES: {
@@ -45,7 +49,8 @@ export const routes = {
         SELECT: "/select",
         FILE: "/file",
         EDIT: "/edit"
-    }
+    },
+    TYPES: "/types"
 }
 
 export const GITHUB_LINK = "https://github.com/klm-lab/inputs";

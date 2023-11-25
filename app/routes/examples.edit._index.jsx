@@ -12,7 +12,7 @@ export const meta = () => {
         , ROOT + EDIT);
 };
 
-const {EXAMPLES: {ROOT, FILE,EDIT}} = routes
+const {EXAMPLES: {ROOT, FILE,EDIT},TYPES} = routes
 
 export const EditExamples = () => {
 
@@ -30,10 +30,11 @@ export const EditExamples = () => {
             a <CallProperty name="Promise<Blob>"/>.</p>
         <Iframe height={600} title="Load value example" src={EDIT_LINK}/>
         <p className="description">
-            ❤️ THANK YOU ❤️
+            Go the next step to find out how to use some built-in types
         </p>
         <div className="foot">
             <PageButton to={ROOT + FILE} prev/>
+            <PageButton to={TYPES} prev/>
         </div>
     </div>
 }

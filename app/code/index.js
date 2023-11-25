@@ -139,6 +139,18 @@ export const FORM_CODE = {
 
 // Get your values
 console.log(form.getValues())`,
+    GET_INPUT_BY_ID: `${FORM_C}
+
+// Get your input
+console.log(form.getInputById("input id"))`,
+    SHOW_ERROR: `${FORM_C}
+
+// Show error
+console.log(form.showError())`,
+    GET_INPUTS_BY_NAME: `${FORM_C}
+
+// Get your inputs
+console.log(form.getInputsByName("input name"))`,
     RESET: `${FORM_C}
 
 // Do a reset
@@ -264,4 +276,34 @@ form.forEach(ip => ip.initValue(MY_URL_OR_MY_ARRAY_OF_URL, {
         },
     },
 },`
+}
+
+export const TYPES_CODE = {
+    CREATE_ARRAY: `// To type an Array of inputs
+    
+import { CreateArrayInputs } from "aio-inputs"
+
+const myInputs: CreateArrayInputs = [...]`,
+    CREATE_OBJECT: `// To type an Object of inputs
+    
+import { CreateObjectInputs } from "aio-inputs"
+
+const myInputs: CreateObjectInputs<'name' | 'age'> = {
+    name:{...}
+    age:{...}
+},`,
+    OUTPUT_INPUT: `// To type an Input
+    
+import {Input} from "aio-inputs"`,
+    OUTPUT_INPUT_PROPS: `// To type an InputProps
+    
+import {InputProps} from "aio-inputs"`,
+    OUTPUT_ARRAY: `// To type an Array of inputs
+    
+import {ArrayInputs} from "aio-inputs"`,
+    OUTPUT_OBJECT: `// To type an Object of inputs
+    
+import { ObjectInputs } from"aio-inputs"
+
+ObjectInputs<'name' | 'age'>`
 }
