@@ -17,7 +17,7 @@ export const meta = () => {
 
 export const Properties = () => {
     return <div className="data">
-        <h1 className="title smt">Files properties list</h1>
+        <h1 className="title">Files properties list</h1>
         <p className="description">
             Files is an array of object with following properties. You can access and use, but
             cannot modified

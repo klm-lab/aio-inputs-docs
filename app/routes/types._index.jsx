@@ -99,11 +99,11 @@ export default function Root() {
             <ImportCode name={"Input"}/>
         </Code>
         <ul className="extra">
-            <li>InputProps. <AppLink
+            <li>InputProps. They are part of input properties. <AppLink
                 aria-label={"To list all input props properties"} to={
                 PROPERTIES.ROOT + PROPERTIES.INPUTS_PROPS
             } className="link">
-                SHOW PROPERTIES</AppLink>.</li>InputProps are part of input properties
+                SHOW PROPERTIES</AppLink>.</li>
         </ul>
         <Code copyText={TYPES_CODE.OUTPUT_INPUT_PROPS}>
             <TopComment comment="To type an InputProps"/>

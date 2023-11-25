@@ -18,7 +18,6 @@ const SidebarCategory = ({routesKeys, routes,hasChild}) => {
 
     useEffect(() => {
         if (pathname.includes(ROOT)) {
-            console.log("dsd",ROOT, pathname, hash)
             appStore.set(ref => {
                 ref.activeList = ROOT
             });
