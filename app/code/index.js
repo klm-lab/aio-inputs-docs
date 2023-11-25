@@ -139,6 +139,18 @@ export const FORM_CODE = {
 
 // Get your values
 console.log(form.getValues())`,
+    GET_INPUT_BY_ID: `${FORM_C}
+
+// Get your input
+console.log(form.getInputById("input id"))`,
+    SHOW_ERROR: `${FORM_C}
+
+// Show error
+console.log(form.showError())`,
+    GET_INPUTS_BY_NAME: `${FORM_C}
+
+// Get your inputs
+console.log(form.getInputsByName("input name"))`,
     RESET: `${FORM_C}
 
 // Do a reset

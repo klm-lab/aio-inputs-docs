@@ -88,7 +88,7 @@ export const Properties = () => {
                 know
                 more of it
             </li>
-            <li><CallProperty name="extraData"/> input extra data. Use it to store any useful extra data <UnlockIcon/></li>
+            <li><CallProperty name="extraData"/> input extra data. Use it to store any useful extra data. This property is never reset <UnlockIcon/></li>
             <li><CallProperty name="id"/> input id <UnlockIcon/></li>
             <li><CallProperty name="key"/> a crypto based key <LockIcon/></li>
             <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
@@ -125,6 +125,7 @@ export const Properties = () => {
                     PROPERTIES</AppLink> to know
                 more of it.
             </li>
+            <li><CallDefinition name="setExtraData" hl/> a method to set or update your extra data <LockIcon/></li>
             <li><CallDefinition name="onChange" hl/> a method to change input value.
                 Accept InputEvent or customValue <LockIcon/></li>
             <li><CallDefinition name="initValue" hl/> a method to load value to
@@ -160,10 +161,7 @@ export const Properties = () => {
         <Box className="warn">
                     <span>we recommend you to use <CallDefinition name="initValue" hl/> method
                         from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT}
-                                          className="link">FORM</AppLink> object
-                        through <AppLink aria-label="Navigate to the form forEach page"
-                                         to={FORM.ROOT + FORM.FOR_EACH}
-                                         className="link">FOREACH </AppLink> method.</span>
+                                          className="link">FORM</AppLink> object or any tracking tool.</span>
         </Box>
         <p className="description">
             Hit next to know more

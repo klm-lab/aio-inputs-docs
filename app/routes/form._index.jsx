@@ -15,7 +15,7 @@ import PageButton from "../components/pageButton";
 const {
     FORM: {
         ROOT,
-        GET_VALUES, RESET, ON_SUBMIT,SHOW_ERROR,
+        GET_VALUES, RESET, ON_SUBMIT, SHOW_ERROR, GET_INPUT_BY_ID, GET_INPUTS_BY_NAME,
         FOR_EACH, MAP, LENGTH, TO_ARRAY, TO_OBJECT
     }, TRACK, CONFIG, USE_INPUTS
 } = routes
@@ -92,13 +92,38 @@ export const Form = () => {
             </Create>
             <ConsoleLog space method="getValues" comment="Get your values"/>
         </Code>
+        <h2 id={getAnchor(GET_INPUT_BY_ID)} className="subTitle smt">
+            Get an input by ID
+        </h2>
+        <p className="description">
+            <DotProperty value="getInputById" hl/> let you to get an input by his ID.
+        </p>
+        <Code copyText={FORM_CODE.GET_INPUT_BY_ID}>
+            <Create close form>
+                ...
+            </Create>
+            <ConsoleLog space method="getInputById" comment="Get your input" content={'"input id"'}/>
+        </Code>
+        <h2 id={getAnchor(GET_INPUT_BY_ID)} className="subTitle smt">
+            Get inputs by name
+        </h2>
+        <p className="description">
+            <DotProperty value="getInputsByName" hl/> let you to get your input by his name.
+            It always return an array.
+        </p>
+        <Code copyText={FORM_CODE.GET_INPUTS_BY_NAME}>
+            <Create close form>
+                ...
+            </Create>
+            <ConsoleLog space method="getInputsByName" comment="Get your inputs" content={'"input name"'}/>
+        </Code>
         <h2 id={getAnchor(SHOW_ERROR)} className="subTitle smt">
             Show error
         </h2>
         <p className="description">
             <DotProperty value="showError" hl/> let your show inputs errors step by step on every invalid input.
         </p>
-        <Code copyText={FORM_CODE.GET_VALUES}>
+        <Code copyText={FORM_CODE.SHOW_ERROR}>
             <Create close form>
                 ...
             </Create>

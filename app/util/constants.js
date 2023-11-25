@@ -10,6 +10,8 @@ export const routes = {
         ROOT: "/form",
         ON_SUBMIT: "#onSubmit",
         GET_VALUES: "#getValues",
+        GET_INPUT_BY_ID: "#getInputById",
+        GET_INPUTS_BY_NAME: "#getInputsByName",
         SHOW_ERROR: "#showError",
         RESET: "#reset",
         FOR_EACH: "#forEach",
