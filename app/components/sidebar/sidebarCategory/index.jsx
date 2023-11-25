@@ -5,7 +5,7 @@ import {appStore} from "../../../store";
 import ArrowIcon from "../../../assets/icon/ArrowIcon";
 import AppLink from "../../appLink";
 
-const SidebarCategory = ({routesKeys, routes}) => {
+const SidebarCategory = ({routesKeys, routes,hasChild}) => {
 
     const {ROOT} = routes;
 
@@ -18,14 +18,20 @@ const SidebarCategory = ({routesKeys, routes}) => {
 
     useEffect(() => {
         if (pathname.includes(ROOT)) {
+            console.log("dsd",ROOT, pathname, hash)
             appStore.set(ref => {
                 ref.activeList = ROOT
             });
             setR(hash.length ? hash : pathname.replace(ROOT, ""))
         } else {
-            setR("")
+            setR("");
         }
-    }, [pathname, hash, ROOT]);
+        if (pathname === routes) {
+            appStore.set(ref => {
+                ref.activeList = ""
+            });
+        }
+    }, [pathname, hash, ROOT,hasChild,routes]);
 
     const closeSideBar = useCallback(() => {
         appStore.set(ref => {
@@ -37,17 +43,17 @@ const SidebarCategory = ({routesKeys, routes}) => {
     const toggleMenu = useCallback(() => {
         appStore.set(ref => {
             ref.activeList = ref.activeList === ROOT ? "" : ROOT;
-            if (routes === "/") {
+            if (!hasChild) {
                 closeSideBar()
             }
         })
-    }, [ROOT, routes, closeSideBar])
+    }, [ROOT, closeSideBar,hasChild])
 
-    if (routes === "/") {
+    if (!hasChild) {
         return <div className={addClasses("sideEl", pathname === routes ? "active" : "")}>
-            <AppLink aria-label={"To navigate to the path " + ROOT} to={ROOT} onClick={toggleMenu}
+            <AppLink aria-label={"To navigate to the path " + routes} to={routes} onClick={toggleMenu}
                      className={addClasses("flexCenterSpace sideTitle", pathname === routes ? "active" : "")}>
-                <h2 className="text">Get started</h2>
+                <h2 className="text up">{routes === "/" ? "Get started" : routes.replace("/","")}</h2>
             </AppLink>
         </div>
     }

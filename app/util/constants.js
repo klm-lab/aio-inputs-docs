@@ -34,6 +34,8 @@ export const routes = {
     PROPERTIES: {
         ROOT: "/properties",
         INPUTS: "/inputs",
+        INPUTS_PROPS: "/inputProps",
+        INPUTS_FILES: "/inputFiles",
         VALIDATIONS: "/validations"
     },
     EXAMPLES: {
@@ -45,7 +47,8 @@ export const routes = {
         SELECT: "/select",
         FILE: "/file",
         EDIT: "/edit"
-    }
+    },
+    TYPES: "/types"
 }
 
 export const GITHUB_LINK = "https://github.com/klm-lab/inputs";

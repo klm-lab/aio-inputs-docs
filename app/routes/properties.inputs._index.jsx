@@ -16,7 +16,7 @@ import Box from "../components/box";
 import PageButton from "../components/pageButton";
 
 const {
-    PROPERTIES: {INPUTS, ROOT, VALIDATIONS},
+    PROPERTIES: {INPUTS, ROOT, VALIDATIONS, INPUTS_PROPS, INPUTS_FILES},
     TRACK, FORM
 } = routes;
 
@@ -77,18 +77,18 @@ export const Properties = () => {
             When you create inputs, these properties are injected for your convenience. You can access and use, but
             cannot modified
             properties that are locked <LockIcon/>. You can only modified unlocked ones <UnlockIcon/>.
-            You are free to add any custom properties.
         </p>
         <CommonSyntax name="label"/>
         <h2 className="subTitle">Properties list</h2>
         <ul className="extra item-space-5">
             <li><CallProperty name="props" hl/> use this to spread all input props including onChange <LockIcon/>.
                 Check <AppLink
-                    aria-label={"To list all props properties"} to={"#props"} className="link">PROPS
+                    aria-label={"To list all props properties"} to={ROOT + INPUTS_PROPS} className="link">PROPS
                     PROPERTIES</AppLink> to
                 know
                 more of it
             </li>
+            <li><CallProperty name="extraData"/> input extra data. Use it to store any useful extra data <UnlockIcon/></li>
             <li><CallProperty name="id"/> input id <UnlockIcon/></li>
             <li><CallProperty name="key"/> a crypto based key <LockIcon/></li>
             <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
@@ -96,10 +96,13 @@ export const Properties = () => {
             <li><CallProperty name="label" hl/> input label <UnlockIcon/><LanguageIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
             <li><CallProperty name="files" hl/> input upload files <LockIcon/>. Check <AppLink
-                aria-label={"To list all file properties"} to={"#files"} className="link">FILES PROPERTIES</AppLink> to
+                aria-label={"To list all file properties"} to={INPUTS_FILES} className="link">FILES
+                PROPERTIES</AppLink> to
                 know
                 more of it
             </li>
+            <li><CallProperty name="accept" hl/> input type file accept property <span
+                className="hl">string</span> <UnlockIcon/></li>
             <li><CallProperty name="checked" hl/> input checked state <span
                 className="hl">boolean</span> <UnlockIcon/></li>
             <li><CallProperty name="multiple" hl/> input property for multiple selection <span
@@ -110,7 +113,7 @@ export const Properties = () => {
                 className="hl">boolean</span><UnlockIcon/></li>
             <li><CallProperty name="touched" hl/> input touched state <span
                 className="hl">boolean</span><UnlockIcon/></li>
-            <li><CallProperty name="placeholder" hl/> input placeholder <UnlockIcon/></li>
+            <li><CallProperty name="placeholder" hl/> input placeholder. Can be used to clear a select input. <UnlockIcon/></li>
             <li><CallProperty name="errorMessage" hl/> input general errorMessage <UnlockIcon/><LanguageIcon/></li>
             <li><CallProperty name="validating" hl/> input asynchronous validation state <span
                 className="hl">boolean</span> <UnlockIcon/></li>
@@ -126,18 +129,22 @@ export const Properties = () => {
                 Accept InputEvent or customValue <LockIcon/></li>
             <li><CallDefinition name="initValue" hl/> a method to load value to
                 your inputs for an edit. Accept any type of value except for files <LockIcon/>
-                <CommonInit copyText={PROPERTIES_CODE.INIT} comment="Without file input" value="MY_VALUE"/>
-                Inputs of type file value need to be a string url <span className="hl">https://....jpg</span> or an
-                array of string
-                url <span className="hl">[https://....jpg, https://....png]</span><br/>
-                When you load data for input type file, you can add an optional function which let you retrieve a blob.
-                This function should take an url as param
-                <CommonInit copyText={PROPERTIES_CODE.INIT_FILES} comment="With file input"
-                            value="MY_URL_OR_MY_ARRAY_OF_URL">
-                    <span>,</span>
-                    <ChildBracket inline stop={false} noIndent>
-                        <KeyValue objKey="getBlob" directValue={false} value={
-                            <span className="no-indent">
+            </li>
+        </ul>
+        <CommonInit copyText={PROPERTIES_CODE.INIT} comment="Without file input" value="MY_VALUE"/>
+        <p className="description">
+            Inputs of type file value need to be a string url <span className="hl">https://....jpg</span> or an
+            array of string
+            url <span className="hl">[https://....jpg, https://....png]</span><br/>
+            When you load data for input type file, you can add an optional function which let you retrieve a blob.
+            This function should take an url as param
+        </p>
+        <CommonInit copyText={PROPERTIES_CODE.INIT_FILES} comment="With file input"
+                    value="MY_URL_OR_MY_ARRAY_OF_URL">
+            <span>,</span>
+            <ChildBracket inline stop={false} noIndent>
+                <KeyValue objKey="getBlob" directValue={false} value={
+                    <span className="no-indent">
                                                 <CallDefinition anonymous arrow params="url"/>
                                                 <ChildBracket>
                                                     <TopComment comment="get your blob with the url"/>
@@ -147,60 +154,26 @@ export const Properties = () => {
                                                     </div>
                                                 </ChildBracket>
                                             </span>
-                        }/>
-                    </ChildBracket>
-                </CommonInit>
-                <Box className="warn">
+                }/>
+            </ChildBracket>
+        </CommonInit>
+        <Box className="warn">
                     <span>we recommend you to use <CallDefinition name="initValue" hl/> method
                         from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT}
                                           className="link">FORM</AppLink> object
                         through <AppLink aria-label="Navigate to the form forEach page"
-                                   to={FORM.ROOT + FORM.FOR_EACH} className="link">FOREACH </AppLink> method.</span>
-                </Box>
-            </li>
-        </ul>
-        <Line/>
-        <h2 id="props" className="subTitle smt">Props properties list</h2>
-        <p className="description">Props is an object with following properties</p>
-        <ul className="extra item-space-5">
-            <li><CallProperty name="id"/> input id <UnlockIcon/></li>
-            <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
-            <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
-            <li><CallProperty name="aria-label" hl/> input aria-label <UnlockIcon/><LanguageIcon/></li>
-            <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
-            <li><CallProperty name="checked" hl/> input checked state <span
-                className="hl">boolean</span> <UnlockIcon/></li>
-            <li><CallProperty name="multiple" hl/> input property for multiple selection <span
-                className="hl">boolean</span> <UnlockIcon/></li>
-            <li><CallProperty name="placeholder" hl/> input placeholder <UnlockIcon/></li>
-            <li><CallDefinition name="onChange" hl/> a method to change input value.
-                Accept InputEvent or customValue <LockIcon/></li>
-        </ul>
-        <h2 id="files" className="subTitle smt">Files properties list</h2>
-        <p className="description">Files is an array of object with following properties</p>
-        <ul className="extra item-space-5">
-            <li><CallProperty name="file"/> The original uploaded file <LockIcon/></li>
-            <li><CallProperty name="key"/> a crypto based key <LockIcon/></li>
-            <li><CallProperty name="url" hl/> a preview url for the file <LockIcon/></li>
-            <li><CallProperty name="fileUpdate" hl/> contains all your changes like, crop, resizing etc... <UnlockIcon/>
-            </li>
-            <li><CallProperty name="gettingFile" hl/> tell you if we are retrieving some blob <span
-                className="hl">boolean</span> <LockIcon/></li>
-            <li><CallDefinition name="selfRemove" hl/> a method to remove an upload file <LockIcon/></li>
-            <li><CallDefinition name="selfUpdate" hl/> a method to save any files changes <LockIcon/><br/>
-                This method take one arguments save the changes on <CallProperty name="fileUpdate" hl/> property
-            </li>
-            <li><CallDefinition name="onLoad" hl/> a method to revoke the preview url. This works only if
-                there is no <CallProperty name="persitID " hl/> <LockIcon/></li>
-        </ul>
+                                         to={FORM.ROOT + FORM.FOR_EACH}
+                                         className="link">FOREACH </AppLink> method.</span>
+        </Box>
         <p className="description">
             Hit next to know more
-            about all validations <AppLink aria-label={"To check all validations properties"} className="link"
-                                           to={ROOT + VALIDATIONS}>PROPERTIES</AppLink>
+            about spreadable input props <AppLink aria-label={"To check spreadable input props properties"}
+                                                  className="link"
+                                                  to={ROOT + INPUTS_PROPS}>PROPERTIES</AppLink>
         </p>
         <div className="foot">
             <PageButton to={TRACK.ROOT} prev/>
-            <PageButton to={ROOT + VALIDATIONS}/>
+            <PageButton to={ROOT + INPUTS_PROPS}/>
         </div>
     </div>
 }

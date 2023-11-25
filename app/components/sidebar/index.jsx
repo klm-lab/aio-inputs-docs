@@ -12,7 +12,10 @@ const Sidebar = () => {
 
     return <aside ref={sidebarRef} className={addClasses("customScroll sidebar", sidebarOpen ? "open" : "")}>
         {Object.keys(routes).map(r => {
-            return <SidebarCategory key={r} routesKeys={Object.keys(routes[r])} routes={routes[r]}/>
+            return <SidebarCategory
+                key={r}
+                hasChild={typeof routes[r] === "object"}
+                routesKeys={Object.keys(routes[r])} routes={routes[r]}/>
         })}
         <h1 className="version">aio-inputs@2.1.13</h1>
     </aside>
