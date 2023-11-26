@@ -127,8 +127,9 @@ export default function Root() {
                 <span>{"<'name' | 'age'>"}</span>
             </div>
         </Code>
-        <p className="description">
-            ❤️ THANK YOU ❤️
+        <p className="flexCenterSpace description">
+            <span/>
+            <span className="bold">❤️ THANK YOU ❤️</span>
         </p>
         <div className="foot">
             <PageButton to={ROOT + EDIT} prev/>

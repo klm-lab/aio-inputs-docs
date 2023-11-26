@@ -1,17 +1,15 @@
 import SearchIcon from "../../assets/icon/SearchIcon";
-import {useCallback, useRef} from "react";
-import {appStore} from "../../store";
+import {useRef} from "react";
+import {showSearch} from "../../store";
 
 const Search = () => {
 
     const ref = useRef(null);
 
-    const openSearch = useCallback(() => {
-        appStore.set(ref => {
-            ref.overlay = true
-        });
+    const openSearch = () => {
+        showSearch()
         ref.current.blur()
-    }, [ref])
+    }
 
     return <div className="flexCenterSpace search">
         <SearchIcon/>

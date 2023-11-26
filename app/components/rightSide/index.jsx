@@ -5,13 +5,14 @@ import Moon from "../../assets/icon/Moon";
 import ExternalLink from "../externalLink";
 import {GITHUB_LINK} from "../../util/constants"
 import SearchIcon from "../../assets/icon/SearchIcon";
+import {showSearch} from "../../store";
 
 const RightSide = () => {
 
     const {loaded, isDark, toggleTheme} = useTheme();
 
     return loaded && <div className="flexCenter rightIcons">
-        <div className="flexCenter icon searchIcon">
+        <div onClick={showSearch} className="flexCenter icon searchIcon">
             <SearchIcon/>
         </div>
         <div className="flexCenter icon" onClick={toggleTheme}>
