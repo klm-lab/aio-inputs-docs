@@ -5,22 +5,27 @@ import {addClasses} from "../../util";
 
 const Iframe = ({src, title,height = 300}) => {
 
-    const [active, setActive] = useState("ts");
+    const [active, setActive] = useState({
+        type: "ts",
+        ctl: 1,
+    });
     const [opacity, setOpacity] = useState(0);
 
-    const activate = useCallback((tab) => {
+    const activate = useCallback((type) => {
         setOpacity(0);
-        setActive(tab)
+        setActive(tab => {
+            return {type, ctl: 0}
+        })
     }, [])
 
     return <div className="iframe-container">
         <div className="tab">
             <div onClick={() => activate("ts")}
-                 className={addClasses("tabEl", active === "ts" && "active")}>
+                 className={addClasses("tabEl", active.type === "ts" && "active")}>
                 <Typescript/> Typescript
             </div>
             <div onClick={() => activate("js")}
-                 className={addClasses("tabEl", active === "js" && "active")}>
+                 className={addClasses("tabEl", active.type === "js" && "active")}>
                 <Javascript/> Javascript
             </div>
         </div>
@@ -34,7 +39,7 @@ const Iframe = ({src, title,height = 300}) => {
             <iframe onLoad={() => {
                 setOpacity(1)
             }} title={title} loading="lazy"
-                    src={src[active]}
+                    src={src[active.type].replace("ctl=1",`ctl=${active.ctl}`)}
             />
         </div>
     </div>

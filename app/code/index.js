@@ -244,7 +244,7 @@ form.forEach(ip => ip.initValue(MY_URL_OR_MY_ARRAY_OF_URL, {
     validation:{
         custom:${async ? " async" : ""} (value, setErrorMessage) => {
             // make your validation
-            setErrorMessage()
+            setErrorMessage("new error message")
             return false
         },
     },

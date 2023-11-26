@@ -2,7 +2,7 @@ import {getMeta, routes} from "../util/constants";
 import useRedirect from "../hook/useRedirect";
 import {getAnchor} from "../util";
 import AppLink from "../components/appLink";
-import CallDefinition from "../components/codeComponents/callDefinition";
+import CallDefinition, {CallProperty} from "../components/codeComponents/callDefinition";
 import Line from "../components/line";
 import ImportStatement from "../components/codeComponents/importStatement";
 import {TRACK_CODE} from "../code";
@@ -66,12 +66,17 @@ export const Track = () => {
     return <div className="data">
         <h1 id={getAnchor(TRACKING_TOOL)} className="title smt">Tracking</h1>
         <p className="description">
-            To access your inputs data outside a component, you need a tracking tool.
-            A tracking tool inherit every method available on <AppLink aria-label={"To show the form utility"}
-                                                                       className="link" to={FORM.ROOT}>
-            FORM
-        </AppLink> and has his own <CallDefinition name="length" hl/> method.
+            To access your inputs data outside a component, you need a tracking tool. A tracking tool inherit every
+            method available on the <AppLink
+            aria-label={"To show the form utility"}
+            className="link" to={FORM.ROOT}>FORM</AppLink> object with one change.
         </p>
+        <ul className="extra">
+            <li>
+                The <CallProperty name="length" hl/> property in a
+                tracking tool is a function.
+            </li>
+        </ul>
         <Line/>
         <ImportStatement copyText={TRACK_CODE.IMPORT} title="Tracking tool" name={"trackInputs"}/>
         <h3 className="subTitle-3">

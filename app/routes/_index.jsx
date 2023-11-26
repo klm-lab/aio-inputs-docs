@@ -11,7 +11,7 @@ export const meta = () => {
         "Best, simple, fast and powerful library inputs state management for react");
 };
 
-export default function Root() {
+export default function GetStarted() {
     return <div className="data">
         <h1 className="title">aio-inputs</h1>
         <p className="titleIntro">

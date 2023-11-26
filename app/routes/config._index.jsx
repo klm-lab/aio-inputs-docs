@@ -24,7 +24,7 @@ export const meta = () => {
 };
 
 export const Config = () => {
-    useRedirect(ROOT, ASYNC_DELAY);
+    useRedirect(ROOT, LOCK_VALUES_ON_ERROR);
     return <div className="data">
         <h1 id={getAnchor(LOCK_VALUES_ON_ERROR)} className="title smt">Config</h1>
         <p className="description">
@@ -118,7 +118,7 @@ export const Config = () => {
             of it.
         </p>
         <div className="foot">
-            <PageButton to={FORM.ROOT} prev/>
+            <PageButton to={FORM.ROOT + FORM.ON_SUBMIT} prev/>
             <PageButton to={TRACK.ROOT}/>
         </div>
     </div>

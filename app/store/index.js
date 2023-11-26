@@ -5,3 +5,9 @@ export const appStore = createStore({
     sidebar: false,
     overlay: false,
 })
+
+export const showSearch = () => {
+    appStore.set(ref => {
+        ref.overlay = true
+    });
+}

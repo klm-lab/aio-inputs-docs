@@ -96,7 +96,7 @@ export const Properties = () => {
             <li><CallProperty name="label" hl/> input label <UnlockIcon/><LanguageIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
             <li><CallProperty name="files" hl/> input upload files <LockIcon/>. Check <AppLink
-                aria-label={"To list all file properties"} to={INPUTS_FILES} className="link">FILES
+                aria-label={"To list all file properties"} to={ROOT + INPUTS_FILES} className="link">FILES
                 PROPERTIES</AppLink> to
                 know
                 more of it
@@ -161,7 +161,9 @@ export const Properties = () => {
         <Box className="warn">
                     <span>we recommend you to use <CallDefinition name="initValue" hl/> method
                         from the <AppLink aria-label="Navigate to the form page" to={FORM.ROOT}
-                                          className="link">FORM</AppLink> object or any tracking tool.</span>
+                                          className="link">Form object</AppLink> or
+                        any <AppLink aria-label="Navigate to the tracking page" to={TRACK.ROOT}
+                                 className="link">tracking tool</AppLink>.</span>
         </Box>
         <p className="description">
             Hit next to know more

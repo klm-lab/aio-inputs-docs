@@ -30,7 +30,7 @@ const CustomCode = ({async, copyText}) => {
                             <ChildBracket>
                                 <TopComment comment="make your validation"/>
                                 <div className="codeLine">
-                                    <CallDefinition name="setErrorMessage"/>
+                                    <CallDefinition name="setErrorMessage" params='"new error message"'/>
                                 </div>
                                 <div className="codeLine">
                                     <span className="keyword">return</span>

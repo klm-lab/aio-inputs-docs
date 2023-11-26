@@ -28,7 +28,7 @@ export const meta = () => {
 };
 
 export const Form = () => {
-    useRedirect(ROOT, GET_VALUES);
+    useRedirect(ROOT, ON_SUBMIT);
     return <div className="data">
         <h1 id={getAnchor(ON_SUBMIT)} className="title smt">Form</h1>
         <p className="description">
@@ -104,7 +104,7 @@ export const Form = () => {
             </Create>
             <ConsoleLog space method="getInputById" comment="Get your input" content={'"input id"'}/>
         </Code>
-        <h2 id={getAnchor(GET_INPUT_BY_ID)} className="subTitle smt">
+        <h2 id={getAnchor(GET_INPUTS_BY_NAME)} className="subTitle smt">
             Get inputs by name
         </h2>
         <p className="description">
@@ -223,7 +223,7 @@ export const Form = () => {
         </p>
         <div className="foot">
             <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.OBJECT} prev/>
-            <PageButton to={CONFIG.ROOT}/>
+            <PageButton to={CONFIG.ROOT + CONFIG.LOCK_VALUES_ON_ERROR}/>
         </div>
     </div>
 }
