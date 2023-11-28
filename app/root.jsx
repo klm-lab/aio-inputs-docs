@@ -10,6 +10,7 @@ export const links = () => [
     {rel: "stylesheet", href: rootStyles},
     {rel: "stylesheet", href: fontStyles},
     {rel: "preconnect", href: "https://fonts.gstatic.com"},
+    {rel: "dns-prefetch", href: "https://stackblitz.com"},
 ];
 export default function App() {
 
