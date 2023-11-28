@@ -229,6 +229,16 @@ trackingTool.length()`
 }
 
 export const PROPERTIES_CODE = {
+    SET: `// Set some extraData
+input.set("extraData", My_Data)
+
+// Show some password
+input.set("type", "text")
+
+// Hide some password
+input.set("type", "password")
+
+// And so on`,
     INIT: `// Without file input
     
 form.forEach(ip => ip.initValue(MY_VALUE))`,

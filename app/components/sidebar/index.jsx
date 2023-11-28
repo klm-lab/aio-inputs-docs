@@ -17,7 +17,7 @@ const Sidebar = () => {
                 hasChild={typeof routes[r] === "object"}
                 routesKeys={Object.keys(routes[r])} routes={routes[r]}/>
         })}
-        <h1 className="version">aio-inputs@2.1.13</h1>
+        <h1 className="version">aio-inputs@2.2.0</h1>
     </aside>
 }
 

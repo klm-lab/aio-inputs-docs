@@ -27,6 +27,7 @@ export const Properties = () => {
             <li><CallProperty name="file"/> The original uploaded file <LockIcon/></li>
             <li><CallProperty name="key"/> a crypto based key <LockIcon/></li>
             <li><CallProperty name="url" hl/> a preview url for the file <LockIcon/></li>
+            <li><CallProperty name="loaded" hl/> true if the preview file is loaded when you use the onLoad function <LockIcon/></li>
             <li><CallProperty name="fileUpdate" hl/> contains all your changes like, crop, resizing etc... <UnlockIcon/>
             </li>
             <li><CallProperty name="gettingFile" hl/> tell you if we are retrieving some blob <span
@@ -36,7 +37,7 @@ export const Properties = () => {
                 This method take one arguments save the changes on <CallProperty name="fileUpdate" hl/> property
             </li>
             <li><CallDefinition name="onLoad" hl/> a method to revoke the preview url. This works only if
-                there is no <CallProperty name="persitID " hl/> <LockIcon/></li>
+                there is no <CallProperty name="persitID" hl/>. It also set the loaded property to true if preview url is loaded <LockIcon/></li>
         </ul>
         <p className="description">
             Hit next to know more

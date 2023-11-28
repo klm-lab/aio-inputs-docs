@@ -24,7 +24,9 @@ export const EditExamples = () => {
         <h2 className="subTitle">
             Load value
         </h2>
-        <p className="description">You can config a <CallProperty name="getBlob" hl/> property as a function
+        <p className="description">
+            This example will show how to populate your inputs value for example an edit.
+            You can also config a <CallProperty name="getBlob" hl/> property as a function
             and retrieve a blob from any file url. Your function must take an url as a pram and return a <CallProperty
                 name="blob"/> or
             a <CallProperty name="Promise<Blob>"/>.</p>

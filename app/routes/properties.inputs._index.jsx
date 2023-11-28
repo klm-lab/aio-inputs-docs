@@ -125,7 +125,23 @@ export const Properties = () => {
                     PROPERTIES</AppLink> to know
                 more of it.
             </li>
-            <li><CallDefinition name="setExtraData" hl/> a method to set or update your extra data <LockIcon/></li>
+            <li><CallDefinition name="set" hl/> a method to set or update
+                an input type or an extraData. <span className="hl key">Use with caution</span> <UnlockIcon/></li>
+            <Code copyText={PROPERTIES_CODE.SET}>
+                <TopComment comment="Set some extraData"/>
+                <div className="codeLine">
+                    <DotProperty name="input" value="set" params='"extraData", My_Data'/>
+                </div>
+                <TopComment space comment="Show some password"/>
+                <div className="codeLine">
+                    <DotProperty name="input" value="set" params='"type", "text"'/>
+                </div>
+                <TopComment space comment="Hide some password"/>
+                <div className="codeLine">
+                    <DotProperty name="input" value="set" params='"type", "password"'/>
+                </div>
+                <TopComment space comment="And so on"/>
+            </Code>
             <li><CallDefinition name="onChange" hl/> a method to change input value.
                 Accept InputEvent or customValue <LockIcon/></li>
             <li><CallDefinition name="initValue" hl/> a method to load value to
