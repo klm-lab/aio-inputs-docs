@@ -1,12 +1,10 @@
-import {getInputsKey, getMeta, routes} from "../util/constants";
+import {getMeta, routes} from "../util/constants";
 import Line from "../components/line";
 import ImportStatement from "../components/codeComponents/importStatement";
 import Code from "../components/code";
 import {USE_INPUTS_CODE} from "../code";
 import Create from "../components/codeComponents/create";
 import AppLink from "../components/appLink";
-import Bracket from "../components/codeComponents/bracket";
-import ReadyToUse from "../components/codeComponents/readyToUse";
 import InputLine from "../components/codeComponents/inputLine";
 import DotProperty from "../components/codeComponents/dotProperty";
 import FormRef from "../components/FormRef";
@@ -50,25 +48,19 @@ export const UseStringInput = () => {
         </Code>
 
         <p className="description">
-            If you log <span className="hl">myInput</span>, you'll see these related
-            ready-to-use properties and <AppLink aria-label={"To show available properties"} className="link"
-                                                 to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
-            The name, id and label is the value of your string.
+            <DotProperty name="myInput" value="phoneNumber" method={false} hl/> contains these <AppLink
+            aria-label={"To show available properties"} className="link"
+            to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>ready-to-use properties</AppLink>.<br/>
         </p>
-        <Code copyText={USE_INPUTS_CODE.PROPERTIES}>
-            <Bracket>
-                <ReadyToUse keys={getInputsKey('"phoneNumber",')}/>
-            </Bracket>
-        </Code>
         <p className="description">
-            Now bind <span className="hl">myInput</span>, to an input element
+            Now bind an input element.
         </p>
         <Code copyText={USE_INPUTS_CODE.BIND}>
-            <InputLine name={"myInput"}/>
+            <InputLine name={<DotProperty name="myInput" value="phoneNumber" method={false}/>}/>
         </Code>
         <p className="description">
             That is it. The value entered by the user will
-            be stored in <DotProperty name={"myInput"} value="value" method={false} hl/>.
+            be stored in <DotProperty name={"phoneNumber"} value="value" method={false} hl/>.
         </p>
         <FormRef/>
         <p className="description">

@@ -25,6 +25,7 @@ export const Properties = () => {
         </p>
         <ul className="extra item-space-5">
             <li><CallProperty name="id"/> input id <LockIcon/></li>
+            <li><CallProperty name="accept" hl/> input type file accept property <LockIcon/></li>
             <li><CallProperty name="name" hl/> input name <LockIcon/></li>
             <li><CallProperty name="type" hl/> html input type <LockIcon/></li>
             <li><CallProperty name="value" hl/> input value <LockIcon/></li>

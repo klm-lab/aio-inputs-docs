@@ -1,6 +1,6 @@
 import {addClasses} from "../../../util";
 
-const Create = ({close, form, multiple = true, array, children,oneConst, imported = "useInputs"}) => {
+const Create = ({value = '"phoneNumber"',close, form, multiple = true, array, children,oneConst, imported = "useInputs"}) => {
     return <div className="codeLine">
         <span className="keyword">const</span>
         {oneConst ?
@@ -15,7 +15,7 @@ const Create = ({close, form, multiple = true, array, children,oneConst, importe
         <span>=</span>
         <span className="definition no-indent">{imported}</span>
         <span className="no-indent">({array && "["}</span>
-        {children ?? <span className="key no-indent">"phoneNumber"</span>}
+        {children ?? <span className="key no-indent">{value}</span>}
         {close && <span>{array && "]"})</span>}
     </div>
 }

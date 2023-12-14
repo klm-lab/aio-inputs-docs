@@ -27,7 +27,7 @@ export const FileExamples = () => {
         </h2>
         <p className="description">If you want change the default behaviour when allowing multiple upload, pushing new
             uploaded file
-            instead or replacing it, set <span className="oKey hl">mergeChanges</span> to <span
+            instead or replacing it, set <span className="oKey hl">merge</span> to <span
                 className="hl">true</span>.</p>
         <Iframe height={400} title="File input example" src={FILE_LINK}/>
         <h2 className="subTitle">

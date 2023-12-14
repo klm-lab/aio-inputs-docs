@@ -25,18 +25,11 @@ const InputArrayLine = ({name, topComment = true, validComment = true, inlineTex
                 <InputLine/>
                 {validComment && <KeyComment full comment={"{/* if touched and not valid */}"}/>}
                 <div className="codeLine">
-                    <ChildBracket inline stop={false}>
-                        <DotProperty name={"ip"} value="touched" method={false} indent/>
-                        <span>&&</span>
-                        <span className="no-indent">!</span>
-                        <DotProperty name={"ip"} value="valid" method={false} indent/>
-                        <span>&&</span>
-                        <span className="element no-indent">{"<span>"}</span>
-                        <ChildBracket inline stop={false} noPrevIndent noIndent>
-                            <DotProperty name={"ip"} value="errorMessage" method={false}/>
-                        </ChildBracket>
-                        <span className="element">{"</span>"}</span>
+                    <span className="element no-indent">{"<span>"}</span>
+                    <ChildBracket inline stop={false} noPrevIndent noIndent>
+                        <DotProperty name={"ip"} value="errorMessage" method={false}/>
                     </ChildBracket>
+                    <span className="element">{"</span>"}</span>
                 </div>
                 <span className="element">{"</div>"}</span>
             </div>

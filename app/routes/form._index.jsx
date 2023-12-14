@@ -15,9 +15,9 @@ import PageButton from "../components/pageButton";
 const {
     FORM: {
         ROOT,
-        GET_VALUES, RESET, ON_SUBMIT, SHOW_ERROR, GET_INPUT_BY_ID, GET_INPUTS_BY_NAME,
-        FOR_EACH, MAP, LENGTH, TO_ARRAY, TO_OBJECT
-    }, TRACK, CONFIG, USE_INPUTS
+        GET_VALUES, RESET, ON_SUBMIT, SHOW_ERROR, GET,
+        FOR_EACH, MAP
+    }, CONFIG, USE_INPUTS
 } = routes
 
 export const meta = () => {
@@ -39,18 +39,12 @@ export const Form = () => {
             <li><CallDefinition name="onSubmit" hl/> prevent the default behaviour of a <span
                 className="hl">{"<form>...</form>"}</span> HTML element .
             </li>
-            <li><CallDefinition name="getValues" hl/> a method to return your inputs values. Return <span
-                className="hl">null</span> if <AppLink aria-label="Navigate to lockValuesOnError config"
-                                                       to={CONFIG.ROOT + CONFIG.LOCK_VALUES_ON_ERROR}
-                                                       className="link">LOCK VALUES ON ERROR</AppLink> is
-                set to true
-            </li>
+            <li><CallDefinition name="getValues" hl/> a method to return your inputs values.</li>
             <li><CallDefinition name="reset" hl/> a method to reset a form.</li>
             <li><CallDefinition name="forEach" hl/> a method to loop through each input.</li>
             <li><CallDefinition name="map" hl/> a method loop through each input with return capabilities.</li>
-            <li><span className="oKey hl">length</span> a property which contains inputs length.</li>
-            <li><CallDefinition name="toArray" hl/> a method to return an array version of your inputs.</li>
-            <li><CallDefinition name="toObject" hl/> a method to return an object version of your inputs.</li>
+            <li><CallDefinition name="showError" hl/> a method that touched inputs and show their error.</li>
+            <li><CallDefinition name="get" hl/> a method that get an input with it's name.</li>
         </ul>
         <Line/>
         <h2 className="subTitle">
@@ -92,30 +86,17 @@ export const Form = () => {
             </Create>
             <ConsoleLog space method="getValues" comment="Get your values"/>
         </Code>
-        <h2 id={getAnchor(GET_INPUT_BY_ID)} className="subTitle smt">
-            Get an input by ID
-        </h2>
-        <p className="description">
-            <DotProperty value="getInputById" hl/> let you to get an input by his ID.
-        </p>
-        <Code copyText={FORM_CODE.GET_INPUT_BY_ID}>
-            <Create close form>
-                ...
-            </Create>
-            <ConsoleLog space method="getInputById" comment="Get your input" content={'"input id"'}/>
-        </Code>
-        <h2 id={getAnchor(GET_INPUTS_BY_NAME)} className="subTitle smt">
+        <h2 id={getAnchor(GET)} className="subTitle smt">
             Get inputs by name
         </h2>
         <p className="description">
-            <DotProperty value="getInputsByName" hl/> let you to get your input by his name.
-            It always return an array.
+            <DotProperty value="get" hl/> let you to get an input by name. It returns an array of input
         </p>
-        <Code copyText={FORM_CODE.GET_INPUTS_BY_NAME}>
+        <Code copyText={FORM_CODE.GET}>
             <Create close form>
                 ...
             </Create>
-            <ConsoleLog space method="getInputsByName" comment="Get your inputs" content={'"input name"'}/>
+            <ConsoleLog space method="get" comment="Get your input" content={'"input name"'}/>
         </Code>
         <h2 id={getAnchor(SHOW_ERROR)} className="subTitle smt">
             Show error
@@ -175,55 +156,15 @@ export const Form = () => {
             </Create>
             <ConsoleLog space method="map" comment="Map inputs" noConsole content="..."/>
         </Code>
-        <h2 id={getAnchor(LENGTH)} className="subTitle smt">
-            Length
-        </h2>
-        <p className="description">
-            <DotProperty value="length" hl method={false}/> give you the inputs length
-        </p>
-        <Code copyText={FORM_CODE.LENGTH}>
-            <Create close form>
-                ...
-            </Create>
-            <ConsoleLog space method="length" comment="Get your inputs length" property/>
-        </Code>
-        <h2 id={getAnchor(TO_ARRAY)} className="subTitle smt">
-            To array
-        </h2>
-        <p className="description">
-            <DotProperty value="toArray" hl/> give you an array version of your
-            inputs.
-        </p>
-        <Code copyText={FORM_CODE.TO_ARRAY}>
-            <Create close form>
-                ...
-            </Create>
-            <ConsoleLog space method="toArray" comment="Get your array version"/>
-        </Code>
-        <h2 id={getAnchor(TO_OBJECT)} className="subTitle smt">
-            To object
-        </h2>
-        <p className="description">
-            <DotProperty value="toObject" hl/> give you an object version of your
-            inputs. If you defined ids in your inputs, they are used as first keys otherwise, we generate random ids
-        </p>
-        <Code copyText={FORM_CODE.TO_OBJECT}>
-            <Create close form>
-                ...
-            </Create>
-            <ConsoleLog space method="toObject" comment="Get your object version"/>
-        </Code>
 
         <p className="description">
             Hit next to find out how to <AppLink aria-label={"To navigate change the configuration of aio-inputs"}
-                                                 className="link" to={CONFIG.ROOT}>CONFIG</AppLink> aio-inputs
-            behaviour,
-            when using <AppLink aria-label={"To setup a tracking tool"} className="link"
-                                to={TRACK.ROOT}>TRACK</AppLink> or async custom validation.
+                                                 className="link" to={CONFIG.ROOT + CONFIG.ASYNC_DELAY}>CONFIG</AppLink> aio-inputs
+            behaviour.
         </p>
         <div className="foot">
             <PageButton to={USE_INPUTS.ROOT + USE_INPUTS.OBJECT} prev/>
-            <PageButton to={CONFIG.ROOT + CONFIG.LOCK_VALUES_ON_ERROR}/>
+            <PageButton to={CONFIG.ROOT + CONFIG.ASYNC_DELAY}/>
         </div>
     </div>
 }
