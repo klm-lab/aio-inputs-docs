@@ -10,28 +10,22 @@ export const routes = {
         ROOT: "/form",
         ON_SUBMIT: "#onSubmit",
         GET_VALUES: "#getValues",
-        GET_INPUT_BY_ID: "#getInputById",
-        GET_INPUTS_BY_NAME: "#getInputsByName",
+        GET: "#get",
         SHOW_ERROR: "#showError",
         RESET: "#reset",
         FOR_EACH: "#forEach",
         MAP: "#map",
-        LENGTH: "#length",
-        TO_ARRAY: "#toArray",
-        TO_OBJECT: "#toObject",
     },
     CONFIG: {
         ROOT: "/config",
-        LOCK_VALUES_ON_ERROR: "#lockValuesOnError",
         ASYNC_DELAY: "#asyncDelay",
         PERSIST_ID: "#persitID",
-        TRACK_ID: "#trackID"
     },
     TRACK: {
         ROOT: "/tracking",
         TRACKING_TOOL: "#trackingTool",
         USE_VALUES: "#useValues",
-        LENGTH: "#length",
+        IS_VALID: "#isValid",
     },
     PROPERTIES: {
         ROOT: "/properties",
@@ -76,18 +70,6 @@ export const getMeta = (title, description, url) => [
     {name: "twitter:image", content: SITE_URL + "/site_image.png"},
     {name: "twitter:creator", content: "@klm-lab"},
     // {name: "twitter:card", content: CARD},
-]
-
-export const getInputsKey = (value) => [
-    {key: "props", value: '// id, value, onChange etc...,'},
-    {key: "key", value: '"some unique key",'},
-    {key: "id", value: value},
-    {key: "name", value: value},
-    {key: "label", value: value},
-    {key: "type", value: '"text",'},
-    {key: "value", value: '"",'},
-    {key: "valid", value: "true,", className: "definition"},
-    {key: "onChange", value: "Function", className: "definition"},
 ]
 
 

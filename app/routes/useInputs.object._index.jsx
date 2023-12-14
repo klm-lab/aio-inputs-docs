@@ -1,5 +1,4 @@
-import {getInputsKey, getMeta, routes} from "../util/constants";
-import Box from "../components/box";
+import {getMeta, routes} from "../util/constants";
 import Line from "../components/line";
 import ImportStatement from "../components/codeComponents/importStatement";
 import Code from "../components/code";
@@ -9,7 +8,6 @@ import Bracket from "../components/codeComponents/bracket";
 import KeyValue, {ChildBracket} from "../components/codeComponents/keyValue";
 import DotProperty from "../components/codeComponents/dotProperty";
 import AppLink from "../components/appLink";
-import ReadyToUse from "../components/codeComponents/readyToUse";
 import MapInputs from "../components/codeComponents/mapInputs";
 import InputLine from "../components/codeComponents/inputLine";
 import FormRef from "../components/FormRef";
@@ -34,11 +32,8 @@ export const UseInputs = () => {
             is <span className="package bold">
             VALID
         </span> by default if
-            there is no validation attached to it.<br/>
-            Object sibling keys are always unique. So the id is defined by every first key inside your object.
-            You can change all other properties but not the id.
+            there is no validation attached to it.
         </p>
-        <Box className="warn" message="If you add an id, it will be ignored."/>
         <Line/>
         <ImportStatement/>
         <h2 className="subTitle">
@@ -64,22 +59,10 @@ export const UseInputs = () => {
         </p>
         <p className="description">
             If you log <span className="hl">myInputs</span>, you'll see an object
-            where first keys are <span className="hl">name and gender</span>. Those keys have as value these
-            related ready-to-use properties and <AppLink aria-label={"To show all inputs properties"} className="link"
-                                                         to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
-            The name, id and label match every first key.
+            where first keys are <span className="hl">name and gender</span>. Those keys have
+            these <AppLink aria-label={"To show all inputs properties"} className="link"
+                           to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>ready-to-use properties</AppLink>.
         </p>
-        <Code copyText={USE_INPUTS_CODE.OBJECT_PROPERTIES}>
-            <Bracket>
-                {["name", "gender"].map(s => {
-                    return <KeyValue directValue={false} key={s} objKey={s} value={
-                        <ChildBracket>
-                            <ReadyToUse keys={getInputsKey(`"${s}",`)}/>
-                        </ChildBracket>
-                    }/>
-                })}
-            </Bracket>
-        </Code>
         <p className="description">
             Now bind <span className="hl">myInputs</span>, to some input element.<br/>
         </p>

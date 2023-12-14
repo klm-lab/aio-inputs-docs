@@ -1,12 +1,11 @@
 import Code from "../../../../components/code";
-import {getInputsKey, routes} from "../../../../util/constants";
-import ReadyToUse from "../../../../components/codeComponents/readyToUse";
 import FormRef from "../../../../components/FormRef";
 import Create, {ArrayParams} from "../../../../components/codeComponents/create";
 import MapInputs from "../../../../components/codeComponents/mapInputs";
 import DotProperty from "../../../../components/codeComponents/dotProperty";
 import AppLink from "../../../../components/appLink";
 import {USE_INPUTS_CODE} from "../../../../code";
+import {routes} from "../../../../util/constants";
 
 const {PROPERTIES} = routes;
 
@@ -26,26 +25,14 @@ const StringArray = () => {
         </Code>
 
         <p className="description">
-            If you log <span className="hl">myInputs</span>, you'll see an array of these related ready-to-use
-            properties and <AppLink aria-label={"To show all inputs properties"} className="link"
-                                    to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>MANY OTHERS</AppLink>.<br/>
-            The name, id and label match the array of string value.
+            <span className="hl">myInputs</span> contains these <AppLink aria-label={"To show all inputs properties"}
+                                                                         className="link"
+                                                                         to={PROPERTIES.ROOT + PROPERTIES.INPUTS}>related
+            ready-to-use
+            properties</AppLink>.
         </p>
-        <Code copyText={USE_INPUTS_CODE.ARRAY_PROPERTIES}>
-            <div className="codeLine">
-                <span>[</span>
-                <span>{"{"}</span>
-            </div>
-            <div className="codeLine">
-                <ReadyToUse keys={getInputsKey('"name | phoneNumber | gender",')}/>
-            </div>
-            <div className="codeLine">
-                <span>{"}"}</span>
-                <span>]</span>
-            </div>
-        </Code>
         <p className="description">
-            Now bind <span className="hl">myInputs</span>, to some input element
+            Now bind some input element.
         </p>
         <Code copyText={USE_INPUTS_CODE.ARRAY_BIND}>
             <MapInputs/>

@@ -42,7 +42,6 @@
     --o-key: #b593ea;
     --definition: #e7ac65;
     --package: #65c765;
-    --new-code: #335017;
     --warn-color: #493e30;
     // code
   }
@@ -69,7 +68,6 @@ body[data-dark="true"] {
   --o-key: #b593ea;
   --definition: #e7ac65;
   --package: #65c765;
-  --new-code: #335017;
   --warn-color: #493e30;
   // code
 }
@@ -96,7 +94,6 @@ body {
   // --definition: #dc8615;
   --definition: #d9740d;
   --package: green;
-  --new-code: #58622b;
   --warn-color: #f8edd1;
   // code
 
@@ -498,16 +495,6 @@ a {
 
     &Line {
       margin-left: 2rem;
-    }
-
-    &New {
-      background-color: var(--new-code);
-      padding: .2rem;
-      border-radius: 6px;
-
-      span {
-        color: white;
-      }
     }
 
   }

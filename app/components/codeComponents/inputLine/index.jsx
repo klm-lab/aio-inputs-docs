@@ -9,14 +9,11 @@ const InputLine = ({name = "ip", iKey, inline}) => {
             <DotProperty name={name} value="key" method={false}/>
             <span>{"}"}</span>
         </>}
-        <span className="keyword no-indent">{"value="}</span>
-        <span className="no-indent">{"{"}</span>
-        <DotProperty name={name} value="value" method={false}/>
-        <span>{"}"}</span>
-        <span className="keyword no-indent">{"onChange="}</span>
-        <span className="no-indent">{"{"}</span>
-        <DotProperty name={name} value="onChange" method={true} noCall/>
-        <span>{"}"}</span>
+        <span className="no-indent">{`{ ...`}</span>
+        <span className="no-indent">{name}</span>
+        <span className="no-indent">.</span>
+        <span className="oKey no-indent">{`props `}</span>
+        <span className="no-indent">{`}`}</span>
         <span className="element">{"/>"}</span>
     </>
     return inline ? I : <div className="codeLine">

@@ -5,13 +5,14 @@ import DotProperty from "../codeComponents/dotProperty";
 import FormRef from "../FormRef";
 import {routes} from "../../util/constants";
 import AppLink from "../appLink";
+import CallDefinition from "../codeComponents/callDefinition";
 
 const {PROPERTIES} = routes;
 
 export const CommonProp = ({validation, value}) => {
     return <KeyValue directValue={false} objKey="validation" value={
         <ChildBracket>
-            <KeyValue objKey={validation} value={value} comment={
+            <KeyValue objKey={validation} value={<CallDefinition name={validation} params={value}/>} comment={
                 <span className="comment"> {`// ${validation} validation`}</span>
             }/>
         </ChildBracket>
@@ -28,11 +29,11 @@ const CommonArrayObject =
          arrayLineName,
          copyGenText,
          copySpecText,
-        inlineText
+         inlineText
      }) => {
         return <>
             <p className="description">
-                Lets add some error message for {name} input to help the user. You can add tow kind of error message:
+                Lets add some error message for {name} input to help the user. You can add two kind of error message:
             </p>
             <ul className="extra">
                 <li>
@@ -43,7 +44,9 @@ const CommonArrayObject =
                 </li>
                 <li>
                     A Specific one
-                    <p className="sub-desc">A specific errorMessage is unique to each validation.</p>
+                    <p className="sub-desc">A specific errorMessage is unique to each validation. You can import
+                        validations
+                        from <span className="package hl">aio-inputs</span> package</p>
                 </li>
             </ul>
             <p className="description">
@@ -52,7 +55,7 @@ const CommonArrayObject =
             </p>
             <Component copyText={copyGenText}>
                 <KeyComment comment="General error message"/>
-                <KeyValue newCode objKey="errorMessage" value={`"${errorMessage}",`}/>
+                <KeyValue objKey="errorMessage" value={`"${errorMessage}",`}/>
                 <CommonProp value={value} validation={validation}/>
             </Component>
             <p className="description">
@@ -60,17 +63,7 @@ const CommonArrayObject =
                 rule.
             </p>
             <Component copyText={copySpecText}>
-                <KeyValue directValue={false} objKey="validation" value={
-                    <ChildBracket>
-                        <KeyValue directValue={false} objKey={validation} value={
-                            <ChildBracket>
-                                <KeyComment comment="Specific error message"/>
-                                <KeyValue newCode objKey="message" value={`"${errorMessage}",`}/>
-                                <KeyValue objKey="value" value={value}/>
-                            </ChildBracket>
-                        }/>
-                    </ChildBracket>
-                }/>
+                <CommonProp value={value + `, "${errorMessage}"`} validation={validation}/>
             </Component>
             <p className="description">
                 You can combine both kind of error message without any issue. Just keep this in mind.
