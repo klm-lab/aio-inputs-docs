@@ -37,7 +37,7 @@ export const Properties = () => {
                 This method take one arguments save the changes on <CallProperty name="update" hl/> property
             </li>
             <li><CallDefinition name="onLoad" hl/> a method to revoke the preview url. This works only if
-                there is no <CallProperty name="persitID" hl/>. It also set the loaded property to true if preview url is loaded <LockIcon/></li>
+                there is no persitID (<CallProperty name="PID" hl/>). It also set the loaded property to true if preview url is loaded <LockIcon/></li>
         </ul>
         <p className="description">
             Hit next to know more

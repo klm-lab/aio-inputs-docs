@@ -19,7 +19,7 @@ export const routes = {
     CONFIG: {
         ROOT: "/config",
         ASYNC_DELAY: "#asyncDelay",
-        PERSIST_ID: "#persitID",
+        PERSIST_ID: "#pid",
     },
     TRACK: {
         ROOT: "/tracking",

@@ -64,7 +64,7 @@ export const Properties = () => {
                 className="hl">boolean</span><UnlockIcon/></li>
             <li><CallProperty name="placeholder" hl/> input placeholder. Can be used to clear a select
                 input. <UnlockIcon/></li>
-            <li><CallProperty name="errorMessage" hl/> input general errorMessage <UnlockIcon/></li>
+            <li><CallProperty name="errorMessage" hl/> input general errorMessage <LockIcon/></li>
             <li><CallProperty name="validating" hl/> input asynchronous validation state <span
                 className="hl">boolean</span> <UnlockIcon/></li>
             <li><CallProperty name="validationFailed" hl/> <span

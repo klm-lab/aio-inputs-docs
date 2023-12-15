@@ -20,15 +20,15 @@ export const meta = () => {
 
 const Custom = ({async}) => {
     return <>
-        <CallDefinition async={async} anonymous params="value, setErrorMessage" arrow/>
+        <CallDefinition async={async} anonymous params="value" arrow/>
         <ChildBracket>
             <TopComment comment="make your validation"/>
             <div className="codeLine">
-                <CallDefinition name="setErrorMessage" params='"new error message"'/>
-            </div>
-            <div className="codeLine">
                 <span className="keyword">return</span>
-                <span className="keyword">false</span>
+                <span>valueIsValid ?</span>
+                <span className="keyword">null</span>
+                <span>:</span>
+                <span>"new error message"</span>
             </div>
         </ChildBracket>
     </>
@@ -41,7 +41,7 @@ const CustomCode = ({async, copyText, name, Fn}) => {
                 <ChildBracket>
                     <KeyValue objKey={name} directValue={false} value={
                         <>
-                            <span className="no-indent">{name}(</span>
+                            {async && <span className="no-indent">{name}(</span>}
                             <Fn async={async}/>
                         </>
                     }/>
@@ -95,9 +95,8 @@ export const Properties = () => {
                 <CustomCode Fn={CopyFn} async='"input name", ["minLength"])' name="copy"
                             copyText={PROPERTIES_CODE.COPY_OMIT}/>
             </li>
-            <li><CallProperty name="custom" hl/>takes a synchronous function that accepts two arguments.
-                The first argument is the value entered by the user and the second is a method for updating the error
-                message. It have to return a <span className="hl">boolean</span>
+            <li><CallProperty name="custom" hl/>must be a synchronous function that takes the
+                value entered by the user and return an error message or null.
                 <CustomCode Fn={Custom} name="custom" copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM()}/>
             </li>
             <li><CallProperty name="asyncCustom" hl/> takes an asynchronous function. Works like the custom
