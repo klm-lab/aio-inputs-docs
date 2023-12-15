@@ -1,11 +1,11 @@
 import InputLine from "../inputLine";
 import DotProperty from "../dotProperty";
 
-const MapInputs = ({name = "myInputs",method = "map", inline = true, children, close}) => {
+const MapInputs = ({name = "myInputs",method = "each", inline = true, children, close}) => {
     return <>
         <div className="codeLine">
             <span className="keyword">return</span>
-            <DotProperty name={name} value={method} method={false}/>
+            <DotProperty name={name} value={method} noCall={true}/>
             <span className="no-indent">(</span>
             <span className="">{`ip =>${!inline ? " {": ""}`}</span>
             {inline && <>

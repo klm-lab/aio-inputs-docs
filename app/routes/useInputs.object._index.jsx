@@ -54,7 +54,7 @@ export const UseInputs = () => {
         <p className="description">Notice that we extract also the <span className="hl">form</span> object
             from <span className="package hl">aio-inputs. </span>
             Because we can't use map like array to render our inputs.
-            We will use <DotProperty value="map" hl/> instead, or just destructure our inputs and render them. It is up
+            We will use <DotProperty value="each" hl/> instead, or just destructure our inputs and render them. It is up
             to you
         </p>
         <p className="description">
@@ -67,7 +67,7 @@ export const UseInputs = () => {
             Now bind <span className="hl">myInputs</span>, to some input element.<br/>
         </p>
         <ul className="extra">
-            <li>With <DotProperty value="map" hl/>, <AppLink aria-label={"To show the form map utility"}
+            <li>With <DotProperty value="each" hl/>, <AppLink aria-label={"To show the form map utility"}
                                                              className="link"
                                                              to={FORM.ROOT + FORM.MAP}>MORE DETAILS</AppLink>
             </li>

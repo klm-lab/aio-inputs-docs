@@ -9,14 +9,13 @@ import {FORM_CODE} from "../code";
 import Create from "../components/codeComponents/create";
 import DotProperty from "../components/codeComponents/dotProperty";
 import ConsoleLog from "../components/codeComponents/consoleLog";
-import ExternalLink from "../components/externalLink";
 import PageButton from "../components/pageButton";
 
 const {
     FORM: {
         ROOT,
         GET_VALUES, RESET, ON_SUBMIT, SHOW_ERROR, GET,
-        FOR_EACH, MAP
+        EACH
     }, CONFIG, USE_INPUTS
 } = routes
 
@@ -41,8 +40,7 @@ export const Form = () => {
             </li>
             <li><CallDefinition name="getValues" hl/> a method to return your inputs values.</li>
             <li><CallDefinition name="reset" hl/> a method to reset a form.</li>
-            <li><CallDefinition name="forEach" hl/> a method to loop through each input.</li>
-            <li><CallDefinition name="map" hl/> a method loop through each input with return capabilities.</li>
+            <li><CallDefinition name="each" hl/> a method to loop through each input.</li>
             <li><CallDefinition name="showError" hl/> a method that touched inputs and show their error.</li>
             <li><CallDefinition name="get" hl/> a method that get an input with it's name.</li>
         </ul>
@@ -122,44 +120,20 @@ export const Form = () => {
             <ConsoleLog space method="reset" comment="Do a reset" noConsole/>
         </Code>
 
-        <h2 id={getAnchor(FOR_EACH)} className="subTitle smt">
+        <h2 id={getAnchor(EACH)} className="subTitle smt">
             For each input
         </h2>
-        <p className="description">
-            <DotProperty value="forEach" hl/> acts like the very popular
-            known <DotProperty name="Array.prototype" value="forEach" hl/> method.
-            More on <ExternalLink aria-label={"Link to mdn site for forEach method"}
-                                  to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">
-            FOR EACH
-        </ExternalLink>.
-        </p>
         <Code copyText={FORM_CODE.FOR_EACH}>
             <Create close form>
                 ...
             </Create>
-            <ConsoleLog space method="forEach" comment="For each input" noConsole content="..."/>
-        </Code>
-        <h2 id={getAnchor(MAP)} className="subTitle smt">
-            Map inputs
-        </h2>
-        <p className="description">
-            <DotProperty value="map" hl/> acts like the very popular
-            known <DotProperty name="Array.prototype" value="map" hl/> method.
-            More on <ExternalLink aria-label={"Link to mdn website for map method"}
-                                  to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">
-            MAP
-        </ExternalLink>.
-        </p>
-        <Code copyText={FORM_CODE.MAP}>
-            <Create close form>
-                ...
-            </Create>
-            <ConsoleLog space method="map" comment="Map inputs" noConsole content="..."/>
+            <ConsoleLog method="each" space comment="For each input" noConsole content="..."/>
         </Code>
 
         <p className="description">
             Hit next to find out how to <AppLink aria-label={"To navigate change the configuration of aio-inputs"}
-                                                 className="link" to={CONFIG.ROOT + CONFIG.ASYNC_DELAY}>CONFIG</AppLink> aio-inputs
+                                                 className="link"
+                                                 to={CONFIG.ROOT + CONFIG.ASYNC_DELAY}>CONFIG</AppLink> aio-inputs
             behaviour.
         </p>
         <div className="foot">

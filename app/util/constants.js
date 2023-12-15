@@ -13,8 +13,7 @@ export const routes = {
         GET: "#get",
         SHOW_ERROR: "#showError",
         RESET: "#reset",
-        FOR_EACH: "#forEach",
-        MAP: "#map",
+        EACH: "#each",
     },
     CONFIG: {
         ROOT: "/config",
