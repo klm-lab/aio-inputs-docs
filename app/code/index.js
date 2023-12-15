@@ -102,11 +102,7 @@ form.reset()`,
     FOR_EACH: `${FORM_C}
 
 // For each input
-form.forEach()`,
-    MAP: `${FORM_C}
-
-// Map inputs
-form.map()`,
+form.each()`,
 }
 
 const CONFIG_C = `const [myInputs, form] = useInputs(yourInputs ,{`;
