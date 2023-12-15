@@ -61,7 +61,8 @@ export const Properties = () => {
         <p className="description">
             These validations properties are available for your convenience.
             You have full control over them.
-            Every property is a function that can be imported from <span className="package hl">aio-inputs</span>.
+            Every property is a function that can be imported from <span className="package hl">aio-inputs</span> except the custom property.
+            You have to write your custom validation function.
         </p>
 
         <h2 className="subTitle">Properties list</h2>
