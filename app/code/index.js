@@ -1,7 +1,7 @@
-const ARRAY_MIX = (gen, spec) => `const [myInputs] = useInputs([
+const ARRAY_MIX = (spec) => `const [myInputs] = useInputs([
     {
         name: "age",
-        type: "number",${gen ?? ""}
+        type: "number",
         validation: {
             min: min(18${spec ?? ''}) // min validation"
         },
@@ -10,9 +10,9 @@ const ARRAY_MIX = (gen, spec) => `const [myInputs] = useInputs([
     "firstname", // No validation
 ])`;
 
-const OBJECT_MIX = (gen, spec) => `const [myInputs, form] = useInputs(
+const OBJECT_MIX = (spec) => `const [myInputs, form] = useInputs(
     {
-        name: {${gen ?? ""}
+        name: {
             validation: {
                 minLength: minLength(3${spec ?? ''}) // minLength validation"
             },
@@ -43,18 +43,16 @@ export const GET_STARTED_CODE = {
 export const USE_INPUTS_CODE = {
     CREATE_STRING: `const [myInput] = useInputs("phoneNumber")`,
     VALIDITY: `// all inputs
+yourInputs.isTouched
 yourInputs.isValid
 
 // Each input
+eachInput.touched
 eachInput.valid`,
     BIND: `<input {...myInput.phoneNumber.props} />`,
     CREATE_ARRAY_STRING: `const [myInputs] = useInputs(["name", "phoneNumber", "gender"])`,
     ARRAY_BIND: MAP_LINE("myInputs"),
-    CREATE_ARRAY_MIX: ARRAY_MIX(),
-    CREATE_ARRAY_MIX_GEN_MESSAGE: ARRAY_MIX(`
-        // General error message
-        errorMessage: "We need you to have at least 18",`),
-    CREATE_ARRAY_MIX_SPEC_MESSAGE: ARRAY_MIX(null, `, "We need you to have at least 18"`),
+    CREATE_ARRAY_MIX_SPEC_MESSAGE: ARRAY_MIX( `, "We need you to have at least 18"`),
     INPUT_ARRAY_LINE: IN_LINE("myInputs"),
     CREATE_OBJECT: `const [myInputs, form] = useInputs(
     {
@@ -69,11 +67,7 @@ return <>
     <input {...name.props} />
     <input {...gender.props} />
 </>`,
-    CREATE_OBJ: OBJECT_MIX(),
-    OBJ_GEN_MESSAGE: OBJECT_MIX(`
-            // General error message
-            errorMessage: "The name must have at least 3 characters",`),
-    OBJ_SPEC_MESSAGE: OBJECT_MIX(null, `{
+    OBJ_SPEC_MESSAGE: OBJECT_MIX( `{
                     // Specific error message
                     message: "The name must have at least 3 characters",
                     value: 3
@@ -122,7 +116,7 @@ export const CONFIG_CODE = {
     asyncDelay: 800 // The type is number
 })`,
     PERSIST_ID: `${CONFIG_C}
-    persistID: "myUniqueId"
+    pid: "myUniqueId"
 })`
 }
 
@@ -156,10 +150,9 @@ input.set("value", MY_URL_OR_MY_ARRAY_OF_URL, {
 `,
     VALIDATIONS_CUSTOM: (async) => `{
     validation:{
-        ${async ? 'asyncCustom' : "custom"}:${async ? " asyncCustom( async " : " custom("}(value, setErrorMessage) => {
+        ${async ? 'asyncCustom' : "custom"}:${async ? " asyncCustom( async " : " "}(value) => {
             // make your validation
-            setErrorMessage("new error message")
-            return false
+            return valueIsValid ? null : "new error message"
         }),
     },
 },`,

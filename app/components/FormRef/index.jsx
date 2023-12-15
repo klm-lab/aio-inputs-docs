@@ -19,9 +19,15 @@ const FormRef = () => {
         <Code copyText={USE_INPUTS_CODE.VALIDITY}>
             <TopComment comment="all inputs"/>
             <div className="codeLine">
+                <DotProperty name="yourInputs" value="isTouched" method={false}/>
+            </div>
+            <div className="codeLine">
                 <DotProperty name="yourInputs" value="isValid" method={false}/>
             </div>
             <TopComment space comment="Each input"/>
+            <div className="codeLine">
+                <DotProperty name="eachInput" value="touched" method={false}/>
+            </div>
             <div className="codeLine">
                 <DotProperty name="eachInput" value="valid" method={false}/>
             </div>

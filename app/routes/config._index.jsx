@@ -33,7 +33,7 @@ export const Config = () => {
         <ul className="extra item-space">
             <li><span className="oKey hl">asyncDelay</span> asynchronous validation waiting time when user stops typing.
             </li>
-            <li><span className="oKey hl">persistID</span> persist data on component unmount with this ID.</li>
+            <li><span className="oKey hl">pid</span> persist data on component unmount with this ID.</li>
         </ul>
         <Line/>
         <h2 id={getAnchor(ASYNC_DELAY)} className="subTitle smt">
@@ -57,14 +57,14 @@ export const Config = () => {
             Persist ID
         </h2>
         <p className="description">
-            You can persist data on component unmount with a persistID.
-            <span className="hl oKey">persistID</span> must be a unique ID throughout your application,
+            You can persist data on component unmount with a pid.
+            <span className="hl oKey">pid</span> must be a unique ID throughout your application,
             and must not change during the component's lifetime.</p>
         <Code copyText={CONFIG_CODE.PERSIST_ID}>
             <Create close form>
                 yourInputs <span>,</span>
                 <ChildBracket inline stop={false} noIndent>
-                    <KeyValue objKey="persistID" value='"myUniqueId"'/>
+                    <KeyValue objKey="pid" value='"myUniqueId"'/>
                 </ChildBracket>
             </Create>
         </Code>
