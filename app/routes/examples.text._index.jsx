@@ -37,10 +37,6 @@ export const TextExamples = () => {
         </h2>
         <Iframe title="An array of string with no validation" src={ARRAY_STRING_LINK}/>
         <h2 className="subTitle">
-            An array of inputs with some validation
-        </h2>
-        <Iframe height={400} title="An array of inputs with some validation" src={ARRAY_VALID_LINK}/>
-        <h2 className="subTitle">
             Array with Validation and errorMessage
         </h2>
         <Iframe height={400} title="Array with Validation and errorMessage" src={ARRAY_VALID_ERROR_LINK}/>

@@ -3,7 +3,6 @@ import {routes} from "../util/constants";
 import Code from "../components/code";
 import {TopComment} from "../components/codeComponents/create";
 import DotProperty from "../components/codeComponents/dotProperty";
-import KeyValue, {ChildBracket} from "../components/codeComponents/keyValue";
 import LockIcon from "../assets/icon/LockIcon";
 import UnlockIcon from "../assets/icon/UnlockIcon";
 import CallDefinition, {CallProperty} from "../components/codeComponents/callDefinition";
@@ -41,8 +40,6 @@ export const Properties = () => {
             <li><CallProperty name="id"/> input id <UnlockIcon/></li>
             <li><CallProperty name="key"/> a unique key <LockIcon/></li>
             <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
-            <li><CallProperty name="min" hl/> input type range minimum value <UnlockIcon/></li>
-            <li><CallProperty name="max" hl/> input type range maximum value <UnlockIcon/></li>
             <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
             <li><CallProperty name="label" hl/> input label <UnlockIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
@@ -102,21 +99,12 @@ export const Properties = () => {
                 <div className="codeLine">
                     <DotProperty name="input" value="set" params={
                         <>
-                            <span>{'"value", MY_URL_OR_MY_ARRAY_OF_URL, '}</span>
-                            <ChildBracket inline stop={false} noIndent>
-                                <KeyValue objKey="getBlob" directValue={false} value={
-                                    <span className="no-indent">
-                                                <CallDefinition anonymous arrow params="url"/>
-                                                <ChildBracket>
-                                                    <TopComment comment="get your blob with the url"/>
-                                                    <div className="codeLine">
-                                                        <span className="keyword">return</span>
-                                                        <span>a blob or a file</span>
-                                                    </div>
-                                                </ChildBracket>
-                                            </span>
-                                }/>
-                            </ChildBracket>
+                            <span>{'"value", MY_URL_OR_MY_ARRAY_OF_URL,'}</span>
+                            <span className="keyword">async</span>
+                            <span className="no-indent">
+                               <CallDefinition anonymous arrow params="url"/>
+                               <span> your file</span>
+                            </span>
                         </>
                     }/>
                 </div>

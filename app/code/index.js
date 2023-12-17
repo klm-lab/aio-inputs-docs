@@ -14,7 +14,7 @@ const OBJECT_MIX = (spec) => `const [myInputs, form] = useInputs(
     {
         name: {
             validation: {
-                minLength: minLength(3${spec ?? ''}) // minLength validation"
+                min: min(3${spec ?? ''}) // minLength validation"
             },
         },
     },
@@ -137,29 +137,32 @@ input.set("type", "password")
 input.set("value", MY_VALUE)
 
 // Set blob or file while setting file input value
-input.set("value", MY_URL_OR_MY_ARRAY_OF_URL, {
-    getBlob: (url) => {
-        // get your blob with the url
-        return your file
-    },
-})
+input.set("value", MY_URL_OR_MY_ARRAY_OF_URL, async (url) => your file)
 `,
     VALIDATIONS_CUSTOM: (async) => `{
     validation:{
-        ${async ? 'asyncCustom' : "custom"}:${async ? " asyncCustom( async " : " "}(value) => {
-            // make your validation
-            return valueIsValid ? null : "new error message"
+        ${async ? 'asyncCustom' : "custom"}:(value${async ? ' ,onSuccess, onError': ''}) => {
+            // make your validation${async ? `
+             callServer(value) {
+             .then(valid => onSuccess(valid ? null : "new error message"))
+             .catch(error => {
+                onError();
+                console.log(error)
+             })
+            `: `
+             return valueIsValid ? null : "new error message"
+            `}
         }),
     },
 },`,
-    COPY: `
-validation: {
-   copy: copy("input name")  
-`,
-    COPY_OMIT: `
-validation: {
-   copy: copy("input name", ["minLength"])  
-`
+//     COPY: `
+// validation: {
+//    copy: copy("input name")
+// `,
+//     COPY_OMIT: `
+// validation: {
+//    copy: copy("input name", ["min"])
+// `
 }
 
 export const TYPES_CODE = {

@@ -36,7 +36,7 @@ const ObjectValidation = () => {
             copySpecText={USE_INPUTS_CODE.OBJ_SPEC_MESSAGE}
             Component={CommonObjectInput}
             value="3"
-            validation="minLength"
+            validation="min"
             errorMessage="The name must have at least 3 characters"
             arrayLineName="form"
         />
