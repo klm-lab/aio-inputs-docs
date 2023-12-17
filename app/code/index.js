@@ -14,7 +14,7 @@ const OBJECT_MIX = (spec) => `const [myInputs, form] = useInputs(
     {
         name: {
             validation: {
-                minLength: minLength(3${spec ?? ''}) // minLength validation"
+                min: min(3${spec ?? ''}) // minLength validation"
             },
         },
     },
@@ -155,14 +155,14 @@ input.set("value", MY_URL_OR_MY_ARRAY_OF_URL, async (url) => your file)
         }),
     },
 },`,
-    COPY: `
-validation: {
-   copy: copy("input name")  
-`,
-    COPY_OMIT: `
-validation: {
-   copy: copy("input name", ["minLength"])  
-`
+//     COPY: `
+// validation: {
+//    copy: copy("input name")
+// `,
+//     COPY_OMIT: `
+// validation: {
+//    copy: copy("input name", ["min"])
+// `
 }
 
 export const TYPES_CODE = {

@@ -1,3 +1,15 @@
+export const RESERVED = [
+    "props",
+    "label",
+    "merge",
+    "valid",
+    "touched",
+    "validation",
+    "data",
+    "afterChange",
+    "g",
+    "set"
+]
 export const routes = {
     ROOT: "/",
     USE_INPUTS: {

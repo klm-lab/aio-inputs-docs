@@ -40,8 +40,6 @@ export const Properties = () => {
             <li><CallProperty name="id"/> input id <UnlockIcon/></li>
             <li><CallProperty name="key"/> a unique key <LockIcon/></li>
             <li><CallProperty name="name" hl/> input name <UnlockIcon/></li>
-            <li><CallProperty name="min" hl/> input type range minimum value <UnlockIcon/></li>
-            <li><CallProperty name="max" hl/> input type range maximum value <UnlockIcon/></li>
             <li><CallProperty name="type" hl/> html input type <UnlockIcon/></li>
             <li><CallProperty name="label" hl/> input label <UnlockIcon/></li>
             <li><CallProperty name="value" hl/> input value <UnlockIcon/></li>
