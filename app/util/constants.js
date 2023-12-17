@@ -96,11 +96,6 @@ export const ARRAY_STRING_LINK = {
     js: "https://stackblitz.com/edit/stackblitz-starters-fymkce?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
 }
 
-export const ARRAY_VALID_LINK = {
-    ts: "https://stackblitz.com/edit/stackblitz-starters-kmslym?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
-    js: "https://stackblitz.com/edit/stackblitz-starters-jrc1wc?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
-}
-
 export const ARRAY_VALID_ERROR_LINK = {
     ts: "https://stackblitz.com/edit/stackblitz-starters-mqylls?ctl=1&embed=1&file=src%2FApp.tsx&hideExplorer=1&hideNavigation=1",
     js: "https://stackblitz.com/edit/stackblitz-starters-csnuxy?ctl=1&embed=1&file=src%2FApp.js&hideExplorer=1&hideNavigation=1"
