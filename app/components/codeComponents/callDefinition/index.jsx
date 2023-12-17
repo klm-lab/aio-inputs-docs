@@ -1,7 +1,7 @@
 import {addClasses} from "../../../util";
 
-const CallDefinition = ({hl, name, params, anonymous, arrow,async}) => {
-    return <span className={hl ? "hl" : ""}>
+const CallDefinition = ({hl, name, params, anonymous, arrow,async,noIndent}) => {
+    return <span className={addClasses(hl ? "hl" : "",noIndent ? 'no-indent': '')}>
         {async && <span className="keyword">async</span>}
         {!anonymous && <span className="definition no-indent">{name}</span>}
         <span className="no-indent">(</span>

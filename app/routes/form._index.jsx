@@ -26,6 +26,12 @@ export const meta = () => {
         , ROOT);
 };
 
+try {
+
+}catch (e) {
+
+}
+
 export const Form = () => {
     useRedirect(ROOT, ON_SUBMIT);
     return <div className="data">

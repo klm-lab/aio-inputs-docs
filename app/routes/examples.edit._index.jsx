@@ -26,10 +26,8 @@ export const EditExamples = () => {
         </h2>
         <p className="description">
             This example will show how to populate your inputs value for example an edit.
-            You can also config a <CallProperty name="getBlob" hl/> property as a function
-            and retrieve a blob from any file url. Your function must take an url as a pram and return a <CallProperty
-                name="blob"/> or
-            a <CallProperty name="Promise<Blob>"/>.</p>
+            For a file, you can also a third optional argument, an asynchronous function
+            and retrieve a blob from your file url. Your function must take an url as param and return a promise.</p>
         <Iframe height={600} title="Load value example" src={EDIT_LINK}/>
         <p className="description">
             Go the next step to find out how to use some built-in types

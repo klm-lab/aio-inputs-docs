@@ -7,6 +7,7 @@ import CallDefinition, {CallProperty} from "../components/codeComponents/callDef
 import {TopComment} from "../components/codeComponents/create";
 import {PROPERTIES_CODE} from "../code";
 import PageButton from "../components/pageButton";
+import ConsoleLog from "../components/codeComponents/consoleLog";
 
 
 const {
@@ -20,15 +21,52 @@ export const meta = () => {
 
 const Custom = ({async}) => {
     return <>
-        <CallDefinition async={async} anonymous params="value" arrow/>
+        <CallDefinition anonymous params={async ? "value, onSuccess, onError" : "value"} arrow/>
         <ChildBracket>
             <TopComment comment="make your validation"/>
             <div className="codeLine">
-                <span className="keyword">return</span>
-                <span>valueIsValid ?</span>
-                <span className="keyword">null</span>
-                <span>:</span>
-                <span>"new error message"</span>
+                {async ?
+                    <>
+                        <CallDefinition noIndent name="callServer" params={"value"}/>
+                        <div className="">
+                            <span className="no-indent">.</span>
+                            <CallDefinition name="then" params={
+                                <span className="no-indent">
+                                    <span>{'valid =>'}</span>
+                                    <CallDefinition noIndent name="onSuccess" params={
+                                        <span className="no-indent">
+                                    <span>valid ?</span>
+                                    <span className="keyword">null</span>
+                                    <span className="no-indent">: "new error message"</span>
+                                </span>
+                                    }/>
+                                </span>
+                            }/>
+
+
+                        </div>
+                        <span className="no-indent">.</span>
+                        <CallDefinition name="catch" params={
+                            <span className="no-indent">
+                                    <span>{'error =>'}</span>
+                                    <ChildBracket stop={false} inline noIndent>
+                                       <div className="codeLine">
+                                            <CallDefinition name="onError"/>
+                                       </div>
+                                         <ConsoleLog noCall name="error"/>
+                                    </ChildBracket>
+                                </span>
+                        }/>
+                    </>
+                    :
+                    <>
+                        <span className="keyword">return</span>
+                        <span>valueIsValid ?</span>
+                        <span className="keyword">null</span>
+                        <span>:</span>
+                        <span>"new error message"</span>
+                    </>
+                }
             </div>
         </ChildBracket>
     </>
@@ -40,10 +78,7 @@ const CustomCode = ({async, copyText, name, Fn}) => {
             <KeyValue objKey="validation" directValue={false} value={
                 <ChildBracket>
                     <KeyValue objKey={name} directValue={false} value={
-                        <>
-                            {async && <span className="no-indent">{name}(</span>}
-                            <Fn async={async}/>
-                        </>
+                        <Fn async={async}/>
                     }/>
                 </ChildBracket>
             }/>
@@ -61,7 +96,8 @@ export const Properties = () => {
         <p className="description">
             These validations properties are available for your convenience.
             You have full control over them.
-            Every property is a function that can be imported from <span className="package hl">aio-inputs</span> except the custom property.
+            Every property is a function that can be imported from <span className="package hl">aio-inputs</span> except
+            the custom property.
             You have to write your custom validation function.
         </p>
 
@@ -100,13 +136,8 @@ export const Properties = () => {
                 value entered by the user and return an error message or null.
                 <CustomCode Fn={Custom} name="custom" copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM()}/>
             </li>
-            <li><CallProperty name="asyncCustom" hl/> takes an asynchronous function. Works like the custom
-                one but have to return a <span className="hl">
-                    Promise
-                     <span className="no-indent">{"<"}</span>
-                <span className="no-indent keyword">boolean</span>
-                <span className="no-indent">{">"}</span>
-                </span>
+            <li><CallProperty name="asyncCustom" hl/> must be a function that takes the
+                value entered by the user, a success callback and an error callback.
                 <CustomCode Fn={Custom} name="asyncCustom" async copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM(true)}/>
             </li>
 
