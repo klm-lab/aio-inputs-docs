@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import Line from "../components/line";
 import ImportStatement from "../components/codeComponents/importStatement";
 import Code from "../components/code";
@@ -15,7 +15,7 @@ const {ROOT: GET_STARTED, USE_INPUTS: {ROOT, STRING, ARRAY}, PROPERTIES} = route
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs hook with a string, documentation for react aio-inputs",
+        `Use Inputs hook with a string, documentation for react ${LIB_NAME}`,
         "string, hook, useInputs, redux, react. Best, simple, fast and powerful library inputs state management for react."
         , ROOT + STRING
     );
@@ -64,7 +64,7 @@ export const UseStringInput = () => {
         </p>
         <FormRef/>
         <p className="description">
-            Hit next to find out how to use array with aio-inputs
+            Hit next to find out how to use array with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={GET_STARTED} prev/>

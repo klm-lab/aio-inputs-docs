@@ -4,6 +4,7 @@ import fontStyles from "./assets/styles/fonts.css"
 import {Links, LiveReload, Meta, Scripts, ScrollRestoration,} from "@remix-run/react";
 import Content from "./components/content";
 import NotFound from "./views/notFound";
+import {LIB_NAME} from "./util/constants";
 
 export const links = () => [
     {rel: "icon", type: "image/x-icon", href: "/favicon.svg"},
@@ -19,7 +20,7 @@ export default function App() {
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <Meta/>
-        <title>Aio-Inputs Docs</title>
+        <title>{LIB_NAME} Docs</title>
         <Links/>
     </head>
     <body>

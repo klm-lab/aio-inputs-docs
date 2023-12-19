@@ -1,10 +1,10 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import useRedirect from "../hook/useRedirect";
 
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs hook with a string, documentation for react aio-inputs",
+        `Use Inputs hook with a string, documentation for react ${LIB_NAME}`,
         "string, hook, useInputs, redux, react. Best, simple, fast and powerful library inputs state management for react."
     ,ROOT);
 };

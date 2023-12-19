@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import Line from "../components/line";
 import Code from "../components/code";
 import {TYPES_CODE} from "../code";
@@ -11,7 +11,7 @@ import AppLink from "../components/appLink";
 
 export const meta = () => {
     return getMeta(
-        "Inputs types documentation for react aio-inputs",
+        `Inputs types documentation for react ${LIB_NAME}`,
         "Some built-in types. Best, simple, fast and powerful library inputs state management for react",
         TYPES);
 };
@@ -22,7 +22,7 @@ export default function Root() {
     return <div className="data">
         <h1 className="title">Built-In Types</h1>
         <p className="description">
-            <span className="hl package">aio-inputs</span> has strong built-in types and properly infer type
+            <span className="hl package">{LIB_NAME}</span> has strong built-in types and properly infer type
             from your inputs.
         </p>
         <p className="description">

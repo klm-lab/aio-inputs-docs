@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import useRedirect from "../hook/useRedirect";
 import {getAnchor} from "../util";
 import AppLink from "../components/appLink";
@@ -18,7 +18,7 @@ const {
 export const meta = () => {
 
     return getMeta(
-        "Track Inputs values in external component ,documentation for react aio-inputs",
+        `Track Inputs values in external component ,documentation for react ${LIB_NAME}`,
         "track, id, useValues, hook, redux, react. Best, simple, fast and powerful library inputs state management for react."
         , ROOT);
 };

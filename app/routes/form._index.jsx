@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import useRedirect from "../hook/useRedirect";
 import {getAnchor} from "../util";
 import CallDefinition from "../components/codeComponents/callDefinition";
@@ -21,7 +21,7 @@ const {
 
 export const meta = () => {
     return getMeta(
-        "Form Inputs state management documentation for react aio-inputs",
+        `Form Inputs state management documentation for react ${LIB_NAME}`,
         "use form and get values , submit or reset your data. Best, simple, fast and powerful library inputs state management for react."
         , ROOT);
 };
@@ -137,9 +137,9 @@ export const Form = () => {
         </Code>
 
         <p className="description">
-            Hit next to find out how to <AppLink aria-label={"To navigate change the configuration of aio-inputs"}
+            Hit next to find out how to <AppLink aria-label={`To navigate change the configuration of ${LIB_NAME}`}
                                                  className="link"
-                                                 to={CONFIG.ROOT + CONFIG.ASYNC_DELAY}>CONFIG</AppLink> aio-inputs
+                                                 to={CONFIG.ROOT + CONFIG.ASYNC_DELAY}>CONFIG</AppLink> {LIB_NAME}
             behaviour.
         </p>
         <div className="foot">

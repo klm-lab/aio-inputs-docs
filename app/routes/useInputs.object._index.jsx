@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import Line from "../components/line";
 import ImportStatement from "../components/codeComponents/importStatement";
 import Code from "../components/code";
@@ -19,7 +19,7 @@ const {USE_INPUTS: {ROOT, OBJECT, ARRAY}, FORM, PROPERTIES} = routes
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs hook with an object, documentation for react aio-inputs",
+        `Use Inputs hook with an object, documentation for react ${LIB_NAME}`,
         "object, hook, useInputs, redux, react. Best, simple, fast and powerful library inputs state management for react.",
         ROOT + OBJECT
     );
@@ -52,7 +52,7 @@ export const UseInputs = () => {
             </Create>
         </Code>
         <p className="description">Notice that we extract also the <span className="hl">form</span> object
-            from <span className="package hl">aio-inputs. </span>
+            from <span className="package hl">{LIB_NAME}. </span>
             Because we can't use map like array to render our inputs.
             We will use <DotProperty value="each" hl/> instead, or just destructure our inputs and render them. It is up
             to you
@@ -109,7 +109,7 @@ export const UseInputs = () => {
         <FormRef/>
         <ObjectValidation/>
         <p className="description">
-            Hit next to find out how to use form object with aio-inputs.
+            Hit next to find out how to use form object with {LIB_NAME}.
         </p>
         <div className="foot">
             <PageButton to={ROOT + ARRAY} prev/>

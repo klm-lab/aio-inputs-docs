@@ -1,6 +1,7 @@
 import Line from "../../components/line";
 import Iframe from "../../components/iframe/Iframe";
 import PageButton from "../../components/pageButton";
+import {LIB_NAME} from "../../util/constants";
 
 const CheckboxAndRadio = ({link, validLink, name, nextName, prevLink, nextLink}) => {
 
@@ -23,7 +24,7 @@ const CheckboxAndRadio = ({link, validLink, name, nextName, prevLink, nextLink})
         </h2>
         <Iframe height={600} title="Checkbox input with validation" src={validLink}/>
         <p className="description">
-            Hit next for {nextName} examples with aio-inputs
+            Hit next for {nextName} examples with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={prevLink} prev/>

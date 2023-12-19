@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import Line from "../components/line";
 import ImportStatement from "../components/codeComponents/importStatement";
 import StringArray from "../views/useInputs/array/stringArray";
@@ -10,7 +10,7 @@ const {ROOT, ARRAY, STRING, OBJECT} = routes.USE_INPUTS
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs hook with an array, documentation for react aio-inputs",
+        `Use Inputs hook with an array, documentation for react ${LIB_NAME}`,
         "array,string, object, hook, useInputs, redux, react. Best, simple, fast and powerful library inputs state management for react."
         , ROOT + ARRAY
     );
@@ -41,7 +41,7 @@ export const UseInputs = () => {
         <StringArray/>
         <MixedArray/>
         <p className="description">
-            Hit next to find out how to use object with aio-inputs
+            Hit next to find out how to use object with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={ROOT + STRING} prev/>

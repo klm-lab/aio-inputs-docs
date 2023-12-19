@@ -72,6 +72,10 @@ body[data-dark="true"] {
   // code
 }
 
+title:first-letter {
+  text-transform: uppercase;
+}
+
 body {
   --bg-color: #ffffff;
   --text-color: #222222;

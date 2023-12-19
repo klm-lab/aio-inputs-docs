@@ -2,7 +2,7 @@ import {
     ARRAY_STRING_LINK,
     ARRAY_VALID_ERROR_LINK,
     ARRAY_VALID_LINK,
-    getMeta,
+    getMeta, LIB_NAME,
     routes,
     SINGLE_INPUT_LINK
 } from "../util/constants";
@@ -13,7 +13,7 @@ import Iframe from "../components/iframe/Iframe";
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs type text examples, documentation for react aio-inputs",
+        `Use Inputs type text examples, documentation for react ${LIB_NAME}`,
         "input type text examples, fast and powerful library inputs state management for react."
         , ROOT + TEXT);
 };
@@ -41,7 +41,7 @@ export const TextExamples = () => {
         </h2>
         <Iframe height={400} title="Array with Validation and errorMessage" src={ARRAY_VALID_ERROR_LINK}/>
         <p className="description">
-            Hit next for password examples with aio-inputs
+            Hit next for password examples with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={PROPERTIES.ROOT + PROPERTIES.VALIDATIONS} prev/>
