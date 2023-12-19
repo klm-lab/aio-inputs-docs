@@ -1,3 +1,4 @@
+export const LIB_NAME = "aio-inputs"
 export const RESERVED = [
     "props",
     "label",
@@ -59,13 +60,13 @@ export const routes = {
 }
 
 export const GITHUB_LINK = "https://github.com/klm-lab/inputs";
-export const SITE_URL = "https://aio-inputs.netlify.app"
+export const SITE_URL = `https://${LIB_NAME}.netlify.app`
 // export const CARD = "summary_large_image";
 
 export const getMeta = (title, description, url) => [
     {
         name: "keywords",
-        content: "react, inputs, state, store, immutable, fast, best, manage, management, hook, redux, inputs, aio-inputs, npm, track, validations, validate, input, useInputs, config, persist, reset, submit"
+        content: `react, inputs, state, store, immutable, fast, best, manage, management, hook, redux, inputs, ${LIB_NAME}, npm, track, validations, validate, input, useInputs, config, persist, reset, submit`
     },
     {title: title},
     {name: "description", content: description},
@@ -74,7 +75,7 @@ export const getMeta = (title, description, url) => [
     {name: "og:description", content: description},
     {name: "og:url", content: url ? SITE_URL + url : SITE_URL},
     {name: "og:image", content: SITE_URL + "/site_image.png"},
-    {name: "og:site_name", content: "Aio-inputs"},
+    {name: "og:site_name", content: LIB_NAME},
     {name: "twitter:title", content: title},
     {name: "twitter:description", content: description},
     {name: "twitter:url", content: url ? SITE_URL + url : SITE_URL},

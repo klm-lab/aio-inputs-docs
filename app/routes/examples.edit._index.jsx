@@ -1,18 +1,18 @@
-import {EDIT_LINK, getMeta, routes} from "../util/constants";
+import {EDIT_LINK, getMeta, LIB_NAME, routes} from "../util/constants";
 import Line from "../components/line";
 import Iframe from "../components/iframe/Iframe";
-import CallDefinition, {CallProperty} from "../components/codeComponents/callDefinition";
+import CallDefinition from "../components/codeComponents/callDefinition";
 import PageButton from "../components/pageButton";
 
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs edit examples, documentation for react aio-inputs",
+        `Use Inputs edit examples, documentation for react ${LIB_NAME}`,
         "input edit examples, fast and powerful library inputs state management for react."
         , ROOT + EDIT);
 };
 
-const {EXAMPLES: {ROOT, FILE,EDIT},TYPES} = routes
+const {EXAMPLES: {ROOT, FILE, EDIT}, TYPES} = routes
 
 export const EditExamples = () => {
 

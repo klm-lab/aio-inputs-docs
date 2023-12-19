@@ -1,11 +1,11 @@
-import {getMeta, PASSWORD_LINK, routes} from "../util/constants";
+import {getMeta, LIB_NAME, PASSWORD_LINK, routes} from "../util/constants";
 import Iframe from "../components/iframe/Iframe";
 import PageButton from "../components/pageButton";
 
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs password examples, documentation for react aio-inputs",
+        `Use Inputs password examples, documentation for react ${LIB_NAME}`,
         "input password examples, fast and powerful library inputs state management for react."
         , ROOT + PASSWORD);
 };
@@ -21,7 +21,7 @@ export const PasswordExamples = () => {
         <p className="description">Common use case when dealing with password</p>
         <Iframe height={600} title="Password example" src={PASSWORD_LINK}/>
         <p className="description">
-            Hit next for type radio examples with aio-inputs
+            Hit next for type radio examples with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={ROOT + TEXT} prev/>

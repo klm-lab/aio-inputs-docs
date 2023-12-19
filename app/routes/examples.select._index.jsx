@@ -1,5 +1,5 @@
 import {
-    getMeta,
+    getMeta, LIB_NAME,
     routes,
     SELECT_LINK,
     SELECT_LINK_VALID,
@@ -14,7 +14,7 @@ import PageButton from "../components/pageButton";
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs type select examples, documentation for react aio-inputs",
+        `Use Inputs type select examples, documentation for react ${LIB_NAME}`,
         "input type select examples, fast and powerful library inputs state management for react."
         , ROOT + SELECT);
 };
@@ -53,7 +53,7 @@ export const SelectExamples = () => {
         </h2>
         <Iframe height={400} title="Custom select" src={SELECT_MULTIPLE_CUSTOM}/>
         <p className="description">
-            Hit next for file examples with aio-inputs
+            Hit next for file examples with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={ROOT + CHECKBOX} prev/>

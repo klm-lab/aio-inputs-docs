@@ -1,4 +1,4 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import useRedirect from "../hook/useRedirect";
 import {getAnchor} from "../util";
 import AppLink from "../components/appLink";
@@ -17,7 +17,7 @@ const {
 
 export const meta = () => {
     return getMeta(
-        "Inputs configuration state management configuration documentation for react aio-inputs",
+        `Inputs configuration state management configuration documentation for react ${LIB_NAME}`,
         "Configuration for persist data, asynchronous validation and tracking. Best, simple, fast and powerful library inputs state management for react.",
         ROOT);
 };
@@ -28,7 +28,7 @@ export const Config = () => {
         <h1 id={getAnchor(ASYNC_DELAY)} className="title smt">Config</h1>
         <p className="description">
             This an optional configuration file to change the behaviour of <span
-            className="package hl">aio-inputs</span>. You can config these properties:
+            className="package hl">{LIB_NAME}</span>. You can config these properties:
         </p>
         <ul className="extra item-space">
             <li><span className="oKey hl">asyncDelay</span> asynchronous validation waiting time when user stops typing.

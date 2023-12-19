@@ -1,3 +1,5 @@
+import {LIB_NAME} from "../util/constants";
+
 const ARRAY_MIX = (spec) => `const [myInputs] = useInputs([
     {
         name: "age",
@@ -35,9 +37,9 @@ const IN_LINE = (value) => `return ${value}.map(ip => {
 })`
 
 export const GET_STARTED_CODE = {
-    NPM: `npm i aio-inputs`,
-    YARN: `yarn add aio-inputs`,
-    IMPORT: `import { useInputs } from "aio-inputs"`
+    NPM: `npm i ${LIB_NAME}`,
+    YARN: `yarn add ${LIB_NAME}`,
+    IMPORT: `import { useInputs } from "${LIB_NAME}"`
 }
 
 export const USE_INPUTS_CODE = {
@@ -117,7 +119,7 @@ export const CONFIG_CODE = {
 }
 
 export const TRACK_CODE = {
-    IMPORT: `import { trackInputs } from "aio-inputs"`,
+    IMPORT: `import { trackInputs } from "${LIB_NAME}"`,
     CREATE: `const myCustomInputs = trackInputs(["name", "gender"])`,
     TRACKING: `const [myInputs, form] = myCustomInputs()`,
     USE_TRACK: (value) => `myCustomInputs.${value}()`
@@ -168,12 +170,12 @@ input.set("value", MY_URL_OR_MY_ARRAY_OF_URL, async (url) => your file)
 export const TYPES_CODE = {
     CREATE_ARRAY: `// To type an Array of inputs
     
-import { CreateArrayInputs } from "aio-inputs"
+import { CreateArrayInputs } from "${LIB_NAME}"
 
 const myInputs: CreateArrayInputs = [...]`,
     CREATE_OBJECT: `// To type an Object of inputs
     
-import { CreateObjectInputs } from "aio-inputs"
+import { CreateObjectInputs } from "${LIB_NAME}"
 
 const myInputs: CreateObjectInputs<'name' | 'age'> = {
     name:{...}
@@ -181,16 +183,16 @@ const myInputs: CreateObjectInputs<'name' | 'age'> = {
 },`,
     OUTPUT_INPUT: `// To type an Input
     
-import {Input} from "aio-inputs"`,
+import {Input} from "${LIB_NAME}"`,
     OUTPUT_INPUT_PROPS: `// To type an InputProps
     
-import {InputProps} from "aio-inputs"`,
+import {InputProps} from "${LIB_NAME}"`,
     OUTPUT_ARRAY: `// To type an Array of inputs
     
-import {ArrayInputs} from "aio-inputs"`,
+import {ArrayInputs} from "${LIB_NAME}"`,
     OUTPUT_OBJECT: `// To type an Object of inputs
     
-import { ObjectInputs } from"aio-inputs"
+import { ObjectInputs } from"${LIB_NAME}"
 
 ObjectInputs<'name' | 'age'>`
 }

@@ -1,4 +1,4 @@
-import {FILE_CONTROL_LINK, FILE_LINK, getMeta, routes} from "../util/constants";
+import {FILE_CONTROL_LINK, FILE_LINK, getMeta, LIB_NAME, routes} from "../util/constants";
 import Line from "../components/line";
 import Iframe from "../components/iframe/Iframe";
 import PageButton from "../components/pageButton";
@@ -7,7 +7,7 @@ import CallDefinition from "../components/codeComponents/callDefinition";
 export const meta = () => {
 
     return getMeta(
-        "Use Inputs type file examples, documentation for react aio-inputs",
+        `Use Inputs type file examples, documentation for react ${LIB_NAME}`,
         "input type file examples, fast and powerful library inputs state management for react."
         , ROOT + FILE);
 };
@@ -39,7 +39,7 @@ export const FileExamples = () => {
             or delete an uploaded file.</p>
         <Iframe height={400} title="File input with deletion and update example" src={FILE_CONTROL_LINK}/>
         <p className="description">
-            Hit next for 'edit' examples with aio-inputs
+            Hit next for 'edit' examples with {LIB_NAME}
         </p>
         <div className="foot">
             <PageButton to={ROOT + SELECT} prev/>

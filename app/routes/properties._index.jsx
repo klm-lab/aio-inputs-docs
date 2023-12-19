@@ -1,10 +1,10 @@
-import {getMeta, routes} from "../util/constants";
+import {getMeta, LIB_NAME, routes} from "../util/constants";
 import useRedirect from "../hook/useRedirect";
 
 export const commonPropMeta = (url) => {
 
     return getMeta(
-        "Inputs properties documentation for react aio-inputs",
+        `Inputs properties documentation for react ${LIB_NAME}`,
         "id, type, value, valid, error message, onChange, max, minLength. Best, simple, fast and powerful library inputs state management for react.",
         url
     );

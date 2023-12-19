@@ -1,5 +1,5 @@
 import {commonPropMeta} from "./properties._index";
-import {routes} from "../util/constants";
+import {LIB_NAME, routes} from "../util/constants";
 import Code from "../components/code";
 import Bracket from "../components/codeComponents/bracket";
 import KeyValue, {ChildBracket} from "../components/codeComponents/keyValue";
@@ -94,8 +94,8 @@ export const Properties = () => {
     return <div className="data">
         <h1 className="title smt">Validations properties</h1>
         <p className="description">
-            These validations properties are external, available for your convenience and will be part of your final bundle if you use them.
-            Every property is a function that can be imported from <span className="package hl">aio-inputs</span> except
+            These validations properties are external, available for your convenience and will be part of your final bundle if you use them.<br/>
+            Add them according to the order in which you want to apply your validations. Every property is a function that can be imported from <span className="package hl">{LIB_NAME}</span> except
             the custom property.<br/>
             You have to write your custom validation function. If it returns something, it have to be an error message.
         </p>
@@ -121,8 +121,8 @@ export const Properties = () => {
                 value entered by the user and return an error message or null.
                 <CustomCode Fn={Custom} name="custom" copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM()}/>
             </li>
-            <li><CallProperty name="asyncCustom" hl/> must be a function that takes the
-                value entered by the user, a success callback and an error callback.
+            <li><CallProperty name="asyncCustom" hl/> must be a function that should be called last in your validations. It takes the
+                value entered by the user, a success callback and an error callback. .
                 <CustomCode Fn={Custom} name="asyncCustom" async copyText={PROPERTIES_CODE.VALIDATIONS_CUSTOM(true)}/>
             </li>
 
