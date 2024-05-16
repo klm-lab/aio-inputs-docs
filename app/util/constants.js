@@ -1,6 +1,8 @@
 export const LIB_NAME = "aio-inputs"
 export const RESERVED = [
     "props",
+    "key",
+    "files",
     "label",
     "merge",
     "valid",
