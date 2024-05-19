@@ -35,7 +35,7 @@ const StringArray = () => {
             Now bind some input element.
         </p>
         <Code copyText={USE_INPUTS_CODE.ARRAY_BIND}>
-            <MapInputs/>
+            <MapInputs method='map'/>
         </Code>
         <p className="description">
             That is it. The value entered by the user will be stored in corresponding

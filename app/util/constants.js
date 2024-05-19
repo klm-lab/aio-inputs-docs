@@ -27,6 +27,7 @@ export const routes = {
         GET_VALUES: "#getValues",
         GET: "#get",
         SHOW_ERROR: "#showError",
+        GET_ERRONEOUS_INPUT: "#getErroneousInput",
         RESET: "#reset",
         EACH: "#each",
     },

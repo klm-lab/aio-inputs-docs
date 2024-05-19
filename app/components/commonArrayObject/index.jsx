@@ -16,7 +16,8 @@ const CommonArrayObject =
          value,
          arrayLineName,
          copySpecText,
-         inlineText
+         inlineText,
+        method
      }) => {
         return <>
             <Component copyText={copySpecText}>
@@ -32,7 +33,7 @@ const CommonArrayObject =
                 Now bind <span className="hl">myInputs</span>, to some input element.
                 We will also display the error message if an input is touched and is not valid.
             </p>
-            <InputArrayLine inlineText={inlineText} name={arrayLineName}/>
+            <InputArrayLine method={method} inlineText={inlineText} name={arrayLineName}/>
             <p className="description">
                 That is it. The value entered by the user will be stored in corresponding
                 <DotProperty name="ip" value="value" method={false} hl/>

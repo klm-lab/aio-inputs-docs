@@ -40,6 +40,7 @@ const MixedArray = () => {
             We will use object for age input and string for others.
         </p>
         <CommonArrayObject
+            method='map'
             inlineText={USE_INPUTS_CODE.INPUT_ARRAY_LINE}
             copySpecText={USE_INPUTS_CODE.CREATE_ARRAY_MIX_SPEC_MESSAGE}
             Component={CommonArrayInput}
