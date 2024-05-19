@@ -97,6 +97,10 @@ console.log(form.get("input name"))`,
 
 // Show error
 console.log(form.showError())`,
+    GET_ERRONEOUS_INPUT: `${FORM_C}
+
+// Get erroneous input
+console.log(form.getErroneousInput())`,
     RESET: `${FORM_C}
 
 // Do a reset

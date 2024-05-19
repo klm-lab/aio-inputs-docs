@@ -15,7 +15,7 @@ const {
     FORM: {
         ROOT,
         GET_VALUES, RESET, ON_SUBMIT, SHOW_ERROR, GET,
-        EACH
+        EACH, GET_ERRONEOUS_INPUT
     }, CONFIG, USE_INPUTS
 } = routes
 
@@ -25,12 +25,6 @@ export const meta = () => {
         "use form and get values , submit or reset your data. Best, simple, fast and powerful library inputs state management for react."
         , ROOT);
 };
-
-try {
-
-}catch (e) {
-
-}
 
 export const Form = () => {
     useRedirect(ROOT, ON_SUBMIT);
@@ -48,6 +42,7 @@ export const Form = () => {
             <li><CallDefinition name="reset" hl/> a method to reset a form.</li>
             <li><CallDefinition name="each" hl/> a method to loop through each input.</li>
             <li><CallDefinition name="showError" hl/> a method that touched inputs and show their error.</li>
+            <li><CallDefinition name="getErroneousInput" hl/> a method that get the current erroneous input.</li>
             <li><CallDefinition name="get" hl/> a method that get an input with it's name.</li>
         </ul>
         <Line/>
@@ -113,6 +108,18 @@ export const Form = () => {
                 ...
             </Create>
             <ConsoleLog space method="showError" comment="Show error"/>
+        </Code>
+        <h2 id={getAnchor(GET_ERRONEOUS_INPUT)} className="subTitle smt">
+            Get erroneous input
+        </h2>
+        <p className="description">
+            <DotProperty value="getErroneousInput" hl/> let your get the current erroneous input.
+        </p>
+        <Code copyText={FORM_CODE.GET_ERRONEOUS_INPUT}>
+            <Create close form>
+                ...
+            </Create>
+            <ConsoleLog space method="getErroneousInput" comment="Get erroneous input"/>
         </Code>
         <h2 id={getAnchor(RESET)} className="subTitle smt">
             Reset inputs
